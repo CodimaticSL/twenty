@@ -1781,7 +1781,7 @@ export type Mutation = {
   restorePageLayoutWidget: PageLayoutWidget;
   retryJobs: RetryJobsResponse;
   revokeApiKey?: Maybe<ApiKey>;
-  runWorkflowVersion: WorkflowRun;
+  runWorkflowVersion: RunWorkflowVersionOutput;
   saveImapSmtpCaldavAccount: ImapSmtpCaldavConnectionSuccess;
   sendInvitations: SendInvitationsOutput;
   setMeteredSubscriptionPrice: BillingUpdateOutput;
@@ -1792,6 +1792,7 @@ export type Mutation = {
   skipBookOnboardingStep: OnboardingStepSuccess;
   skipSyncEmailOnboardingStep: OnboardingStepSuccess;
   startChannelSync: ChannelSyncSuccess;
+  stopWorkflowRun: WorkflowRun;
   submitFormStep: Scalars['Boolean'];
   switchBillingPlan: BillingUpdateOutput;
   switchSubscriptionInterval: BillingUpdateOutput;
@@ -2445,6 +2446,11 @@ export type MutationSignUpInWorkspaceArgs = {
 
 export type MutationStartChannelSyncArgs = {
   connectedAccountId: Scalars['UUID'];
+};
+
+
+export type MutationStopWorkflowRunArgs = {
+  workflowRunId: Scalars['UUID'];
 };
 
 
@@ -3549,6 +3555,11 @@ export type RunWorkflowVersionInput = {
   workflowVersionId: Scalars['UUID'];
 };
 
+export type RunWorkflowVersionOutput = {
+  __typename?: 'RunWorkflowVersionOutput';
+  workflowRunId: Scalars['UUID'];
+};
+
 export type SsoConnection = {
   __typename?: 'SSOConnection';
   id: Scalars['UUID'];
@@ -4414,8 +4425,20 @@ export enum WorkflowActionType {
 
 export type WorkflowRun = {
   __typename?: 'WorkflowRun';
-  workflowRunId: Scalars['UUID'];
+  id: Scalars['UUID'];
+  status: WorkflowRunStatusEnum;
 };
+
+/** Status of the workflow run */
+export enum WorkflowRunStatusEnum {
+  COMPLETED = 'COMPLETED',
+  ENQUEUED = 'ENQUEUED',
+  FAILED = 'FAILED',
+  NOT_STARTED = 'NOT_STARTED',
+  RUNNING = 'RUNNING',
+  STOPPED = 'STOPPED',
+  STOPPING = 'STOPPING'
+}
 
 export type WorkflowStepPosition = {
   __typename?: 'WorkflowStepPosition';
