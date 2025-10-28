@@ -12,7 +12,7 @@ export class AppSyncCommand {
     appPath: string = CURRENT_EXECUTION_DIRECTORY,
   ): Promise<ApiResponse<any>> {
     try {
-      console.log(chalk.blue('🚀 Syncing Twenty Application'));
+      console.log(chalk.blue('🚀 Syncing NodiaFlow Application'));
       console.log(chalk.gray(`📁 App Path: ${appPath}`));
       console.log('');
 

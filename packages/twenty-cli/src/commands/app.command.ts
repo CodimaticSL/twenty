@@ -1,9 +1,9 @@
 import chalk from 'chalk';
 import { Command } from 'commander';
 import {
-  AppAddCommand,
-  isSyncableEntity,
-  SyncableEntity,
+    AppAddCommand,
+    isSyncableEntity,
+    SyncableEntity,
 } from './app-add.command';
 import { AppDeleteCommand } from './app-delete.command';
 import { AppDevCommand } from './app-dev.command';
@@ -31,7 +31,7 @@ export class AppCommand {
 
     appCommand
       .command('sync')
-      .description('Sync application to Twenty')
+      .description('Sync application to NodiaFlow')
       .action(async () => {
         try {
           const result = await this.syncCommand.execute();
@@ -45,7 +45,7 @@ export class AppCommand {
 
     appCommand
       .command('delete')
-      .description('Delete application from Twenty')
+      .description('Delete application from NodiaFlow')
       .action(async () => {
         try {
           const result = await this.deleteCommand.execute({
@@ -61,7 +61,7 @@ export class AppCommand {
 
     appCommand
       .command('init [directory]')
-      .description('Initialize a new Twenty application')
+      .description('Initialize a new NodiaFlow application')
       .action(async (directory?: string) => {
         if (directory && !/^[a-z0-9-]+$/.test(directory)) {
           console.error(

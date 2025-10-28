@@ -1820,8 +1820,8 @@ msgstr "職稱"
 
 #. js-lingui-id: PviVyk
 #: src/engine/core-modules/workspace-invitation/services/workspace-invitation.service.ts
-msgid "Join your team on Twenty"
-msgstr "加入您的團隊，使用 Twenty"
+msgid "Join your team on NodiaFlow"
+msgstr "加入您的團隊，使用 NodiaFlow"
 
 #. js-lingui-id: WNfJ8M
 #: src/modules/connected-account/standard-objects/connected-account.workspace-entity.ts
@@ -4180,8 +4180,8 @@ msgstr "星期三"
 
 #. js-lingui-id: TVkCrJ
 #: src/engine/core-modules/email-verification/services/email-verification.service.ts
-msgid "Welcome to Twenty: Please Confirm Your Email"
-msgstr "歡迎來到 Twenty：請確認您的電子郵件"
+msgid "Welcome to NodiaFlow: Please Confirm Your Email"
+msgstr "歡迎來到 NodiaFlow：請確認您的電子郵件"
 
 #. js-lingui-id: bLt/0J
 #: src/modules/workflow/common/standard-objects/workflow.workspace-entity.ts

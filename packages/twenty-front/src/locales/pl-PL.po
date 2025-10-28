@@ -1253,8 +1253,8 @@ msgstr "Krótki opis tego pola wyjściowego"
 
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "Używając Twenty, zgadzasz się na"
+msgid "By using NodiaFlow, you agree to the"
+msgstr "Używając NodiaFlow, zgadzasz się na"
 
 #. js-lingui-id: PmmvzS
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterValue.tsx
@@ -1492,8 +1492,8 @@ msgstr "Sprawdź swoją pocztę"
 
 #. js-lingui-id: SxwQE8
 #: src/modules/billing/hooks/useHandleCheckoutSession.ts
-msgid "Checkout session error. Please retry or contact Twenty team"
-msgstr "Błąd sesji przy realizacji zakupu. Spróbuj ponownie lub skontaktuj się z zespołem Twenty"
+msgid "Checkout session error. Please retry or contact NodiaFlow team"
+msgstr "Błąd sesji przy realizacji zakupu. Spróbuj ponownie lub skontaktuj się z zespołem NodiaFlow"
 
 #. js-lingui-id: SviKkE
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
@@ -3230,8 +3230,8 @@ msgstr "Błąd podczas anulowania przełączania planu."
 
 #. js-lingui-id: QmR+2U
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
-msgstr "Błąd podczas kończenia okresu próbnego. Proszę skontaktować się z zespołem Twenty."
+msgid "Error while ending trial period. Please contact NodiaFlow team."
+msgstr "Błąd podczas kończenia okresu próbnego. Proszę skontaktować się z zespołem NodiaFlow."
 
 #. js-lingui-id: QEee5f
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx

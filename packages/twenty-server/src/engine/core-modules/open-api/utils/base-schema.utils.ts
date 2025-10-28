@@ -12,7 +12,7 @@ export const baseSchema = (
   return {
     openapi: '3.1.1',
     info: {
-      title: 'Twenty Api',
+      title: 'NodiaFlow Api',
       description: `Use this page to explore and call the **REST API**. 
 
 ## Authentication
@@ -110,7 +110,7 @@ Metadata: ${serverUrl}/rest/open-api/metadata?token=${token ?? '<your_token>'}
 Quick prompt example (Cursor or any agent):
 
 \`\`\`text
-Here is an OpenAPI schema for the Twenty REST API:\n${serverUrl}/rest/open-api/core?token=${token ?? '<your_token>'}
+Here is an OpenAPI schema for the NodiaFlow REST API:\n${serverUrl}/rest/open-api/core?token=${token ?? '<your_token>'}
 
 Use it to list companies created after 2024-01-01, ordered by createdAt desc, and include only 20 results.
 \`\`\`
@@ -154,7 +154,7 @@ Notes:
       },
     ],
     externalDocs: {
-      description: 'Find out more about **Twenty**',
+      description: 'Find out more about **NodiaFlow**',
       url: 'https://twenty.com',
     },
     paths: { [`/open-api/${schemaName}`]: computeOpenApiPath(serverUrl) },

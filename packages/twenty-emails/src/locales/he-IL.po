@@ -49,8 +49,8 @@ msgstr "המרחב ייסגר בעוד {remainingDays} {dayOrDays}, וכל הנ�
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
-msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
-msgstr "אם תרצה להמשיך ולהשתמש ב-Twenty, אנא עדכן את המנוי שלך במהלך {remainingDays} {dayOrDays} הבאים."
+msgid "If you wish to continue using NodiaFlow, please update your subscription within the next {remainingDays} {dayOrDays}."
+msgstr "אם תרצה להמשיך ולהשתמש ב-NodiaFlow, אנא עדכן את המנוי שלך במהלך {remainingDays} {dayOrDays} הבאים."
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
@@ -75,8 +75,8 @@ msgstr "הודעת דוא\"ל מבחן"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
-msgstr "הצטרף לצוות שלך ב-Twenty"
+msgid "Join your team on NodiaFlow"
+msgstr "הצטרף לצוות שלך ב-NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
@@ -95,8 +95,8 @@ msgstr "אמת את כתובת האימייל שלך"
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
-msgid "Thanks for registering for an account on Twenty! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
-msgstr "תודה שנרשמת לחשבון ב-Twenty! לפני שנתחיל, אנחנו רק צריכים לוודא שזה אתה. לחץ מטה כדי לאמת את כתובת המייל שלך."
+msgid "Thanks for registering for an account on NodiaFlow! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
+msgstr "תודה שנרשמת לחשבון ב-NodiaFlow! לפני שנתחיל, אנחנו רק צריכים לוודא שזה אתה. לחץ מטה כדי לאמת את כתובת המייל שלך."
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
@@ -120,8 +120,8 @@ msgstr "אם לא אתה התחלת את השינוי הזה, אנא פנה מי
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
-msgstr "התחבר ל-Twenty"
+msgid "Connect to NodiaFlow"
+msgstr "התחבר ל-NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/emails/password-reset-link.email.tsx
@@ -155,8 +155,8 @@ msgstr "כל הנתונים במרחב העבודה הזה נמחקו לצמית
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you wish to use Twenty again, you can create a new workspace."
-msgstr "אם תרצה להשתמש ב-Twenty שוב, תוכל ליצור מרחב עבודה חדש."
+msgid "If you wish to use NodiaFlow again, you can create a new workspace."
+msgstr "אם תרצה להשתמש ב-NodiaFlow שוב, תוכל ליצור מרחב עבודה חדש."
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
@@ -165,8 +165,8 @@ msgstr "צור מרחב עבודה חדש"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
-msgstr "מה זה Twenty?"
+msgid "What is NodiaFlow?"
+msgstr "מה זה NodiaFlow?"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
@@ -180,8 +180,8 @@ msgstr "אתר אינטרנט"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's website"
-msgstr "בקר באתר של Twenty"
+msgid "Visit NodiaFlow's website"
+msgstr "בקר באתר של NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -190,8 +190,8 @@ msgstr "Github"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
-msgstr "בקר במאגר ה-GitHub של Twenty"
+msgid "Visit NodiaFlow's GitHub repository"
+msgstr "בקר במאגר ה-GitHub של NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -200,8 +200,8 @@ msgstr "מדריך למשתמש"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
-msgstr "קרא את המדריך למשתמש של Twenty"
+msgid "Read NodiaFlow's user guide"
+msgstr "קרא את המדריך למשתמש של NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -210,13 +210,13 @@ msgstr "מפתחים"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
-msgstr "בקר בתיעוד המפתחים של Twenty"
+msgid "Visit NodiaFlow's developer documentation"
+msgstr "בקר בתיעוד המפתחים של NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
-msgstr "Twenty.com, תאגיד לתועלת הציבור"
+msgid "NodiaFlow.com, Public Benefit Corporation"
+msgstr "NodiaFlow.com, תאגיד לתועלת הציבור"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx

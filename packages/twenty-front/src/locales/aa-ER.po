@@ -1253,7 +1253,7 @@ msgstr "crwdns6340:0crwdne6340:0"
 
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
+msgid "By using NodiaFlow, you agree to the"
 msgstr "crwdns155:0crwdne155:0"
 
 #. js-lingui-id: PmmvzS
@@ -1492,7 +1492,7 @@ msgstr "crwdns6162:0crwdne6162:0"
 
 #. js-lingui-id: SxwQE8
 #: src/modules/billing/hooks/useHandleCheckoutSession.ts
-msgid "Checkout session error. Please retry or contact Twenty team"
+msgid "Checkout session error. Please retry or contact NodiaFlow team"
 msgstr "crwdns6450:0crwdne6450:0"
 
 #. js-lingui-id: SviKkE
@@ -3230,7 +3230,7 @@ msgstr "crwdns7928:0crwdne7928:0"
 
 #. js-lingui-id: QmR+2U
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
+msgid "Error while ending trial period. Please contact NodiaFlow team."
 msgstr "crwdns5802:0crwdne5802:0"
 
 #. js-lingui-id: QEee5f

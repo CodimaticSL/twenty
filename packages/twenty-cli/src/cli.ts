@@ -16,12 +16,12 @@ const program = new Command();
 
 program
   .name('twenty')
-  .description('CLI for Twenty application development')
+  .description('CLI for NodiaFlow application development')
   .version(packageJson.version);
 
 program.option(
   '--api-url <url>',
-  'Twenty API URL',
+  'NodiaFlow API URL',
   process.env.TWENTY_API_URL || 'http://localhost:3000',
 );
 

@@ -1253,8 +1253,8 @@ msgstr "Rövid magyarázat ehhez a kimeneti mezőhöz"
 
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "A Twenty használatával elfogadja a"
+msgid "By using NodiaFlow, you agree to the"
+msgstr "A NodiaFlow használatával elfogadja a"
 
 #. js-lingui-id: PmmvzS
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterValue.tsx
@@ -1492,8 +1492,8 @@ msgstr "Ellenőrizze az e-mailjeit"
 
 #. js-lingui-id: SxwQE8
 #: src/modules/billing/hooks/useHandleCheckoutSession.ts
-msgid "Checkout session error. Please retry or contact Twenty team"
-msgstr "Fizetési munkamenet hiba. Kérem, próbálja újra, vagy vegye fel a kapcsolatot a Twenty csapatával"
+msgid "Checkout session error. Please retry or contact NodiaFlow team"
+msgstr "Fizetési munkamenet hiba. Kérem, próbálja újra, vagy vegye fel a kapcsolatot a NodiaFlow csapatával"
 
 #. js-lingui-id: SviKkE
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
@@ -3230,8 +3230,8 @@ msgstr "Hiba a csomagváltás törlésekor."
 
 #. js-lingui-id: QmR+2U
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
-msgstr "Hiba a próbaidőszak befejezésekor. Kérjük, vegye fel a kapcsolatot a Twenty csapatával."
+msgid "Error while ending trial period. Please contact NodiaFlow team."
+msgstr "Hiba a próbaidőszak befejezésekor. Kérjük, vegye fel a kapcsolatot a NodiaFlow csapatával."
 
 #. js-lingui-id: QEee5f
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx

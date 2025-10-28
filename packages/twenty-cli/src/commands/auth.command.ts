@@ -14,9 +14,9 @@ export class AuthCommand {
 
     authCommand
       .command('login')
-      .description('Authenticate with Twenty')
+      .description('Authenticate with NodiaFlow')
       .option('--api-key <key>', 'API key for authentication')
-      .option('--api-url <url>', 'Twenty API URL')
+      .option('--api-url <url>', 'NodiaFlow API URL')
       .action(async (options) => {
         await this.login(options);
       });
@@ -54,7 +54,7 @@ export class AuthCommand {
           {
             type: 'input',
             name: 'apiUrl',
-            message: 'Twenty API URL:',
+            message: 'NodiaFlow API URL:',
             default: config.apiUrl,
             validate: (input) => {
               try {
@@ -92,7 +92,7 @@ export class AuthCommand {
       const isValid = await this.apiService.validateAuth();
 
       if (isValid) {
-        console.log(chalk.green('✓ Successfully authenticated with Twenty'));
+        console.log(chalk.green('✓ Successfully authenticated with NodiaFlow'));
       } else {
         console.log(
           chalk.red('✗ Authentication failed. Please check your credentials.'),

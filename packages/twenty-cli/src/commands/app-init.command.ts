@@ -1,9 +1,9 @@
 import chalk from 'chalk';
 import * as fs from 'fs-extra';
 import inquirer from 'inquirer';
+import kebabCase from 'lodash.kebabcase';
 import * as path from 'path';
 import { copyBaseApplicationProject } from '../utils/app-template';
-import kebabCase from 'lodash.kebabcase';
 
 export class AppInitCommand {
   async execute(directory?: string): Promise<void> {
@@ -87,7 +87,7 @@ export class AppInitCommand {
     appDirectory: string;
     appName: string;
   }): void {
-    console.log(chalk.blue('🎯 Creating Twenty Application'));
+    console.log(chalk.blue('🎯 Creating NodiaFlow Application'));
     console.log(chalk.gray(`📁 Directory: ${appDirectory}`));
     console.log(chalk.gray(`📝 Name: ${appName}`));
     console.log('');

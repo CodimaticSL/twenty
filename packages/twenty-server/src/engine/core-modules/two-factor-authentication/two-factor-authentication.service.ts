@@ -7,8 +7,8 @@ import { isDefined } from 'twenty-shared/utils';
 import { Repository } from 'typeorm';
 
 import {
-  AuthException,
-  AuthExceptionCode,
+    AuthException,
+    AuthExceptionCode,
 } from 'src/engine/core-modules/auth/auth.exception';
 import { TwoFactorAuthenticationMethod } from 'src/engine/core-modules/two-factor-authentication/entities/two-factor-authentication-method.entity';
 import { TOTP_DEFAULT_CONFIGURATION } from 'src/engine/core-modules/two-factor-authentication/strategies/otp/totp/constants/totp.strategy.constants';
@@ -19,8 +19,8 @@ import { type User } from 'src/engine/core-modules/user/user.entity';
 import { type Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 
 import {
-  TwoFactorAuthenticationException,
-  TwoFactorAuthenticationExceptionCode,
+    TwoFactorAuthenticationException,
+    TwoFactorAuthenticationExceptionCode,
 } from './two-factor-authentication.exception';
 import { twoFactorAuthenticationMethodsValidator } from './two-factor-authentication.validation';
 
@@ -120,7 +120,7 @@ export class TwoFactorAuthenticationService {
           this.generateOtpSecretEncryptionKey(userId, workspaceId),
         );
 
-      const issuer = `Twenty${workspaceDisplayName ? ` - ${workspaceDisplayName}` : ''}`;
+      const issuer = `NodiaFlow${workspaceDisplayName ? ` - ${workspaceDisplayName}` : ''}`;
       const reuseUri = authenticator.keyuri(userEmail, issuer, existingSecret);
 
       return reuseUri;
@@ -130,7 +130,7 @@ export class TwoFactorAuthenticationService {
       TOTP_DEFAULT_CONFIGURATION,
     ).initiate(
       userEmail,
-      `Twenty${workspaceDisplayName ? ` - ${workspaceDisplayName}` : ''}`,
+      `NodiaFlow${workspaceDisplayName ? ` - ${workspaceDisplayName}` : ''}`,
     );
 
     const encryptedSecret = await this.simpleSecretEncryptionUtil.encryptSecret(

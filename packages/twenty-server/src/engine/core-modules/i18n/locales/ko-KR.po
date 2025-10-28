@@ -1820,7 +1820,7 @@ msgstr "직책"
 
 #. js-lingui-id: PviVyk
 #: src/engine/core-modules/workspace-invitation/services/workspace-invitation.service.ts
-msgid "Join your team on Twenty"
+msgid "Join your team on NodiaFlow"
 msgstr "Twenty에서 팀에 합류하세요"
 
 #. js-lingui-id: WNfJ8M
@@ -4180,7 +4180,7 @@ msgstr "수요일"
 
 #. js-lingui-id: TVkCrJ
 #: src/engine/core-modules/email-verification/services/email-verification.service.ts
-msgid "Welcome to Twenty: Please Confirm Your Email"
+msgid "Welcome to NodiaFlow: Please Confirm Your Email"
 msgstr "Twenty에 오신 것을 환영합니다: 이메일을 확인해 주세요"
 
 #. js-lingui-id: bLt/0J

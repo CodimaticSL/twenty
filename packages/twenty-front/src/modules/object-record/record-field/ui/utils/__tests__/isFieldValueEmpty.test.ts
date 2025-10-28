@@ -1,10 +1,10 @@
 import {
-  booleanFieldDefinition,
-  fieldMetadataId,
-  fullNameFieldDefinition,
-  linksFieldDefinition,
-  relationFieldDefinition,
-  selectFieldDefinition,
+    booleanFieldDefinition,
+    fieldMetadataId,
+    fullNameFieldDefinition,
+    linksFieldDefinition,
+    relationFieldDefinition,
+    selectFieldDefinition,
 } from '@/object-record/record-field/ui/__mocks__/fieldDefinitions';
 import { type FieldDefinition } from '@/object-record/record-field/ui/types/FieldDefinition';
 import { type FieldCurrencyMetadata } from '@/object-record/record-field/ui/types/FieldMetadata';
@@ -140,7 +140,7 @@ describe('isFieldValueEmpty', () => {
         fieldDefinition: linksFieldDefinition,
         fieldValue: {
           primaryLinkUrl: 'https://www.twenty.com',
-          primaryLinkLabel: 'Twenty Website',
+          primaryLinkLabel: 'NodiaFlow Website',
           secondaryLinks: [],
         },
       }),
@@ -180,7 +180,7 @@ describe('isFieldValueEmpty', () => {
         fieldDefinition: linksFieldDefinition,
         fieldValue: {
           primaryLinkUrl: 'https://www.twenty.com',
-          primaryLinkLabel: 'Twenty Website',
+          primaryLinkLabel: 'NodiaFlow Website',
           secondaryLinks: [{ url: 'wikipedia', label: 'Invalid URL' }],
         },
       }),

@@ -19,7 +19,7 @@ const mockStep = {
         fields: {
           name: {
             label: 'Name',
-            value: 'Twenty',
+            value: 'NodiaFlow',
             isLeaf: true,
             fieldMetadataId: '123e4567-e89b-12d3-a456-426614174000',
             type: FieldMetadataType.TEXT,
@@ -35,7 +35,7 @@ const mockStep = {
 describe('getCurrentSubStepFromPath', () => {
   it('should return the current sub step from the path', () => {
     const path = ['company', 'name'];
-    expect(getCurrentSubStepFromPath(mockStep, path)).toBe('Twenty');
+    expect(getCurrentSubStepFromPath(mockStep, path)).toBe('NodiaFlow');
   });
 
   it('should return undefined when the path is not valid', () => {

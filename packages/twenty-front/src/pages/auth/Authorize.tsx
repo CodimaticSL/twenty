@@ -106,8 +106,8 @@ export const Authorize = () => {
       <StyledCardWrapper>
         <StyledAppsContainer>
           <img
-            src="/images/integrations/twenty-logo.svg"
-            alt="twenty-icon"
+            src="https://nodiaflow.com/logo.svg"
+            alt="nodiaflow-icon"
             height={40}
             width={40}
           />

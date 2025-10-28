@@ -49,8 +49,8 @@ msgstr "工作區將在 {remainingDays} {dayOrDays} 後停用，所有數據將�
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
-msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
-msgstr "如果您希望繼續使用 Twenty，請在接下來的 {remainingDays} {dayOrDays} 內更新您的訂閱。"
+msgid "If you wish to continue using NodiaFlow, please update your subscription within the next {remainingDays} {dayOrDays}."
+msgstr "如果您希望繼續使用 NodiaFlow，請在接下來的 {remainingDays} {dayOrDays} 內更新您的訂閱。"
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
@@ -75,8 +75,8 @@ msgstr "測試電子郵件"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
-msgstr "加入您的團隊，使用 Twenty"
+msgid "Join your team on NodiaFlow"
+msgstr "加入您的團隊，使用 NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
@@ -95,8 +95,8 @@ msgstr "確認您的電子郵件地址"
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
-msgid "Thanks for registering for an account on Twenty! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
-msgstr "感謝您在 Twenty 註冊帳戶！在開始之前，我們需要確認是您本人。請點擊以下驗證您的電子郵件地址。"
+msgid "Thanks for registering for an account on NodiaFlow! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
+msgstr "感謝您在 NodiaFlow 註冊帳戶！在開始之前，我們需要確認是您本人。請點擊以下驗證您的電子郵件地址。"
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
@@ -120,8 +120,8 @@ msgstr "如果您未發起此更改，請立即聯繫您的工作區擁有者。
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
-msgstr "連接到 Twenty"
+msgid "Connect to NodiaFlow"
+msgstr "連接到 NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/emails/password-reset-link.email.tsx
@@ -155,8 +155,8 @@ msgstr "此工作區中的所有數據已被永久刪除。"
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you wish to use Twenty again, you can create a new workspace."
-msgstr "如果您想再次使用 Twenty，可以創建一個新的工作區。"
+msgid "If you wish to use NodiaFlow again, you can create a new workspace."
+msgstr "如果您想再次使用 NodiaFlow，可以創建一個新的工作區。"
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
@@ -165,8 +165,8 @@ msgstr "創建新的工作區"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
-msgstr "什麼是Twenty？"
+msgid "What is NodiaFlow?"
+msgstr "什麼是NodiaFlow？"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
@@ -180,8 +180,8 @@ msgstr "網站"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's website"
-msgstr "訪問Twenty的網站"
+msgid "Visit NodiaFlow's website"
+msgstr "訪問NodiaFlow的網站"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -190,8 +190,8 @@ msgstr "Github"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
-msgstr "訪問Twenty的GitHub 儲存庫"
+msgid "Visit NodiaFlow's GitHub repository"
+msgstr "訪問NodiaFlow的GitHub 儲存庫"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -200,8 +200,8 @@ msgstr "用戶指南"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
-msgstr "閱讀Twenty的用戶指南"
+msgid "Read NodiaFlow's user guide"
+msgstr "閱讀NodiaFlow的用戶指南"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -210,13 +210,13 @@ msgstr "開發人員"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
-msgstr "訪問Twenty的開發者文檔"
+msgid "Visit NodiaFlow's developer documentation"
+msgstr "訪問NodiaFlow的開發者文檔"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
-msgstr "Twenty.com, 公益公司"
+msgid "NodiaFlow.com, Public Benefit Corporation"
+msgstr "NodiaFlow.com, 公益公司"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx

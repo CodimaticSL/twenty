@@ -1253,8 +1253,8 @@ msgstr "這個輸出欄位的簡要說明"
 
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "使用 Twenty 即表示您同意"
+msgid "By using NodiaFlow, you agree to the"
+msgstr "使用 NodiaFlow 即表示您同意"
 
 #. js-lingui-id: PmmvzS
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterValue.tsx
@@ -1492,8 +1492,8 @@ msgstr "檢查您的電子郵件"
 
 #. js-lingui-id: SxwQE8
 #: src/modules/billing/hooks/useHandleCheckoutSession.ts
-msgid "Checkout session error. Please retry or contact Twenty team"
-msgstr "結賬會話錯誤。請重試或聯繫 Twenty 團隊"
+msgid "Checkout session error. Please retry or contact NodiaFlow team"
+msgstr "結賬會話錯誤。請重試或聯繫 NodiaFlow 團隊"
 
 #. js-lingui-id: SviKkE
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
@@ -3230,8 +3230,8 @@ msgstr "取消方案切換時出現錯誤。"
 
 #. js-lingui-id: QmR+2U
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
-msgstr "結束試用期時發生錯誤。請聯繫Twenty團隊。"
+msgid "Error while ending trial period. Please contact NodiaFlow team."
+msgstr "結束試用期時發生錯誤。請聯繫NodiaFlow團隊。"
 
 #. js-lingui-id: QEee5f
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx

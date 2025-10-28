@@ -2,7 +2,7 @@ import axios from 'axios';
 import { ConfigService } from '../../services/config.service';
 import { SERVER_URL } from './constants/server-url.constant';
 
-describe('Twenty Server Health Check (E2E)', () => {
+describe('NodiaFlow Server Health Check (E2E)', () => {
   const configService = new ConfigService();
   const HEALTH_ENDPOINT = `${SERVER_URL}/healthz`;
 

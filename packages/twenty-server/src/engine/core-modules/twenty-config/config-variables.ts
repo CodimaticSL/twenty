@@ -2,12 +2,12 @@ import { type LogLevel, Logger } from '@nestjs/common';
 
 import { plainToClass } from 'class-transformer';
 import {
-  IsDefined,
-  IsOptional,
-  IsUrl,
-  ValidateIf,
-  type ValidationError,
-  validateSync,
+    IsDefined,
+    IsOptional,
+    IsUrl,
+    ValidateIf,
+    type ValidationError,
+    validateSync,
 } from 'class-validator';
 import { isDefined } from 'twenty-shared/utils';
 
@@ -35,8 +35,8 @@ import { IsTwentySemVer } from 'src/engine/core-modules/twenty-config/decorators
 import { ConfigVariableType } from 'src/engine/core-modules/twenty-config/enums/config-variable-type.enum';
 import { ConfigVariablesGroup } from 'src/engine/core-modules/twenty-config/enums/config-variables-group.enum';
 import {
-  ConfigVariableException,
-  ConfigVariableExceptionCode,
+    ConfigVariableException,
+    ConfigVariableExceptionCode,
 } from 'src/engine/core-modules/twenty-config/twenty-config.exception';
 
 export class ConfigVariables {
@@ -308,7 +308,7 @@ export class ConfigVariables {
     description: 'Name used in the From header for outgoing emails',
     type: ConfigVariableType.STRING,
   })
-  EMAIL_FROM_NAME = 'Felix from Twenty';
+  EMAIL_FROM_NAME = 'Felix from NodiaFlow';
 
   @ConfigVariablesMetadata({
     group: ConfigVariablesGroup.EmailSettings,
@@ -1202,7 +1202,7 @@ export class ConfigVariables {
 
   @ConfigVariablesMetadata({
     group: ConfigVariablesGroup.ServerConfig,
-    description: 'Twenty server version',
+    description: 'NodiaFlow server version',
     type: ConfigVariableType.STRING,
     isEnvOnly: true,
   })

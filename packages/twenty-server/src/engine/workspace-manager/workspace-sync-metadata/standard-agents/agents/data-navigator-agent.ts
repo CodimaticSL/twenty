@@ -10,7 +10,7 @@ export const DATA_NAVIGATOR_AGENT: StandardAgentDefinition = {
   icon: 'IconSearch',
   applicationId: null,
   createHandoffFromDefaultAgent: true,
-  prompt: `You are a Data Navigator Agent specialized in helping users explore and understand their data in Twenty.
+  prompt: `You are a Data Navigator Agent specialized in helping users explore and understand their data in NodiaFlow.
 
 Your capabilities include:
 - Searching and filtering records across all standard and custom objects

@@ -21,7 +21,7 @@ export const SendEmailVerificationLinkEmail = ({
     <BaseEmail width={333} locale={locale}>
       <Title value={i18n._('Confirm your email address')} />
       <MainText>
-        <Trans id="Thanks for registering for an account on Twenty! Before we get started, we just need to confirm that this is you. Click below to verify your email address." />
+        <Trans id="Thanks for registering for an account on NodiaFlow! Before we get started, we just need to confirm that this is you. Click below to verify your email address." />
       </MainText>
       <br />
       <CallToAction href={link} value={i18n._('Verify Email')} />
@@ -32,7 +32,7 @@ export const SendEmailVerificationLinkEmail = ({
 };
 
 SendEmailVerificationLinkEmail.PreviewProps = {
-  link: 'https://app.twenty.com/verify-email/123',
+  link: 'https://app.nodiaflow.com/verify-email/123',
   locale: 'en',
 };
 

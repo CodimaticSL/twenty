@@ -1,13 +1,13 @@
 import {
-  ApolloClient,
-  type ApolloClientOptions,
-  ApolloLink,
-  type FetchResult,
-  fromPromise,
-  type Observable,
-  type Operation,
-  type ServerError,
-  type ServerParseError,
+    ApolloClient,
+    type ApolloClientOptions,
+    ApolloLink,
+    type FetchResult,
+    fromPromise,
+    type Observable,
+    type Operation,
+    type ServerError,
+    type ServerParseError,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { onError } from '@apollo/client/link/error';
@@ -26,10 +26,10 @@ import { getTokenPair } from '@/apollo/utils/getTokenPair';
 import { i18n } from '@lingui/core';
 import { t } from '@lingui/core/macro';
 import {
-  type DefinitionNode,
-  type DirectiveNode,
-  type GraphQLFormattedError,
-  type SelectionNode,
+    type DefinitionNode,
+    type DirectiveNode,
+    type GraphQLFormattedError,
+    type SelectionNode,
 } from 'graphql';
 import isEmpty from 'lodash.isempty';
 import { getGenericOperationName, isDefined } from 'twenty-shared/utils';
@@ -39,7 +39,7 @@ import { type ApolloManager } from '../types/apolloManager.interface';
 import { loggerLink } from '../utils/loggerLink';
 import { StreamingRestLink } from '../utils/streamingRestLink';
 
-const logger = loggerLink(() => 'Twenty');
+const logger = loggerLink(() => 'NodiaFlow');
 
 export interface Options<TCacheShape> extends ApolloClientOptions<TCacheShape> {
   onError?: (err: readonly GraphQLFormattedError[] | undefined) => void;

@@ -53,7 +53,7 @@ describe('permissionsOnRelations', () => {
         `,
       data: {
         id: companyId,
-        name: 'Twenty',
+        name: 'NodiaFlow',
       },
     });
 

@@ -1,22 +1,22 @@
 import {
-  ApolloClient,
-  ApolloLink,
-  HttpLink,
-  InMemoryCache,
-  type UriFunction,
+    ApolloClient,
+    ApolloLink,
+    HttpLink,
+    InMemoryCache,
+    type UriFunction,
 } from '@apollo/client';
 
 import { loggerLink } from '@/apollo/utils/loggerLink';
 import { isDefined } from 'twenty-shared/utils';
 import {
-  type AuthTokenPair,
-  RenewTokenDocument,
-  type RenewTokenMutation,
-  type RenewTokenMutationVariables,
+    type AuthTokenPair,
+    RenewTokenDocument,
+    type RenewTokenMutation,
+    type RenewTokenMutationVariables,
 } from '~/generated-metadata/graphql';
 import { isUndefinedOrNull } from '~/utils/isUndefinedOrNull';
 
-const logger = loggerLink(() => 'Twenty-Refresh');
+const logger = loggerLink(() => 'NodiaFlow-Refresh');
 
 const renewTokenMutation = async (
   uri: string | UriFunction | undefined,

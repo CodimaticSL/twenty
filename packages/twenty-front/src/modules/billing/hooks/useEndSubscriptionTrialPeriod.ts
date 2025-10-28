@@ -52,7 +52,7 @@ export const useEndSubscriptionTrialPeriod = () => {
       return { success: true };
     } catch {
       enqueueErrorSnackBar({
-        message: t`Error while ending trial period. Please contact Twenty team.`,
+        message: t`Error while ending trial period. Please contact NodiaFlow team.`,
       });
       return { success: false };
     } finally {

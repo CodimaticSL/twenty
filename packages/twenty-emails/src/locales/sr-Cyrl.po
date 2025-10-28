@@ -49,8 +49,8 @@ msgstr "Радни простор ће бити деактивиран за {rem
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
-msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
-msgstr "Ако желите наставити коришћење Twenty, молимо вас да освежите вашу претплату у наредних {remainingDays} {dayOrDays}."
+msgid "If you wish to continue using NodiaFlow, please update your subscription within the next {remainingDays} {dayOrDays}."
+msgstr "Ако желите наставити коришћење NodiaFlow, молимо вас да освежите вашу претплату у наредних {remainingDays} {dayOrDays}."
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
@@ -75,8 +75,8 @@ msgstr "Тест имејл"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
-msgstr "Придружите се свом тиму на Twenty"
+msgid "Join your team on NodiaFlow"
+msgstr "Придружите се свом тиму на NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
@@ -95,8 +95,8 @@ msgstr "Потврдите вашу е-адресу"
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
-msgid "Thanks for registering for an account on Twenty! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
-msgstr "Хвала што сте се регистровали за налог на Twenty! Пре него што започнемо, потребно је да потврдимо да сте то ви. Кликните испод да верификујете своју имејл адресу."
+msgid "Thanks for registering for an account on NodiaFlow! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
+msgstr "Хвала што сте се регистровали за налог на NodiaFlow! Пре него што започнемо, потребно је да потврдимо да сте то ви. Кликните испод да верификујете своју имејл адресу."
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
@@ -120,8 +120,8 @@ msgstr "Ако ову промену нисте покренули ви, мол�
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
-msgstr "Повежите се са Twenty"
+msgid "Connect to NodiaFlow"
+msgstr "Повежите се са NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/emails/password-reset-link.email.tsx
@@ -155,8 +155,8 @@ msgstr "Сви подаци у овом радном простору су тр�
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you wish to use Twenty again, you can create a new workspace."
-msgstr "Ако желите поново користити Twenty, можете створити нови радни простор."
+msgid "If you wish to use NodiaFlow again, you can create a new workspace."
+msgstr "Ако желите поново користити NodiaFlow, можете створити нови радни простор."
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
@@ -165,8 +165,8 @@ msgstr "Креирај нови радни простор"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
-msgstr "Шта је Twenty?"
+msgid "What is NodiaFlow?"
+msgstr "Шта је NodiaFlow?"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
@@ -180,8 +180,8 @@ msgstr "Вебсајт"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's website"
-msgstr "Посетите Twenty вебсајт"
+msgid "Visit NodiaFlow's website"
+msgstr "Посетите NodiaFlow вебсајт"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -190,8 +190,8 @@ msgstr "Гитхаб"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
-msgstr "Посетите Twenty репозиторијум на GitHub-у"
+msgid "Visit NodiaFlow's GitHub repository"
+msgstr "Посетите NodiaFlow репозиторијум на GitHub-у"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -200,8 +200,8 @@ msgstr "Корисничко упутство"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
-msgstr "Прочитајте Twenty корисничко упутство"
+msgid "Read NodiaFlow's user guide"
+msgstr "Прочитајте NodiaFlow корисничко упутство"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -210,13 +210,13 @@ msgstr "Програмери"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
-msgstr "Посетите Twenty документацију за програмере"
+msgid "Visit NodiaFlow's developer documentation"
+msgstr "Посетите NodiaFlow документацију за програмере"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
-msgstr "Twenty.com, јавна корпорација"
+msgid "NodiaFlow.com, Public Benefit Corporation"
+msgstr "NodiaFlow.com, јавна корпорација"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx

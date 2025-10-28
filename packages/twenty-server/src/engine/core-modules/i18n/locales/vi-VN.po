@@ -1820,8 +1820,8 @@ msgstr "Chức danh công việc"
 
 #. js-lingui-id: PviVyk
 #: src/engine/core-modules/workspace-invitation/services/workspace-invitation.service.ts
-msgid "Join your team on Twenty"
-msgstr "Tham gia vào đội ngũ của bạn trên Twenty"
+msgid "Join your team on NodiaFlow"
+msgstr "Tham gia vào đội ngũ của bạn trên NodiaFlow"
 
 #. js-lingui-id: WNfJ8M
 #: src/modules/connected-account/standard-objects/connected-account.workspace-entity.ts
@@ -4180,8 +4180,8 @@ msgstr "Thứ Tư"
 
 #. js-lingui-id: TVkCrJ
 #: src/engine/core-modules/email-verification/services/email-verification.service.ts
-msgid "Welcome to Twenty: Please Confirm Your Email"
-msgstr "Chào mừng đến với Twenty: Vui lòng xác nhận email của bạn"
+msgid "Welcome to NodiaFlow: Please Confirm Your Email"
+msgstr "Chào mừng đến với NodiaFlow: Vui lòng xác nhận email của bạn"
 
 #. js-lingui-id: bLt/0J
 #: src/modules/workflow/common/standard-objects/workflow.workspace-entity.ts

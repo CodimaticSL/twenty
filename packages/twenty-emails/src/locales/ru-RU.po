@@ -49,8 +49,8 @@ msgstr "Рабочее пространство будет деактивиро�
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
-msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
-msgstr "Если вы хотите продолжить использование Twenty, пожалуйста, обновите вашу подписку в течение следующих {remainingDays} {dayOrDays}."
+msgid "If you wish to continue using NodiaFlow, please update your subscription within the next {remainingDays} {dayOrDays}."
+msgstr "Если вы хотите продолжить использование NodiaFlow, пожалуйста, обновите вашу подписку в течение следующих {remainingDays} {dayOrDays}."
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
@@ -75,8 +75,8 @@ msgstr "Тестовое письмо"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
-msgstr "Присоединяйтесь к вашей команде на Twenty"
+msgid "Join your team on NodiaFlow"
+msgstr "Присоединяйтесь к вашей команде на NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
@@ -95,8 +95,8 @@ msgstr "Подтвердите ваш адрес электронной почт
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
-msgid "Thanks for registering for an account on Twenty! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
-msgstr "Спасибо за регистрацию учетной записи на сайте Twenty! Прежде чем мы начнем, нам нужно убедиться, что это действительно вы. Нажмите ниже, чтобы подтвердить ваш электронный адрес."
+msgid "Thanks for registering for an account on NodiaFlow! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
+msgstr "Спасибо за регистрацию учетной записи на сайте NodiaFlow! Прежде чем мы начнем, нам нужно убедиться, что это действительно вы. Нажмите ниже, чтобы подтвердить ваш электронный адрес."
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
@@ -120,8 +120,8 @@ msgstr "Если вы не инициировали это изменение, �
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
-msgstr "Подключиться к Twenty"
+msgid "Connect to NodiaFlow"
+msgstr "Подключиться к NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/emails/password-reset-link.email.tsx
@@ -155,8 +155,8 @@ msgstr "Все данные в этом рабочем пространстве 
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you wish to use Twenty again, you can create a new workspace."
-msgstr "Если вы захотите снова использовать Twenty, вы сможете создать новое рабочее пространство."
+msgid "If you wish to use NodiaFlow again, you can create a new workspace."
+msgstr "Если вы захотите снова использовать NodiaFlow, вы сможете создать новое рабочее пространство."
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
@@ -165,8 +165,8 @@ msgstr "Создать новое рабочее пространство"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
-msgstr "Что такое Twenty?"
+msgid "What is NodiaFlow?"
+msgstr "Что такое NodiaFlow?"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
@@ -180,8 +180,8 @@ msgstr "Веб-сайт"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's website"
-msgstr "Посетите веб-сайт Twenty"
+msgid "Visit NodiaFlow's website"
+msgstr "Посетите веб-сайт NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -190,8 +190,8 @@ msgstr "Гитхаб"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
-msgstr "Посетите репозиторий Twenty на GitHub"
+msgid "Visit NodiaFlow's GitHub repository"
+msgstr "Посетите репозиторий NodiaFlow на GitHub"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -200,8 +200,8 @@ msgstr "Руководство пользователя"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
-msgstr "Читайте руководство пользователя Twenty"
+msgid "Read NodiaFlow's user guide"
+msgstr "Читайте руководство пользователя NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -210,13 +210,13 @@ msgstr "Разработчики"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
-msgstr "Ознакомьтесь с документацией для разработчиков Twenty"
+msgid "Visit NodiaFlow's developer documentation"
+msgstr "Ознакомьтесь с документацией для разработчиков NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
-msgstr "Twenty.com, Общественная корпорация"
+msgid "NodiaFlow.com, Public Benefit Corporation"
+msgstr "NodiaFlow.com, Общественная корпорация"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx

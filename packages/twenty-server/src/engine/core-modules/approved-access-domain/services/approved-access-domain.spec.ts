@@ -7,8 +7,8 @@ import { type DeleteResult, type Repository } from 'typeorm';
 
 import { ApprovedAccessDomain } from 'src/engine/core-modules/approved-access-domain/approved-access-domain.entity';
 import {
-  ApprovedAccessDomainException,
-  ApprovedAccessDomainExceptionCode,
+    ApprovedAccessDomainException,
+    ApprovedAccessDomainExceptionCode,
 } from 'src/engine/core-modules/approved-access-domain/approved-access-domain.exception';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
 import { EmailService } from 'src/engine/core-modules/email/email.service';
@@ -310,7 +310,7 @@ describe('ApprovedAccessDomainService', () => {
       });
 
       expect(emailService.send).toHaveBeenCalledWith({
-        from: 'John Doe (via Twenty) <no-reply@example.com>',
+        from: 'John Doe (via NodiaFlow) <no-reply@example.com>',
         to: email,
         subject: 'Approve your access domain',
         text: expect.any(String),

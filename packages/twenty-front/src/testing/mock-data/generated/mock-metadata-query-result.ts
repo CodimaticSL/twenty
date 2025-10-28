@@ -16376,7 +16376,7 @@ export const mockedStandardObjectMetadataQueryResult: ObjectMetadataItemsQuery =
               "isLabelSyncedWithName": false,
               "relation": null,
               "label": "Secret",
-              "description": "Optional secret used to compute the HMAC signature for webhook payloads. This secret is shared between Twenty and the webhook consumer to authenticate webhook requests.",
+              "description": "Optional secret used to compute the HMAC signature for webhook payloads. This secret is shared between NodiaFlow and the webhook consumer to authenticate webhook requests.",
               "icon": "IconLock"
             },
             {

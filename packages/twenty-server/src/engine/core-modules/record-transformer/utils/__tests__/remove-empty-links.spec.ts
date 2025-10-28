@@ -1,6 +1,6 @@
 import {
-  RecordTransformerException,
-  RecordTransformerExceptionCode,
+    RecordTransformerException,
+    RecordTransformerExceptionCode,
 } from 'src/engine/core-modules/record-transformer/record-transformer.exception';
 import { removeEmptyLinks } from 'src/engine/core-modules/record-transformer/utils/remove-empty-links';
 
@@ -35,12 +35,12 @@ describe('removeEmptyLinks', () => {
     expect(
       removeEmptyLinks({
         primaryLinkUrl: 'https://www.twenty.com',
-        primaryLinkLabel: 'Twenty Website',
+        primaryLinkLabel: 'NodiaFlow Website',
         secondaryLinks: [],
       }),
     ).toEqual({
       primaryLinkUrl: 'https://www.twenty.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'NodiaFlow Website',
       secondaryLinks: [],
     });
   });
@@ -93,7 +93,7 @@ describe('removeEmptyLinks', () => {
     expect(() =>
       removeEmptyLinks({
         primaryLinkUrl: 'https://www.twenty.com',
-        primaryLinkLabel: 'Twenty Website',
+        primaryLinkLabel: 'NodiaFlow Website',
         secondaryLinks: [
           {
             url: 'wikipedia',
@@ -135,7 +135,7 @@ describe('removeEmptyLinks', () => {
     expect(
       removeEmptyLinks({
         primaryLinkUrl: 'https://www.twenty.com',
-        primaryLinkLabel: 'Twenty Website',
+        primaryLinkLabel: 'NodiaFlow Website',
         secondaryLinks: [
           {
             url: '',
@@ -149,7 +149,7 @@ describe('removeEmptyLinks', () => {
       }),
     ).toEqual({
       primaryLinkUrl: 'https://www.twenty.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'NodiaFlow Website',
       secondaryLinks: [],
     });
   });

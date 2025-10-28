@@ -49,8 +49,8 @@ msgstr "Không gian làm việc sẽ bị ngừng hoạt động trong {remainin
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
-msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
-msgstr "Nếu bạn muốn tiếp tục sử dụng Twenty, vui lòng cập nhật gói đăng ký của bạn trong vòng {remainingDays} ngày kế tiếp."
+msgid "If you wish to continue using NodiaFlow, please update your subscription within the next {remainingDays} {dayOrDays}."
+msgstr "Nếu bạn muốn tiếp tục sử dụng NodiaFlow, vui lòng cập nhật gói đăng ký của bạn trong vòng {remainingDays} ngày kế tiếp."
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
@@ -75,8 +75,8 @@ msgstr "Kiểm tra email"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
-msgstr "Tham gia vào đội ngũ của bạn trên Twenty"
+msgid "Join your team on NodiaFlow"
+msgstr "Tham gia vào đội ngũ của bạn trên NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
@@ -95,8 +95,8 @@ msgstr "Xác nhận địa chỉ email của bạn"
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
-msgid "Thanks for registering for an account on Twenty! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
-msgstr "Cảm ơn bạn đã đăng ký tài khoản trên Twenty! Trước khi bắt đầu, chúng tôi cần xác nhận đây chính là bạn. Nhấn vào bên dưới để xác minh địa chỉ email của bạn."
+msgid "Thanks for registering for an account on NodiaFlow! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
+msgstr "Cảm ơn bạn đã đăng ký tài khoản trên NodiaFlow! Trước khi bắt đầu, chúng tôi cần xác nhận đây chính là bạn. Nhấn vào bên dưới để xác minh địa chỉ email của bạn."
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
@@ -120,8 +120,8 @@ msgstr "Nếu bạn không khởi xướng việc thay đổi này, vui lòng li
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
-msgstr "Kết nối với Twenty"
+msgid "Connect to NodiaFlow"
+msgstr "Kết nối với NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/emails/password-reset-link.email.tsx
@@ -155,8 +155,8 @@ msgstr "Tất cả dữ liệu trong không gian làm việc này đã bị xóa
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you wish to use Twenty again, you can create a new workspace."
-msgstr "Nếu bạn muốn sử dụng Twenty lại, bạn có thể tạo một không gian làm việc mới."
+msgid "If you wish to use NodiaFlow again, you can create a new workspace."
+msgstr "Nếu bạn muốn sử dụng NodiaFlow lại, bạn có thể tạo một không gian làm việc mới."
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
@@ -165,8 +165,8 @@ msgstr "Tạo không gian làm việc mới"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
-msgstr "Twenty là gì?"
+msgid "What is NodiaFlow?"
+msgstr "NodiaFlow là gì?"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
@@ -180,8 +180,8 @@ msgstr "Trang web"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's website"
-msgstr "Thăm trang web của Twenty"
+msgid "Visit NodiaFlow's website"
+msgstr "Thăm trang web của NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -190,8 +190,8 @@ msgstr "Github"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
-msgstr "Thăm kho GitHub của Twenty"
+msgid "Visit NodiaFlow's GitHub repository"
+msgstr "Thăm kho GitHub của NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -200,8 +200,8 @@ msgstr "Hướng dẫn người dùng"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
-msgstr "Đọc hướng dẫn người dùng của Twenty"
+msgid "Read NodiaFlow's user guide"
+msgstr "Đọc hướng dẫn người dùng của NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -210,13 +210,13 @@ msgstr "Nhà phát triển"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
-msgstr "Thăm tài liệu nhà phát triển của Twenty"
+msgid "Visit NodiaFlow's developer documentation"
+msgstr "Thăm tài liệu nhà phát triển của NodiaFlow"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
-msgstr "Twenty.com, Tập đoàn lợi ích công cộng"
+msgid "NodiaFlow.com, Public Benefit Corporation"
+msgstr "NodiaFlow.com, Tập đoàn lợi ích công cộng"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx

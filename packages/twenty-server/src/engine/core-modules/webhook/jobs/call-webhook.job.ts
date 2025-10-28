@@ -68,13 +68,13 @@ export class CallWebhookJob {
       const { secret, ...payloadWithoutSecret } = data;
 
       if (secret) {
-        headers['X-Twenty-Webhook-Timestamp'] = Date.now().toString();
-        headers['X-Twenty-Webhook-Signature'] = this.generateSignature(
+        headers['X-NodiaFlow-Webhook-Timestamp'] = Date.now().toString();
+        headers['X-NodiaFlow-Webhook-Signature'] = this.generateSignature(
           payloadWithoutSecret,
           secret,
-          headers['X-Twenty-Webhook-Timestamp'],
+          headers['X-NodiaFlow-Webhook-Timestamp'],
         );
-        headers['X-Twenty-Webhook-Nonce'] = crypto
+        headers['X-NodiaFlow-Webhook-Nonce'] = crypto
           .randomBytes(16)
           .toString('hex');
       }

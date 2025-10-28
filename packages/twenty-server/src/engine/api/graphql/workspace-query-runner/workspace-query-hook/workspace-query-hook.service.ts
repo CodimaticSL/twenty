@@ -31,13 +31,8 @@ export class WorkspaceQueryHookService {
   ): Promise<WorkspacePreQueryHookPayload<T>> {
     const key: WorkspaceQueryHookKey = `${objectName}.${methodName}`;
     
-    console.log(`🔍 [HOOK SERVICE] executePreQueryHooks llamado con key: ${key}`);
-    console.log(`🔍 [HOOK SERVICE] objectName: ${objectName}, methodName: ${methodName}`);
-    
     const preHookInstances =
       this.workspaceQueryHookStorage.getWorkspaceQueryPreHookInstances(key);
-
-    console.log(`🔍 [HOOK SERVICE] Hooks encontrados para ${key}:`, preHookInstances?.length || 0);
 
     if (!preHookInstances) {
       return payload;

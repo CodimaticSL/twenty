@@ -13,14 +13,14 @@ describe('getCompanyNameFromDomainName', () => {
       title: 'should extract and capitalize company name from simple domain',
       context: {
         input: 'twenty.dev',
-        expected: 'Twenty',
+        expected: 'NodiaFlow',
       },
     },
     {
       title: 'should extract and capitalize company name from subdomain',
       context: {
         input: 'app.twenty.dev',
-        expected: 'Twenty',
+        expected: 'NodiaFlow',
       },
     },
     {
@@ -28,14 +28,14 @@ describe('getCompanyNameFromDomainName', () => {
         'should extract and capitalize company name from multiple subdomains',
       context: {
         input: 'test.app.twenty.dev',
-        expected: 'Twenty',
+        expected: 'NodiaFlow',
       },
     },
     {
       title: 'should handle domain with multiple parts',
       context: {
         input: 'twenty.co.uk',
-        expected: 'Twenty',
+        expected: 'NodiaFlow',
       },
     },
     {

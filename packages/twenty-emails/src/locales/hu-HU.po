@@ -49,8 +49,8 @@ msgstr "A munkaterület {remainingDays} {dayOrDays} múlva lesz deaktiválva, é
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
-msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
-msgstr "Amennyiben szeretné folytatni a Twenty használatát, kérjük frissítse előfizetését a következő {remainingDays} {dayOrDays} időszakban."
+msgid "If you wish to continue using NodiaFlow, please update your subscription within the next {remainingDays} {dayOrDays}."
+msgstr "Amennyiben szeretné folytatni a NodiaFlow használatát, kérjük frissítse előfizetését a következő {remainingDays} {dayOrDays} időszakban."
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
@@ -75,8 +75,8 @@ msgstr "Teszt e-mail"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
-msgstr "Csatlakozzon a csapatához a Twentyn"
+msgid "Join your team on NodiaFlow"
+msgstr "Csatlakozzon a csapatához a NodiaFlown"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
@@ -95,8 +95,8 @@ msgstr "Erősítse meg email címét"
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
-msgid "Thanks for registering for an account on Twenty! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
-msgstr "Köszönjük, hogy regisztrált a Twenty szolgáltatására! Mielőtt elkezdenénk, csak meg kell erősítenünk, hogy ez Ön. Kattintson az alábbi hivatkozásra email címének megerősítéséhez."
+msgid "Thanks for registering for an account on NodiaFlow! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
+msgstr "Köszönjük, hogy regisztrált a NodiaFlow szolgáltatására! Mielőtt elkezdenénk, csak meg kell erősítenünk, hogy ez Ön. Kattintson az alábbi hivatkozásra email címének megerősítéséhez."
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
@@ -120,8 +120,8 @@ msgstr "Amennyiben Ön nem kezdeményezte ezt a változtatást, kérjük azonnal
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
-msgstr "Csatlakozás a Twentyhez"
+msgid "Connect to NodiaFlow"
+msgstr "Csatlakozás a NodiaFlowhez"
 
 #. js-lingui-explicit-id
 #: src/emails/password-reset-link.email.tsx
@@ -155,8 +155,8 @@ msgstr "A munkaterület minden adata végérvényesen törlésre került."
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you wish to use Twenty again, you can create a new workspace."
-msgstr "Ha újra szeretné használni a Twenty-t, létrehozhat egy új munkaterületet."
+msgid "If you wish to use NodiaFlow again, you can create a new workspace."
+msgstr "Ha újra szeretné használni a NodiaFlow-t, létrehozhat egy új munkaterületet."
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
@@ -165,8 +165,8 @@ msgstr "Hozzon létre új munkaterületet"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
-msgstr "Mi az a Twenty?"
+msgid "What is NodiaFlow?"
+msgstr "Mi az a NodiaFlow?"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
@@ -180,8 +180,8 @@ msgstr "Weboldal"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's website"
-msgstr "Látogasson el a Twenty weboldalára"
+msgid "Visit NodiaFlow's website"
+msgstr "Látogasson el a NodiaFlow weboldalára"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -190,8 +190,8 @@ msgstr "Github"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
-msgstr "Látogasson el a Twenty GitHub tárházához"
+msgid "Visit NodiaFlow's GitHub repository"
+msgstr "Látogasson el a NodiaFlow GitHub tárházához"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -200,8 +200,8 @@ msgstr "Felhasználói útmutató"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
-msgstr "Olvassa el a Twenty felhasználói útmutatóját"
+msgid "Read NodiaFlow's user guide"
+msgstr "Olvassa el a NodiaFlow felhasználói útmutatóját"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -210,13 +210,13 @@ msgstr "Fejlesztők"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
-msgstr "Látogasson el a Twenty fejlesztői dokumentációjához"
+msgid "Visit NodiaFlow's developer documentation"
+msgstr "Látogasson el a NodiaFlow fejlesztői dokumentációjához"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
-msgstr "Twenty.com, Közhasznú Vállalat"
+msgid "NodiaFlow.com, Public Benefit Corporation"
+msgstr "NodiaFlow.com, Közhasznú Vállalat"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx

@@ -1248,7 +1248,7 @@ msgstr ""
 
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
+msgid "By using NodiaFlow, you agree to the"
 msgstr ""
 
 #. js-lingui-id: PmmvzS
@@ -1487,7 +1487,7 @@ msgstr ""
 
 #. js-lingui-id: SxwQE8
 #: src/modules/billing/hooks/useHandleCheckoutSession.ts
-msgid "Checkout session error. Please retry or contact Twenty team"
+msgid "Checkout session error. Please retry or contact NodiaFlow team"
 msgstr ""
 
 #. js-lingui-id: SviKkE
@@ -3225,7 +3225,7 @@ msgstr ""
 
 #. js-lingui-id: QmR+2U
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
+msgid "Error while ending trial period. Please contact NodiaFlow team."
 msgstr ""
 
 #. js-lingui-id: QEee5f

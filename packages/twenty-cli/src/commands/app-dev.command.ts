@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import * as chokidar from 'chokidar';
-import { ApiService } from '../services/api.service';
 import { CURRENT_EXECUTION_DIRECTORY } from '../constants/current-execution-directory';
+import { ApiService } from '../services/api.service';
 import { loadManifest } from '../utils/app-manifest-loader';
 
 export class AppDevCommand {
@@ -36,7 +36,7 @@ export class AppDevCommand {
   }
 
   private logStartupInfo(appPath: string, debounceMs: number): void {
-    console.log(chalk.blue('🚀 Starting Twenty Application Development Mode'));
+    console.log(chalk.blue('🚀 Starting NodiaFlow Application Development Mode'));
     console.log(chalk.gray(`📁 App Path: ${appPath}`));
     console.log(chalk.gray(`⏱️  Debounce: ${debounceMs}ms`));
     console.log('');

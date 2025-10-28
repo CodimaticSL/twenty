@@ -1820,7 +1820,7 @@ msgstr "Työnimike"
 
 #. js-lingui-id: PviVyk
 #: src/engine/core-modules/workspace-invitation/services/workspace-invitation.service.ts
-msgid "Join your team on Twenty"
+msgid "Join your team on NodiaFlow"
 msgstr "Liity tiimiisi Twentyssä"
 
 #. js-lingui-id: WNfJ8M
@@ -4180,7 +4180,7 @@ msgstr "Keskiviikko"
 
 #. js-lingui-id: TVkCrJ
 #: src/engine/core-modules/email-verification/services/email-verification.service.ts
-msgid "Welcome to Twenty: Please Confirm Your Email"
+msgid "Welcome to NodiaFlow: Please Confirm Your Email"
 msgstr "Tervetuloa Twentyyn: Vahvista sähköpostisi"
 
 #. js-lingui-id: bLt/0J

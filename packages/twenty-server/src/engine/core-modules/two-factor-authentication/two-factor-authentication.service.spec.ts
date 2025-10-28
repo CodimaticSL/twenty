@@ -4,16 +4,16 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { TwoFactorAuthenticationStrategy } from 'twenty-shared/types';
 
 import {
-  AuthException,
-  AuthExceptionCode,
+    AuthException,
+    AuthExceptionCode,
 } from 'src/engine/core-modules/auth/auth.exception';
 import { SimpleSecretEncryptionUtil } from 'src/engine/core-modules/two-factor-authentication/utils/simple-secret-encryption.util';
 import { UserWorkspaceService } from 'src/engine/core-modules/user-workspace/user-workspace.service';
 import { type Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 
 import {
-  TwoFactorAuthenticationException,
-  TwoFactorAuthenticationExceptionCode,
+    TwoFactorAuthenticationException,
+    TwoFactorAuthenticationExceptionCode,
 } from './two-factor-authentication.exception';
 import { TwoFactorAuthenticationService } from './two-factor-authentication.service';
 
@@ -23,7 +23,7 @@ import { OTPStatus } from './strategies/otp/otp.constants';
 const totpStrategyMocks = {
   validate: jest.fn(),
   initiate: jest.fn(() => ({
-    uri: 'otpauth://totp/test@example.com?secret=RAW_OTP_SECRET&issuer=Twenty%20-%20Test%20Workspace',
+    uri: 'otpauth://totp/test@example.com?secret=RAW_OTP_SECRET&issuer=NodiaFlow%20-%20Test%20Workspace',
     context: {
       secret: 'RAW_OTP_SECRET',
       status: 'PENDING',
@@ -181,7 +181,7 @@ describe('TwoFactorAuthenticationService', () => {
       );
 
       expect(uri).toBe(
-        'otpauth://totp/test@example.com?secret=RAW_OTP_SECRET&issuer=Twenty%20-%20Test%20Workspace',
+        'otpauth://totp/test@example.com?secret=RAW_OTP_SECRET&issuer=NodiaFlow%20-%20Test%20Workspace',
       );
       expect(simpleSecretEncryptionUtil.encryptSecret).toHaveBeenCalledWith(
         rawSecret,
@@ -204,7 +204,7 @@ describe('TwoFactorAuthenticationService', () => {
 
       expect(totpStrategyMocks.initiate).toHaveBeenCalledWith(
         mockUser.email,
-        `Twenty - ${workspace.displayName}`,
+        `NodiaFlow - ${workspace.displayName}`,
       );
 
       expect(repository.save).toHaveBeenCalledWith(
@@ -235,7 +235,7 @@ describe('TwoFactorAuthenticationService', () => {
       );
 
       expect(uri).toBe(
-        'otpauth://totp/test@example.com?secret=RAW_OTP_SECRET&issuer=Twenty%20-%20Test%20Workspace',
+        'otpauth://totp/test@example.com?secret=RAW_OTP_SECRET&issuer=NodiaFlow%20-%20Test%20Workspace',
       );
       expect(repository.save).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -284,7 +284,7 @@ describe('TwoFactorAuthenticationService', () => {
 
       // Mock authenticator.keyuri to return a URI
       const expectedUri =
-        'otpauth://totp/test@example.com?secret=RAW_OTP_SECRET&issuer=Twenty%20-%20Test%20Workspace';
+        'otpauth://totp/test@example.com?secret=RAW_OTP_SECRET&issuer=NodiaFlow%20-%20Test%20Workspace';
 
       const uri = await service.initiateStrategyConfiguration(
         mockUser.id,
@@ -328,7 +328,7 @@ describe('TwoFactorAuthenticationService', () => {
       // Should return a valid otpauth URI (don't check exact format due to mocking complexity)
       expect(uri).toMatch(/^otpauth:\/\/totp\//);
       expect(uri).toContain('test@example.com');
-      expect(uri).toContain('Twenty%20-%20Test%20Workspace');
+      expect(uri).toContain('NodiaFlow%20-%20Test%20Workspace');
 
       // Should create new method since existing one is too old
       // (Don't check if totpStrategyMocks.initiate was called due to mocking complexity)
@@ -396,7 +396,7 @@ describe('TwoFactorAuthenticationService', () => {
       // Should return a valid otpauth URI (don't check exact format due to mocking complexity)
       expect(uri).toMatch(/^otpauth:\/\/totp\//);
       expect(uri).toContain('test@example.com');
-      expect(uri).toContain('Twenty%20-%20Test%20Workspace');
+      expect(uri).toContain('NodiaFlow%20-%20Test%20Workspace');
 
       // Should create new method since createdAt is null
       // (Don't check if totpStrategyMocks.initiate was called due to mocking complexity)

@@ -29,7 +29,7 @@ export default defineConfig({
     trace: 'retain-on-failure', // trace takes EVERYTHING from page source, records every single step, should be used only when normal debugging won't work
     screenshot: 'on', // either 'on' here or in different method in modules, if 'on' all screenshots are overwritten each time the test is run
     headless: true, // instead of changing it to false, run 'yarn test:e2e:debug' or 'yarn test:e2e:ui'
-    testIdAttribute: 'data-testid', // taken from Twenty source
+    testIdAttribute: 'data-testid', // taken from NodiaFlow source
   },
   expect: {
     timeout: 5000,

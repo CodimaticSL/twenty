@@ -1253,8 +1253,8 @@ msgstr "Breve explicação deste campo de saída"
 
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "Ao usar o Twenty, você concorda com os"
+msgid "By using NodiaFlow, you agree to the"
+msgstr "Ao usar o NodiaFlow, você concorda com os"
 
 #. js-lingui-id: PmmvzS
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterValue.tsx
@@ -1492,8 +1492,8 @@ msgstr "Verifique seus Emails"
 
 #. js-lingui-id: SxwQE8
 #: src/modules/billing/hooks/useHandleCheckoutSession.ts
-msgid "Checkout session error. Please retry or contact Twenty team"
-msgstr "Erro na sessão de checkout. Por favor, tente novamente ou contate a equipe Twenty"
+msgid "Checkout session error. Please retry or contact NodiaFlow team"
+msgstr "Erro na sessão de checkout. Por favor, tente novamente ou contate a equipe NodiaFlow"
 
 #. js-lingui-id: SviKkE
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
@@ -3230,8 +3230,8 @@ msgstr "Erro ao cancelar a alternância de plano."
 
 #. js-lingui-id: QmR+2U
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
-msgstr "Erro ao encerrar o período de avaliação. Por favor, entre em contato com a equipe Twenty."
+msgid "Error while ending trial period. Please contact NodiaFlow team."
+msgstr "Erro ao encerrar o período de avaliação. Por favor, entre em contato com a equipe NodiaFlow."
 
 #. js-lingui-id: QEee5f
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx

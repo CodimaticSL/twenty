@@ -16,7 +16,7 @@ export class AppDeleteCommand {
     askForConfirmation: boolean;
   }): Promise<ApiResponse<any>> {
     try {
-      console.log(chalk.blue('🚀 Deleting Twenty Application'));
+      console.log(chalk.blue('🚀 Deleting NodiaFlow Application'));
       console.log(chalk.gray(`📁 App Path: ${appPath}`));
       console.log('');
 

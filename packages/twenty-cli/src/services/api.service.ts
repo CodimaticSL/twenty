@@ -1,9 +1,9 @@
 import axios, { type AxiosInstance, type AxiosResponse } from 'axios';
 import chalk from 'chalk';
 import {
-  type ApiResponse,
-  type AppManifest,
-  type PackageJson,
+    type ApiResponse,
+    type AppManifest,
+    type PackageJson,
 } from '../types/config.types';
 import { ConfigService } from './config.service';
 
@@ -44,7 +44,7 @@ export class ApiService {
           );
         } else if (error.code === 'ECONNREFUSED') {
           console.error(
-            chalk.red('Cannot connect to Twenty server. Is it running?'),
+            chalk.red('Cannot connect to NodiaFlow server. Is it running?'),
           );
         }
         throw error;

@@ -2,8 +2,8 @@ import { Test, type TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 
 import {
-  AuthException,
-  AuthExceptionCode,
+    AuthException,
+    AuthExceptionCode,
 } from 'src/engine/core-modules/auth/auth.exception';
 import { LoginTokenService } from 'src/engine/core-modules/auth/token/services/login-token.service';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
@@ -130,7 +130,7 @@ describe('TwoFactorAuthenticationResolver', () => {
       );
       userService.findUserByEmailOrThrow.mockResolvedValue(mockUser);
       twoFactorAuthenticationService.initiateStrategyConfiguration.mockResolvedValue(
-        'otpauth://totp/Twenty:test@example.com?secret=SECRETKEY&issuer=Twenty',
+        'otpauth://totp/NodiaFlow:test@example.com?secret=SECRETKEY&issuer=NodiaFlow',
       );
     });
 
@@ -138,7 +138,7 @@ describe('TwoFactorAuthenticationResolver', () => {
       const result = await resolver.initiateOTPProvisioning(mockInput, origin);
 
       expect(result).toEqual({
-        uri: 'otpauth://totp/Twenty:test@example.com?secret=SECRETKEY&issuer=Twenty',
+        uri: 'otpauth://totp/NodiaFlow:test@example.com?secret=SECRETKEY&issuer=NodiaFlow',
       });
       expect(loginTokenService.verifyLoginToken).toHaveBeenCalledWith(
         mockInput.loginToken,
@@ -209,7 +209,7 @@ describe('TwoFactorAuthenticationResolver', () => {
   describe('initiateOTPProvisioningForAuthenticatedUser', () => {
     beforeEach(() => {
       twoFactorAuthenticationService.initiateStrategyConfiguration.mockResolvedValue(
-        'otpauth://totp/Twenty:test@example.com?secret=SECRETKEY&issuer=Twenty',
+        'otpauth://totp/NodiaFlow:test@example.com?secret=SECRETKEY&issuer=NodiaFlow',
       );
     });
 
@@ -220,7 +220,7 @@ describe('TwoFactorAuthenticationResolver', () => {
       );
 
       expect(result).toEqual({
-        uri: 'otpauth://totp/Twenty:test@example.com?secret=SECRETKEY&issuer=Twenty',
+        uri: 'otpauth://totp/NodiaFlow:test@example.com?secret=SECRETKEY&issuer=NodiaFlow',
       });
       expect(
         twoFactorAuthenticationService.initiateStrategyConfiguration,

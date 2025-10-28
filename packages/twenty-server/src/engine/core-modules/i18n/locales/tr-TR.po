@@ -1820,8 +1820,8 @@ msgstr "İş Unvanı"
 
 #. js-lingui-id: PviVyk
 #: src/engine/core-modules/workspace-invitation/services/workspace-invitation.service.ts
-msgid "Join your team on Twenty"
-msgstr "Ekibinize Twenty'de katılın"
+msgid "Join your team on NodiaFlow"
+msgstr "Ekibinize NodiaFlow'de katılın"
 
 #. js-lingui-id: WNfJ8M
 #: src/modules/connected-account/standard-objects/connected-account.workspace-entity.ts
@@ -4180,8 +4180,8 @@ msgstr "Çarşamba"
 
 #. js-lingui-id: TVkCrJ
 #: src/engine/core-modules/email-verification/services/email-verification.service.ts
-msgid "Welcome to Twenty: Please Confirm Your Email"
-msgstr "Twenty'e Hoş Geldiniz: Lütfen E-postanızı Onaylayın"
+msgid "Welcome to NodiaFlow: Please Confirm Your Email"
+msgstr "NodiaFlow'e Hoş Geldiniz: Lütfen E-postanızı Onaylayın"
 
 #. js-lingui-id: bLt/0J
 #: src/modules/workflow/common/standard-objects/workflow.workspace-entity.ts

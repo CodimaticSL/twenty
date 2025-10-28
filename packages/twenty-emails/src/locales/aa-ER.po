@@ -49,7 +49,7 @@ msgstr "crwdns33:0{remainingDays}crwdnd33:0{dayOrDays}crwdne33:0"
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
-msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
+msgid "If you wish to continue using NodiaFlow, please update your subscription within the next {remainingDays} {dayOrDays}."
 msgstr "crwdns17:0{remainingDays}crwdnd17:0{dayOrDays}crwdne17:0"
 
 #. js-lingui-explicit-id
@@ -75,7 +75,7 @@ msgstr "crwdns5770:0crwdne5770:0"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
+msgid "Join your team on NodiaFlow"
 msgstr "crwdns23:0crwdne23:0"
 
 #. js-lingui-explicit-id
@@ -95,7 +95,7 @@ msgstr "crwdns5:0crwdne5:0"
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
-msgid "Thanks for registering for an account on Twenty! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
+msgid "Thanks for registering for an account on NodiaFlow! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
 msgstr "crwdns5915:0crwdne5915:0"
 
 #. js-lingui-explicit-id
@@ -120,7 +120,7 @@ msgstr "crwdns15:0crwdne15:0"
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
+msgid "Connect to NodiaFlow"
 msgstr "crwdns7:0crwdne7:0"
 
 #. js-lingui-explicit-id
@@ -155,7 +155,7 @@ msgstr "crwdns3:0crwdne3:0"
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you wish to use Twenty again, you can create a new workspace."
+msgid "If you wish to use NodiaFlow again, you can create a new workspace."
 msgstr "crwdns19:0crwdne19:0"
 
 #. js-lingui-explicit-id
@@ -165,7 +165,7 @@ msgstr "crwdns4865:0crwdne4865:0"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
+msgid "What is NodiaFlow?"
 msgstr "crwdns5774:0crwdne5774:0"
 
 #. js-lingui-explicit-id
@@ -180,7 +180,7 @@ msgstr "crwdns5778:0crwdne5778:0"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's website"
+msgid "Visit NodiaFlow's website"
 msgstr "crwdns5780:0crwdne5780:0"
 
 #. js-lingui-explicit-id
@@ -190,7 +190,7 @@ msgstr "crwdns5782:0crwdne5782:0"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
+msgid "Visit NodiaFlow's GitHub repository"
 msgstr "crwdns5784:0crwdne5784:0"
 
 #. js-lingui-explicit-id
@@ -200,7 +200,7 @@ msgstr "crwdns5786:0crwdne5786:0"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
+msgid "Read NodiaFlow's user guide"
 msgstr "crwdns5788:0crwdne5788:0"
 
 #. js-lingui-explicit-id
@@ -210,12 +210,12 @@ msgstr "crwdns5790:0crwdne5790:0"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
+msgid "Visit NodiaFlow's developer documentation"
 msgstr "crwdns5792:0crwdne5792:0"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
+msgid "NodiaFlow.com, Public Benefit Corporation"
 msgstr "crwdns5794:0crwdne5794:0"
 
 #. js-lingui-explicit-id

@@ -1820,8 +1820,8 @@ msgstr "Посада"
 
 #. js-lingui-id: PviVyk
 #: src/engine/core-modules/workspace-invitation/services/workspace-invitation.service.ts
-msgid "Join your team on Twenty"
-msgstr "Приєднуйтесь до своєї команди на Twenty"
+msgid "Join your team on NodiaFlow"
+msgstr "Приєднуйтесь до своєї команди на NodiaFlow"
 
 #. js-lingui-id: WNfJ8M
 #: src/modules/connected-account/standard-objects/connected-account.workspace-entity.ts
@@ -4180,8 +4180,8 @@ msgstr "Середа"
 
 #. js-lingui-id: TVkCrJ
 #: src/engine/core-modules/email-verification/services/email-verification.service.ts
-msgid "Welcome to Twenty: Please Confirm Your Email"
-msgstr "Ласкаво просимо до Twenty: Будь ласка, підтвердіть свою електронну пошту"
+msgid "Welcome to NodiaFlow: Please Confirm Your Email"
+msgstr "Ласкаво просимо до NodiaFlow: Будь ласка, підтвердіть свою електронну пошту"
 
 #. js-lingui-id: bLt/0J
 #: src/modules/workflow/common/standard-objects/workflow.workspace-entity.ts

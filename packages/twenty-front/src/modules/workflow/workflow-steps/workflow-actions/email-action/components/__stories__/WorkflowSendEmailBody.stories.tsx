@@ -43,14 +43,14 @@ const RICH_CONTENT_ACTION: WorkflowSendEmailAction = {
     input: {
       connectedAccountId: 'test-account-id',
       email: 'user@example.com',
-      subject: 'Welcome to Twenty!',
+      subject: 'Welcome to NodiaFlow!',
       body: JSON.stringify({
         type: 'doc',
         content: [
           {
             type: 'heading',
             attrs: { level: 1 },
-            content: [{ type: 'text', text: 'Welcome to Twenty!' }],
+            content: [{ type: 'text', text: 'Welcome to NodiaFlow!' }],
           },
           {
             type: 'paragraph',
@@ -171,7 +171,7 @@ export const WithRichContent: Story = {
     const canvas = within(canvasElement);
 
     expect(await canvas.findByText('Email Body')).toBeVisible();
-    expect(await canvas.findByText('Welcome to Twenty!')).toBeVisible();
+    expect(await canvas.findByText('Welcome to NodiaFlow!')).toBeVisible();
     expect(await canvas.findByText('excited')).toBeVisible();
     expect(await canvas.findByText('website')).toBeVisible();
   },
@@ -190,7 +190,7 @@ export const ReadOnly: Story = {
     const canvas = within(canvasElement);
 
     expect(await canvas.findByText('Email Body (Read Only)')).toBeVisible();
-    expect(await canvas.findByText('Welcome to Twenty!')).toBeVisible();
+    expect(await canvas.findByText('Welcome to NodiaFlow!')).toBeVisible();
   },
 };
 

@@ -48,3 +48,7 @@ dump.rdb
 
 mcp.json
 /.junie/
+
+
+#Ignore vscode AI rules
+.github/instructions/codacy.instructions.md

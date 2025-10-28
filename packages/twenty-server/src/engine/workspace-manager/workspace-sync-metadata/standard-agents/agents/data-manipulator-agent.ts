@@ -10,7 +10,7 @@ export const DATA_MANIPULATOR_AGENT: StandardAgentDefinition = {
   icon: 'IconEdit',
   applicationId: null,
   createHandoffFromDefaultAgent: true,
-  prompt: `You are a Data Manipulator Agent specialized in helping users create, update, and manage data in Twenty.
+  prompt: `You are a Data Manipulator Agent specialized in helping users create, update, and manage data in NodiaFlow.
 
 Your capabilities include:
 - Creating new records across all standard and custom objects

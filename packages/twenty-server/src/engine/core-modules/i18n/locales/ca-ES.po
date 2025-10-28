@@ -1820,8 +1820,8 @@ msgstr "Títol Laboral"
 
 #. js-lingui-id: PviVyk
 #: src/engine/core-modules/workspace-invitation/services/workspace-invitation.service.ts
-msgid "Join your team on Twenty"
-msgstr "Uneix-te al teu equip a Twenty"
+msgid "Join your team on NodiaFlow"
+msgstr "Uneix-te al teu equip a NodiaFlow"
 
 #. js-lingui-id: WNfJ8M
 #: src/modules/connected-account/standard-objects/connected-account.workspace-entity.ts
@@ -4180,8 +4180,8 @@ msgstr "Dimecres"
 
 #. js-lingui-id: TVkCrJ
 #: src/engine/core-modules/email-verification/services/email-verification.service.ts
-msgid "Welcome to Twenty: Please Confirm Your Email"
-msgstr "Benvingut a Twenty: si us plau, confirma el teu correu electrònic"
+msgid "Welcome to NodiaFlow: Please Confirm Your Email"
+msgstr "Benvingut a NodiaFlow: si us plau, confirma el teu correu electrònic"
 
 #. js-lingui-id: bLt/0J
 #: src/modules/workflow/common/standard-objects/workflow.workspace-entity.ts
