@@ -64,7 +64,7 @@ export const seedFeatureFlags = async (
       {
         key: FeatureFlagKey.IS_COMMON_API_ENABLED,
         workspaceId: workspaceId,
-        value: false,
+        value: true,
       },
       {
         key: FeatureFlagKey.IS_PAGE_LAYOUT_ENABLED,

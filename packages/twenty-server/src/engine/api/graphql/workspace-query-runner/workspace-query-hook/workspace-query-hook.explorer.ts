@@ -43,15 +43,15 @@ export class WorkspaceQueryHookExplorer implements OnModuleInit {
   }
 
   async explore() {
-    const hooks = this.discoveryService
-      .getProviders()
-      .filter((wrapper) =>
-        this.metadataAccessor.isWorkspaceQueryHook(
-          !wrapper.metatype || wrapper.inject
-            ? wrapper.instance?.constructor
-            : wrapper.metatype,
-        ),
-      );
+    const allProviders = this.discoveryService.getProviders();
+
+    const hooks = allProviders.filter((wrapper) =>
+      this.metadataAccessor.isWorkspaceQueryHook(
+        !wrapper.metatype || wrapper.inject
+          ? wrapper.instance?.constructor
+          : wrapper.metatype,
+      ),
+    );
 
     for (const hook of hooks) {
       const { instance, metatype } = hook;

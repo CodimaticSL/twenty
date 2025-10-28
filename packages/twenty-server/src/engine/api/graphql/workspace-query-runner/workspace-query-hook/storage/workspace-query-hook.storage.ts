@@ -53,16 +53,18 @@ export class WorkspaceQueryHookStorage {
       throw new Error(`Can't split workspace query hook key: ${key}`);
     }
 
+    const wildcardKey = `*.${methodName}` as WorkspaceQueryHookKey;
+
     // Retrieve wildcard pre-hook instances
-    const wildcardPrehooksInstance = this.preHookInstances.get(
-      `*.${methodName}`,
-    );
+    const wildcardPrehooksInstance = this.preHookInstances.get(wildcardKey);
 
     if (isDefined(wildcardPrehooksInstance)) {
       wildcardInstances = wildcardPrehooksInstance;
     }
 
-    return [...wildcardInstances, ...(this.preHookInstances.get(key) ?? [])];
+    const specificInstances = this.preHookInstances.get(key) ?? [];
+
+    return [...wildcardInstances, ...specificInstances];
   }
 
   registerWorkspacePostQueryHookInstance(
