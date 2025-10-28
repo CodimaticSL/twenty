@@ -82,7 +82,7 @@ const RICH_CONTENT_ACTION: WorkflowSendEmailAction = {
               {
                 type: 'text',
                 marks: [
-                  { type: 'link', attrs: { href: 'https://twenty.com' } },
+                  { type: 'link', attrs: { href: 'https://nodiaflow.com' } },
                 ],
                 text: 'website',
               },

@@ -1,8 +1,8 @@
 import { type CurrentWorkspaceMember } from '@/auth/states/currentWorkspaceMemberState';
 import { type WorkspaceMember } from '@/workspace-member/types/WorkspaceMember';
 import {
-  WorkspaceMemberDateFormatEnum,
-  WorkspaceMemberTimeFormatEnum,
+    WorkspaceMemberDateFormatEnum,
+    WorkspaceMemberTimeFormatEnum,
 } from '~/generated/graphql';
 
 export const mockWorkspaceMembers: WorkspaceMember[] = [
@@ -13,7 +13,7 @@ export const mockWorkspaceMembers: WorkspaceMember[] = [
       lastName: 'Doe',
     },
     __typename: 'WorkspaceMember',
-    userEmail: 'jane.doe@twenty.com',
+    userEmail: 'jane.doe@nodiaflow.com',
     locale: 'en',
     avatarUrl: '',
     createdAt: '2023-12-18T09:51:19.645Z',
@@ -30,7 +30,7 @@ export const mockWorkspaceMembers: WorkspaceMember[] = [
       firstName: 'John',
       lastName: 'Wick',
     },
-    userEmail: 'john.wick@twenty.com',
+    userEmail: 'john.wick@nodiaflow.com',
     __typename: 'WorkspaceMember',
     locale: 'en',
     avatarUrl: '',

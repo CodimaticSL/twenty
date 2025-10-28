@@ -34,12 +34,12 @@ describe('removeEmptyLinks', () => {
   it('should keep valid primary link and remove empty secondary links', () => {
     expect(
       removeEmptyLinks({
-        primaryLinkUrl: 'https://www.twenty.com',
+        primaryLinkUrl: 'https://www.nodiaflow.com',
         primaryLinkLabel: 'NodiaFlow Website',
         secondaryLinks: [],
       }),
     ).toEqual({
-      primaryLinkUrl: 'https://www.twenty.com',
+      primaryLinkUrl: 'https://www.nodiaflow.com',
       primaryLinkLabel: 'NodiaFlow Website',
       secondaryLinks: [],
     });
@@ -52,7 +52,7 @@ describe('removeEmptyLinks', () => {
         primaryLinkLabel: null,
         secondaryLinks: [
           {
-            url: 'https://docs.twenty.com',
+            url: 'https://docs.nodiaflow.com',
             label: 'Documentation',
           },
           {
@@ -62,7 +62,7 @@ describe('removeEmptyLinks', () => {
         ],
       }),
     ).toEqual({
-      primaryLinkUrl: 'https://docs.twenty.com',
+      primaryLinkUrl: 'https://docs.nodiaflow.com',
       primaryLinkLabel: 'Documentation',
       secondaryLinks: [
         {
@@ -92,7 +92,7 @@ describe('removeEmptyLinks', () => {
   it('should throw RecordTransformerException when any secondary link URL is invalid', () => {
     expect(() =>
       removeEmptyLinks({
-        primaryLinkUrl: 'https://www.twenty.com',
+        primaryLinkUrl: 'https://www.nodiaflow.com',
         primaryLinkLabel: 'NodiaFlow Website',
         secondaryLinks: [
           {
@@ -134,7 +134,7 @@ describe('removeEmptyLinks', () => {
   it('should handle empty or null secondary links', () => {
     expect(
       removeEmptyLinks({
-        primaryLinkUrl: 'https://www.twenty.com',
+        primaryLinkUrl: 'https://www.nodiaflow.com',
         primaryLinkLabel: 'NodiaFlow Website',
         secondaryLinks: [
           {
@@ -148,7 +148,7 @@ describe('removeEmptyLinks', () => {
         ],
       }),
     ).toEqual({
-      primaryLinkUrl: 'https://www.twenty.com',
+      primaryLinkUrl: 'https://www.nodiaflow.com',
       primaryLinkLabel: 'NodiaFlow Website',
       secondaryLinks: [],
     });
@@ -180,21 +180,21 @@ describe('removeEmptyLinks', () => {
   it('should keep valid URLs with null labels', () => {
     expect(
       removeEmptyLinks({
-        primaryLinkUrl: 'https://www.twenty.com',
+        primaryLinkUrl: 'https://www.nodiaflow.com',
         primaryLinkLabel: null,
         secondaryLinks: [
           {
-            url: 'https://docs.twenty.com',
+            url: 'https://docs.nodiaflow.com',
             label: null,
           },
         ],
       }),
     ).toEqual({
-      primaryLinkUrl: 'https://www.twenty.com',
+      primaryLinkUrl: 'https://www.nodiaflow.com',
       primaryLinkLabel: null,
       secondaryLinks: [
         {
-          url: 'https://docs.twenty.com',
+          url: 'https://docs.nodiaflow.com',
           label: null,
         },
       ],

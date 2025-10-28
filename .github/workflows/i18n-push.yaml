@@ -46,7 +46,7 @@ jobs:
         id: check_extract_changes
         run: |
           git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@twenty.com'
+          git config --global user.email 'github-actions@nodiaflow.com'
           git add .
           if ! git diff --staged --quiet --exit-code; then
             git commit -m "chore: extract translations"
@@ -65,7 +65,7 @@ jobs:
         id: check_compile_changes
         run: |
           git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@twenty.com'
+          git config --global user.email 'github-actions@nodiaflow.com'
           git add .
           if ! git diff --staged --quiet --exit-code; then
             git commit -m "chore: compile translations"

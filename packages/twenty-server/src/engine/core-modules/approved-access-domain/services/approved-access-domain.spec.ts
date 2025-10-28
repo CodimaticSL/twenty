@@ -287,7 +287,7 @@ describe('ApprovedAccessDomainService', () => {
 
       jest
         .spyOn(domainManagerService, 'buildWorkspaceURL')
-        .mockReturnValue(new URL('https://sub.twenty.com'));
+        .mockReturnValue(new URL('https://sub.nodiaflow.com'));
 
       jest
         .spyOn(twentyConfigService, 'get')

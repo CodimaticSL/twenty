@@ -99,11 +99,11 @@ export const setupTestObjectsWithAllFieldTypes = async () => {
           booleanField: true,
           numberField: 1,
           linksField: {
-            primaryLinkUrl: 'twenty.com',
+            primaryLinkUrl: 'nodiaflow.com',
             primaryLinkLabel: 'twenty - #1 Open source CRM',
             secondaryLinks: [
               {
-                url: 'twenty.com',
+                url: 'nodiaflow.com',
                 label: 'twenty - #1 Open source CRM',
               },
             ],

@@ -1,19 +1,19 @@
 [![Hacktoberfest 2025](packages/twenty-website/public/images/readme/hacktoberfest2025.png)](https://twentycrm.notion.site/)
 
 <p align="center">
-  <a href="https://www.twenty.com">
+  <a href="https://www.nodiaflow.com">
     <img src="./packages/twenty-website/public/images/core/logo.svg" width="100px" alt="Twenty logo" />
   </a>
 </p>
 
 <h2 align="center" >The #1 Open-Source CRM </h2>
 
-<p align="center"><a href="https://twenty.com">🌐 Website</a> · <a href="https://twenty.com/developers">📚 Documentation</a> · <a href="https://github.com/orgs/twentyhq/projects/1"><img src="./packages/twenty-website/public/images/readme/planner-icon.svg" width="12" height="12"/> Roadmap </a> · <a href="https://discord.gg/cx5n4Jzs57"><img src="./packages/twenty-website/public/images/readme/discord-icon.svg" width="12" height="12"/> Discord</a> · <a href="https://www.figma.com/file/xt8O9mFeLl46C5InWwoMrN/Twenty"><img src="./packages/twenty-website/public/images/readme/figma-icon.png"  width="12" height="12"/>  Figma</a></p> 
+<p align="center"><a href="https://nodiaflow.com">🌐 Website</a> · <a href="https://nodiaflow.com/developers">📚 Documentation</a> · <a href="https://github.com/orgs/twentyhq/projects/1"><img src="./packages/twenty-website/public/images/readme/planner-icon.svg" width="12" height="12"/> Roadmap </a> · <a href="https://discord.gg/cx5n4Jzs57"><img src="./packages/twenty-website/public/images/readme/discord-icon.svg" width="12" height="12"/> Discord</a> · <a href="https://www.figma.com/file/xt8O9mFeLl46C5InWwoMrN/Twenty"><img src="./packages/twenty-website/public/images/readme/figma-icon.png"  width="12" height="12"/>  Figma</a></p> 
 <br />
 
 
 <p align="center">
-  <a href="https://www.twenty.com">
+  <a href="https://www.nodiaflow.com">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/refs/heads/main/packages/twenty-website/public/images/readme/github-cover-dark.png" />
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/refs/heads/main/packages/twenty-website/public/images/readme/github-cover-light.png" />
@@ -27,8 +27,8 @@
 # Installation 
 
 See:  
-🚀 [Self-hosting](https://twenty.com/developers/section/self-hosting)  
-🖥️ [Local Setup](https://twenty.com/developers/local-setup)  
+🚀 [Self-hosting](https://nodiaflow.com/developers/section/self-hosting)  
+🖥️ [Local Setup](https://nodiaflow.com/developers/local-setup)  
 
 # Does the world need another CRM?
 

@@ -54,10 +54,10 @@ const PRO_METERED_MONTHLY_PRICE = PRO_METERED_PRODUCT?.prices?.find(
 )!;
 
 export const mockCurrentWorkspace: Workspace = {
-  subdomain: 'acme.twenty.com',
+  subdomain: 'acme.nodiaflow.com',
   id: '7dfbc3f7-6e5e-4128-957e-8d86808cdf6w',
   displayName: 'NodiaFlow',
-  inviteHash: 'twenty.com-invite-hash',
+  inviteHash: 'nodiaflow.com-invite-hash',
   logo: workspaceLogoUrl,
   isPublicInviteLinkEnabled: true,
   allowImpersonation: true,
@@ -68,7 +68,7 @@ export const mockCurrentWorkspace: Workspace = {
   isCustomDomainEnabled: false,
   workspaceUrls: {
     customUrl: undefined,
-    subdomainUrl: 'twenty.twenty.com',
+    subdomainUrl: 'twenty.nodiaflow.com',
   },
   isMicrosoftAuthEnabled: false,
   featureFlags: [

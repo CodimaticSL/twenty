@@ -121,20 +121,20 @@ export const SETTINGS_COMPOSITE_FIELD_TYPE_CONFIGS = {
     ],
     exampleValues: [
       {
-        primaryEmail: 'tim@twenty.com',
+        primaryEmail: 'tim@nodiaflow.com',
         additionalEmails: [
-          'tim@twenty.com',
-          'timapple@twenty.com',
-          'johnappletim@twenty.com',
+          'tim@nodiaflow.com',
+          'timapple@nodiaflow.com',
+          'johnappletim@nodiaflow.com',
         ],
       },
       {
-        primaryEmail: 'jane@twenty.com',
-        additionalEmails: ['jane@twenty.com', 'jane.doe@twenty.com'],
+        primaryEmail: 'jane@nodiaflow.com',
+        additionalEmails: ['jane@nodiaflow.com', 'jane.doe@nodiaflow.com'],
       },
       {
-        primaryEmail: 'john@twenty.com',
-        additionalEmails: ['john.doe@twenty.com'],
+        primaryEmail: 'john@nodiaflow.com',
+        additionalEmails: ['john.doe@nodiaflow.com'],
       },
     ],
     category: 'Basic',
@@ -179,14 +179,14 @@ export const SETTINGS_COMPOSITE_FIELD_TYPE_CONFIGS = {
     ],
     exampleValues: [
       {
-        primaryLinkUrl: 'twenty.com',
+        primaryLinkUrl: 'nodiaflow.com',
         primaryLinkLabel: '',
-        secondaryLinks: [{ url: 'twenty.com', label: 'NodiaFlow' }],
+        secondaryLinks: [{ url: 'nodiaflow.com', label: 'NodiaFlow' }],
       },
       {
         primaryLinkUrl: 'github.com/twentyhq/twenty',
         primaryLinkLabel: 'NodiaFlow Repo',
-        secondaryLinks: [{ url: 'twenty.com', label: '' }],
+        secondaryLinks: [{ url: 'nodiaflow.com', label: '' }],
       },
       {
         primaryLinkUrl: 'react.dev',

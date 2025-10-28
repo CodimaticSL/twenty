@@ -27,7 +27,7 @@ export async function GET() {
       const updatedContent = releaseNote.content.replace(
         /!\[(.*?)\]\((\/images\/.*?)\)/g,
         (match, altText, imagePath) => {
-          return `![${altText}](https://twenty.com${imagePath})`;
+          return `![${altText}](https://nodiaflow.com${imagePath})`;
         },
       );
 

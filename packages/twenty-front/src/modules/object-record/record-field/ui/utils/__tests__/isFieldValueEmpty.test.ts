@@ -139,7 +139,7 @@ describe('isFieldValueEmpty', () => {
       isFieldValueEmpty({
         fieldDefinition: linksFieldDefinition,
         fieldValue: {
-          primaryLinkUrl: 'https://www.twenty.com',
+          primaryLinkUrl: 'https://www.nodiaflow.com',
           primaryLinkLabel: 'NodiaFlow Website',
           secondaryLinks: [],
         },
@@ -154,7 +154,7 @@ describe('isFieldValueEmpty', () => {
           primaryLinkUrl: null,
           primaryLinkLabel: null,
           secondaryLinks: [
-            { url: 'https://docs.twenty.com', label: 'Documentation' },
+            { url: 'https://docs.nodiaflow.com', label: 'Documentation' },
           ],
         },
       }),
@@ -168,7 +168,7 @@ describe('isFieldValueEmpty', () => {
           primaryLinkUrl: 'lydia,com',
           primaryLinkLabel: 'Invalid URL',
           secondaryLinks: [
-            { url: 'https://docs.twenty.com', label: 'Documentation' },
+            { url: 'https://docs.nodiaflow.com', label: 'Documentation' },
           ],
         },
       }),
@@ -179,7 +179,7 @@ describe('isFieldValueEmpty', () => {
       isFieldValueEmpty({
         fieldDefinition: linksFieldDefinition,
         fieldValue: {
-          primaryLinkUrl: 'https://www.twenty.com',
+          primaryLinkUrl: 'https://www.nodiaflow.com',
           primaryLinkLabel: 'NodiaFlow Website',
           secondaryLinks: [{ url: 'wikipedia', label: 'Invalid URL' }],
         },
@@ -207,7 +207,7 @@ describe('isFieldValueEmpty', () => {
           primaryLinkLabel: null,
           secondaryLinks: [
             { url: 'wikipedia', label: 'Invalid URL' },
-            { url: 'https://docs.twenty.com', label: 'Documentation' },
+            { url: 'https://docs.nodiaflow.com', label: 'Documentation' },
           ],
         },
       }),

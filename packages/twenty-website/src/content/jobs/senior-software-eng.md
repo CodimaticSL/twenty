@@ -1,6 +1,6 @@
 # Senior Software Engineer 
 
-📮 **Apply:** Send LinkedIn or resume + a few words to founders(at)twenty.com  
+📮 **Apply:** Send LinkedIn or resume + a few words to founders(at)nodiaflow.com  
 📍 **Location:** Paris, France (on-site or hybrid, no full remote)  
 💰 **Salary range:** €65k-75k + 0,2%-0,3% equity  
 🏝️ **Benefits:** ~35 PTO days + 100% health insurance + 50% transportation  
@@ -44,7 +44,7 @@ Android, WordPress or VSCode all lead their respective market because being Open
 
 ## Apply 
 
-Send LinkedIn or resume + a few words, by email to founders(at)twenty.com  
+Send LinkedIn or resume + a few words, by email to founders(at)nodiaflow.com  
 
 We reply quickly and to all candidates. If we think it could be a fit, we'll reply by email with a link for you to book a 30 minutes interview (mostly non-technical), eventually followed by 2 hours technical interview (coding + architecture).
 

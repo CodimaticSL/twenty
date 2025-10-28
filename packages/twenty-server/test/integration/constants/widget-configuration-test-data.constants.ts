@@ -13,7 +13,7 @@ export const TEST_IFRAME_CONFIG = {
 };
 
 export const TEST_IFRAME_CONFIG_ALTERNATIVE = {
-  url: 'https://app.twenty.com/analytics',
+  url: 'https://app.nodiaflow.com/analytics',
 };
 
 export const TEST_NUMBER_CHART_CONFIG = {

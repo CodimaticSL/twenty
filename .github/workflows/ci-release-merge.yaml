@@ -51,7 +51,7 @@ jobs:
         run: |
           set -euo pipefail
           git config --global user.name 'Github Action Deploy'
-          git config --global user.email 'github-action-deploy@twenty.com'
+          git config --global user.email 'github-action-deploy@nodiaflow.com'
           git tag "v${{ env.VERSION }}"
           git push origin "v${{ env.VERSION }}"
 

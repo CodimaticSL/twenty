@@ -18,7 +18,7 @@ export const getCardPath = (
     const apiName = card.fileName.includes('core') ? 'core' : 'metadata';
     return `/developers/${apiType}/${apiName}`;
   } else if (card.fileName.includes('storybook')) {
-    return 'https://storybook.twenty.com';
+    return 'https://storybook.nodiaflow.com';
   } else if (card.fileName.includes('components')) {
     return `/twenty-ui`;
   } else {

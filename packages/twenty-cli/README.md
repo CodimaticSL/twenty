@@ -10,7 +10,7 @@ npm install -g twenty-cli
 
 ## Requirements
 - yarn >= 4.9.2
-- an `apiKey`. Go to `https://twenty.com/settings/api-webhooks` to generate one
+- an `apiKey`. Go to `https://nodiaflow.com/settings/api-webhooks` to generate one
 
 ## Quick example project
 

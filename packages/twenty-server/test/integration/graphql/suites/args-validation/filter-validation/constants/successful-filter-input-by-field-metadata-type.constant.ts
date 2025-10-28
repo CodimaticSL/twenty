@@ -1,8 +1,8 @@
 import { isDefined } from 'class-validator';
 import { type FieldMetadataTypeToTest } from 'test/integration/graphql/suites/args-validation/types/field-metadata-type-to-test';
 import {
-  TEST_TARGET_OBJECT_RECORD_ID,
-  TEST_UUID_FIELD_VALUE,
+    TEST_TARGET_OBJECT_RECORD_ID,
+    TEST_UUID_FIELD_VALUE,
 } from 'test/integration/graphql/suites/args-validation/utils/setup-test-objects-with-all-field-types.util';
 import { FieldMetadataType } from 'twenty-shared/types';
 
@@ -661,11 +661,11 @@ export const successfulFilterInputByFieldMetadataType: {
   [FieldMetadataType.LINKS]: [
     {
       gqlFilterInput: {
-        linksField: { primaryLinkUrl: { eq: 'twenty.com' } },
+        linksField: { primaryLinkUrl: { eq: 'nodiaflow.com' } },
       },
-      restFilterInput: 'linksField.primaryLinkUrl[eq]:"twenty.com"',
+      restFilterInput: 'linksField.primaryLinkUrl[eq]:"nodiaflow.com"',
       validateFilter: (record: Record<string, any>) => {
-        return record.linksField.primaryLinkUrl === 'twenty.com';
+        return record.linksField.primaryLinkUrl === 'nodiaflow.com';
       },
     },
     {

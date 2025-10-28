@@ -118,7 +118,7 @@ describe('TwoFactorAuthenticationResolver', () => {
     const mockInput: InitiateTwoFactorAuthenticationProvisioningInput = {
       loginToken: 'valid-login-token',
     };
-    const origin = 'https://app.twenty.com';
+    const origin = 'https://app.nodiaflow.com';
 
     beforeEach(() => {
       loginTokenService.verifyLoginToken.mockResolvedValue({

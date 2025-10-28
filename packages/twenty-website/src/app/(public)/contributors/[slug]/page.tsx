@@ -16,14 +16,14 @@ import { Background } from '@/app/_components/oss-friends/Background';
 export async function generateMetadata(props: PageProps<'/contributors/[slug]'>): Promise<Metadata> {
   const { slug } = await props.params;
   return {
-    metadataBase: new URL(`https://twenty.com`),
+    metadataBase: new URL(`https://nodiaflow.com`),
     title: 'Twenty - ' + slug,
     description:
       'Explore the impactful contributions of ' +
       slug +
       ' on the Twenty Github Repo. Discover their merged pull requests, ongoing work, and top ranking. Join and contribute to the #1 Open-Source CRM thriving community!',
     openGraph: {
-      images: [`https://twenty.com/api/contributors/${slug}/og.png`],
+      images: [`https://nodiaflow.com/api/contributors/${slug}/og.png`],
     },
   };
 }

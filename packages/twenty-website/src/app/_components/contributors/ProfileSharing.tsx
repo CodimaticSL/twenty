@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import styled from '@emotion/styled';
 import { IconDownload } from '@tabler/icons-react';
+import { useState } from 'react';
 
 import { CardContainer } from '@/app/_components/contributors/CardContainer';
 import Spinner from '@/app/_components/contributors/Spinner';
@@ -55,7 +55,7 @@ interface ProfileProps {
 
 export const ProfileSharing = ({ username }: ProfileProps) => {
   const [loading, setLoading] = useState(false);
-  const baseUrl = 'https://twenty.com';
+  const baseUrl = 'https://nodiaflow.com';
   const contributorUrl = `${baseUrl}/contributors/${username}`;
 
   const handleDownload = async () => {

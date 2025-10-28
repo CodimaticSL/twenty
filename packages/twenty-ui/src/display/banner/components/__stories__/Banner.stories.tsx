@@ -10,7 +10,7 @@ const meta: Meta<typeof Banner> = {
   render: (args) => (
     // eslint-disable-next-line react/jsx-props-no-spreading
     <Banner {...args}>
-      Sync lost with mailbox hello@twenty.com. Please reconnect for updates:
+      Sync lost with mailbox hello@nodiaflow.com. Please reconnect for updates:
     </Banner>
   ),
   argTypes: {},

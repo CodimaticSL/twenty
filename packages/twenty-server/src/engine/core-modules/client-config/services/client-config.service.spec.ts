@@ -92,7 +92,7 @@ describe('ClientConfigService', () => {
         });
 
       jest.spyOn(domainManagerService, 'getFrontUrl').mockReturnValue({
-        hostname: 'app.twenty.com',
+        hostname: 'app.nodiaflow.com',
       } as URL);
     });
 
@@ -127,7 +127,7 @@ describe('ClientConfigService', () => {
         isMultiWorkspaceEnabled: true,
         isEmailVerificationRequired: true,
         defaultSubdomain: 'app',
-        frontDomain: 'app.twenty.com',
+        frontDomain: 'app.nodiaflow.com',
         debugMode: true,
         support: {
           supportDriver: 'FRONT',

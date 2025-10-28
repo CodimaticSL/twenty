@@ -2,8 +2,8 @@ import { type Decorator, type Meta, type StoryObj } from '@storybook/react';
 import { expect, fn, userEvent, within } from '@storybook/test';
 
 import { SettingsAccountsBlocklistInput } from '@/settings/accounts/components/SettingsAccountsBlocklistInput';
-import { I18nFrontDecorator } from '~/testing/decorators/I18nFrontDecorator';
 import { ComponentDecorator } from 'twenty-ui/testing';
+import { I18nFrontDecorator } from '~/testing/decorators/I18nFrontDecorator';
 
 const updateBlockedEmailListJestFn = fn();
 
@@ -43,7 +43,7 @@ export const AddToBlocklist: Story = {
 
     const addToBlocklistInput = canvas.getByRole('textbox');
 
-    await userEvent.type(addToBlocklistInput, 'test@twenty.com');
+    await userEvent.type(addToBlocklistInput, 'test@nodiaflow.com');
 
     const addToBlocklistButton = canvas.getByRole('button', {
       name: /add to blocklist/i,
@@ -53,7 +53,7 @@ export const AddToBlocklist: Story = {
 
     expect(updateBlockedEmailListJestFn).toHaveBeenCalledTimes(1);
     expect(updateBlockedEmailListJestFn).toHaveBeenCalledWith(
-      'test@twenty.com',
+      'test@nodiaflow.com',
     );
   },
 };

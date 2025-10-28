@@ -21,7 +21,7 @@ export const Default: Story = {
   args: {
     label: 'Emails',
     defaultValue: {
-      primaryEmail: 'tim@twenty.com',
+      primaryEmail: 'tim@nodiaflow.com',
       additionalEmails: [],
     },
   },
@@ -30,7 +30,7 @@ export const Default: Story = {
 
     await canvas.findByText('Emails');
     await canvas.findByText('Primary Email');
-    await canvas.findByText('tim@twenty.com');
+    await canvas.findByText('tim@nodiaflow.com');
   },
 };
 
@@ -58,7 +58,7 @@ export const Disabled: Story = {
   args: {
     label: 'Emails',
     defaultValue: {
-      primaryEmail: 'tim@twenty.com',
+      primaryEmail: 'tim@nodiaflow.com',
       additionalEmails: [],
     },
     onChange: fn(),
@@ -78,7 +78,7 @@ export const Disabled: Story = {
       throw new Error('Editor element not found');
     }
 
-    const defaultValue = await canvas.findByText('tim@twenty.com');
+    const defaultValue = await canvas.findByText('tim@nodiaflow.com');
     expect(defaultValue).toBeVisible();
 
     await userEvent.type(editor, 'hello@gmail.com');

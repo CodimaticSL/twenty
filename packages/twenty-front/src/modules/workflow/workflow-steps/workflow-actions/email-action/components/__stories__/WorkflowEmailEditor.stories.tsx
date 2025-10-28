@@ -176,7 +176,7 @@ export const WithLinks: Story = {
             { type: 'text', text: 'Visit our ' },
             {
               type: 'text',
-              marks: [{ type: 'link', attrs: { href: 'https://twenty.com' } }],
+              marks: [{ type: 'link', attrs: { href: 'https://nodiaflow.com' } }],
               text: 'website',
             },
             { type: 'text', text: ' for more information.' },
@@ -189,9 +189,9 @@ export const WithLinks: Story = {
             {
               type: 'text',
               marks: [
-                { type: 'link', attrs: { href: 'mailto:support@twenty.com' } },
+                { type: 'link', attrs: { href: 'mailto:support@nodiaflow.com' } },
               ],
-              text: 'support@twenty.com',
+              text: 'support@nodiaflow.com',
             },
           ],
         },

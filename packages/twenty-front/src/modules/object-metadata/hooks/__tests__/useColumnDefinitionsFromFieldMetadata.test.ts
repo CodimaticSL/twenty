@@ -4,9 +4,9 @@ import { currentWorkspaceState } from '@/auth/states/currentWorkspaceState';
 import { useColumnDefinitionsFromFieldMetadata } from '@/object-metadata/hooks/useColumnDefinitionsFromFieldMetadata';
 import { type ObjectMetadataItem } from '@/object-metadata/types/ObjectMetadataItem';
 import {
-  SubscriptionInterval,
-  SubscriptionStatus,
-  WorkspaceActivationStatus,
+    SubscriptionInterval,
+    SubscriptionStatus,
+    WorkspaceActivationStatus,
 } from '~/generated/graphql';
 import { getJestMetadataAndApolloMocksAndActionMenuWrapper } from '~/testing/jest/getJestMetadataAndApolloMocksAndActionMenuWrapper';
 import { generatedMockObjectMetadataItems } from '~/testing/utils/generatedMockObjectMetadataItems';
@@ -31,7 +31,7 @@ const Wrapper = getJestMetadataAndApolloMocksAndActionMenuWrapper({
       isCustomDomainEnabled: false,
       customDomain: 'my-custom-domain.com',
       workspaceUrls: {
-        subdomainUrl: 'https://twenty.twenty.com',
+        subdomainUrl: 'https://twenty.nodiaflow.com',
         customUrl: 'https://my-custom-domain.com',
       },
       currentBillingSubscription: {

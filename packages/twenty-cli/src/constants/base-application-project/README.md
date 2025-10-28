@@ -4,7 +4,7 @@
 
 ## Requirements
 - twenty-cli `npm install -g twenty-cli`
-- an `apiKey`. Go to `https://twenty.com/settings/api-webhooks` to generate one
+- an `apiKey`. Go to `https://nodiaflow.com/settings/api-webhooks` to generate one
 
 
 ## Install to your Twenty workspace

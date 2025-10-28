@@ -1,6 +1,6 @@
 # Founders Associate (Intern)
 
-📮 **Apply:** Send LinkedIn or resume + a few words, by email to founders(at)twenty.com  
+📮 **Apply:** Send LinkedIn or resume + a few words, by email to founders(at)nodiaflow.com  
 📍 **Location:** Paris, France (on-site or hybrid, no full remote)  
 💰 **Salary:** 1.5k€/month + meal/transporation
 

@@ -5,8 +5,8 @@ import { NodeEnvironment } from 'src/engine/core-modules/twenty-config/interface
 
 import { AuditService } from 'src/engine/core-modules/audit/services/audit.service';
 import {
-  AuthException,
-  AuthExceptionCode,
+    AuthException,
+    AuthExceptionCode,
 } from 'src/engine/core-modules/auth/auth.exception';
 import { LoginTokenService } from 'src/engine/core-modules/auth/token/services/login-token.service';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
@@ -65,7 +65,7 @@ describe('ImpersonationService', () => {
           useValue: {
             getWorkspaceUrls: jest.fn().mockReturnValue({
               customUrl: undefined,
-              subdomainUrl: 'https://twenty.twenty.com',
+              subdomainUrl: 'https://twenty.nodiaflow.com',
             }),
           },
         },
@@ -183,7 +183,7 @@ describe('ImpersonationService', () => {
         id: 'workspace-id',
         workspaceUrls: {
           customUrl: undefined,
-          subdomainUrl: 'https://twenty.twenty.com',
+          subdomainUrl: 'https://twenty.nodiaflow.com',
         },
       },
       loginToken: {
@@ -239,7 +239,7 @@ describe('ImpersonationService', () => {
         id: 'workspace-id',
         workspaceUrls: {
           customUrl: undefined,
-          subdomainUrl: 'https://twenty.twenty.com',
+          subdomainUrl: 'https://twenty.nodiaflow.com',
         },
       },
       loginToken: {
@@ -436,7 +436,7 @@ describe('ImpersonationService', () => {
           id: 'target-workspace-id',
           workspaceUrls: {
             customUrl: undefined,
-            subdomainUrl: 'https://twenty.twenty.com',
+            subdomainUrl: 'https://twenty.nodiaflow.com',
           },
         },
         loginToken: {
@@ -601,7 +601,7 @@ describe('ImpersonationService', () => {
           id: 'target-workspace-id',
           workspaceUrls: {
             customUrl: undefined,
-            subdomainUrl: 'https://twenty.twenty.com',
+            subdomainUrl: 'https://twenty.nodiaflow.com',
           },
         },
         loginToken: {

@@ -63,7 +63,7 @@ jobs:
       - name: Stash any changes before pulling translations
         run: |
           git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@twenty.com'
+          git config --global user.email 'github-actions@nodiaflow.com'
           git add .
           git stash
 
@@ -107,7 +107,7 @@ jobs:
           npx nx run twenty-front:lingui:compile
           git status
           git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@twenty.com'
+          git config --global user.email 'github-actions@nodiaflow.com'
           git add .
           if ! git diff --staged --quiet --exit-code; then
             git commit -m "chore: compile translations"

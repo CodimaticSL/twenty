@@ -122,7 +122,7 @@ Notes:
       termsOfService:
         'https://github.com/twentyhq/twenty?tab=coc-ov-file#readme',
       contact: {
-        email: 'felix@twenty.com',
+        email: 'felix@nodiaflow.com',
       },
       license: {
         name: 'AGPL-3.0',
@@ -155,7 +155,7 @@ Notes:
     ],
     externalDocs: {
       description: 'Find out more about **NodiaFlow**',
-      url: 'https://twenty.com',
+      url: 'https://nodiaflow.com',
     },
     paths: { [`/open-api/${schemaName}`]: computeOpenApiPath(serverUrl) },
   };
