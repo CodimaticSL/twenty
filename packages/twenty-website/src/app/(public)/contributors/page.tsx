@@ -11,7 +11,7 @@ import { TWENTY_TEAM_MEMBERS } from '@/shared-utils/listTeamMembers';
 export const metadata = {
   title: 'Twenty - Contributors',
   description:
-    'Discover the brilliant minds behind Twenty.com. Meet our contributors and explore how their expertise contributes to making Twenty the leading open-source CRM. Join our community today.',
+    'Discover the brilliant minds behind NodiaFlow.com. Meet our contributors and explore how their expertise contributes to making Twenty the leading open-source CRM. Join our community today.',
   icons: '/images/core/logo.svg',
 };
 

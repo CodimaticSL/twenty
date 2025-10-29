@@ -16,6 +16,7 @@ import {
   IconSettingsAutomation,
   IconSpy,
   IconUsers,
+  IconEye,
 } from 'twenty-ui/display';
 import { AnimatedExpandableContainer, Card, Section } from 'twenty-ui/layout';
 import { PermissionFlagType } from '~/generated-metadata/graphql';

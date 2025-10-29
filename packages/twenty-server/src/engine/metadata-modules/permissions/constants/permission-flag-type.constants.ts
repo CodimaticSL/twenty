@@ -14,4 +14,7 @@ export enum PermissionFlagType {
   SEND_EMAIL_TOOL = 'SEND_EMAIL_TOOL',
   IMPORT_CSV = 'IMPORT_CSV',
   EXPORT_CSV = 'EXPORT_CSV',
+
+  // Data filtering permissions
+  VIEW_ONLY_OWN_OR_ASSIGNED_RECORDS = 'VIEW_ONLY_OWN_OR_ASSIGNED_RECORDS',
 }

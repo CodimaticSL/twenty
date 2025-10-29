@@ -20,6 +20,7 @@ import { WorkspaceAuthGuard } from 'src/engine/guards/workspace-auth.guard';
 import { UserRoleService } from 'src/engine/metadata-modules/user-role/user-role.service';
 import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { WorkspaceCacheStorageService } from 'src/engine/workspace-cache-storage/workspace-cache-storage.service';
+import { PermissionFlagType } from 'src/engine/metadata-modules/permissions/constants/permission-flag-type.constants';
 
 @Resolver()
 @UseFilters(SearchApiExceptionFilter, PreventNestToAutoLogGraphqlErrorsFilter)
@@ -48,14 +49,6 @@ export class SearchResolver {
       after,
     }: SearchArgs,
   ) {
-    console.log('🔍 SEARCH DEBUG - Iniciando búsqueda con filtro de comercial');
-    console.log('🔍 SEARCH DEBUG - User:', user?.firstName, user?.lastName);
-    console.log('🔍 SEARCH DEBUG - UserWorkspace ID:', userWorkspaceId);
-    console.log(
-      '🔍 SEARCH DEBUG - Filter original:',
-      JSON.stringify(filter, null, 2),
-    );
-
     // Aplicar filtro de comercial si corresponde
     let enhancedFilter: ObjectRecordFilter | undefined = filter;
 
@@ -74,14 +67,15 @@ export class SearchResolver {
 
         const userRole = roles.get(userWorkspaceId)?.[0];
 
-        console.log('🔍 SEARCH DEBUG - Rol de usuario:', userRole);
+        // Solo aplicar filtro a roles con el permission flag VIEW_ONLY_OWN_OR_ASSIGNED_RECORDS
+        const shouldApplySalesFilter =
+          userRole?.permissionFlags?.some(
+            (permissionFlag) =>
+              permissionFlag.flag ===
+              PermissionFlagType.VIEW_ONLY_OWN_OR_ASSIGNED_RECORDS,
+          ) ?? false;
 
-        // Si es comercial, aplicar filtro de propiedad
-        if (userRole && userRole.label === 'Comercial') {
-          console.log(
-            '🔍 SEARCH DEBUG - Aplicando filtro de comercial a búsqueda',
-          );
-
+        if (shouldApplySalesFilter) {
           // Obtener el workspaceMember para el usuario
           const workspaceMemberRepository =
             await this.twentyORMGlobalManager.getRepositoryForWorkspace(
@@ -96,52 +90,75 @@ export class SearchResolver {
           });
 
           if (workspaceMember) {
+            // Obtener el nombre completo del usuario para el filtro por nombre
             const firstName = workspaceMember.name?.firstName || '';
             const lastName = workspaceMember.name?.lastName || '';
             const userFullName = `${firstName} ${lastName}`.trim();
 
-            console.log(
-              '🔍 SEARCH DEBUG - Nombre completo para filtro:',
-              userFullName,
-            );
-            console.log(
-              '🔍 SEARCH DEBUG - WorkspaceMember ID:',
-              workspaceMember.id,
-            );
-
-            // Crear filtro de comercial para búsqueda
+            // Aplicar la lógica exacta solicitada:
+            // (responsableId != null && responsableId != "" && responsableId = workspaceMember.id)
+            // || (responsableId = null && (createdBy.workspaceMemberId = workspaceMember.id || createdBy.name = userFullName))
             const commercialFilter: ObjectRecordFilter = {
               or: [
+                // Condición 1: responsableId != null && responsableId != "" && responsableId = workspaceMember.id
                 {
-                  createdBy: {
-                    workspaceMemberId: {
-                      eq: workspaceMember.id,
+                  and: [
+                    {
+                      responsableId: {
+                        is: 'NOT_NULL',
+                      },
                     },
-                  },
+                    {
+                      responsableId: {
+                        is: 'NOT_EMPTY',
+                      },
+                    },
+                    {
+                      responsableId: {
+                        eq: workspaceMember.id,
+                      },
+                    },
+                  ],
                 },
+                // Condición 2: responsableId = null && (createdBy.workspaceMemberId = workspaceMember.id || createdBy.name = userFullName)
                 {
-                  createdBy: {
-                    name: {
-                      eq: userFullName,
+                  and: [
+                    {
+                      responsableId: {
+                        is: 'NULL',
+                      },
                     },
-                  },
+                    {
+                      or: [
+                        {
+                          createdBy: {
+                            workspaceMemberId: {
+                              eq: workspaceMember.id,
+                            },
+                          },
+                        },
+                        {
+                          createdBy: {
+                            name: {
+                              eq: userFullName,
+                            },
+                          },
+                        },
+                      ],
+                    },
+                  ],
                 },
               ],
             };
 
             // Combinar con filtro existente
-            if (enhancedFilter) {
+            if (enhancedFilter && Object.keys(enhancedFilter).length > 0) {
               enhancedFilter = {
                 and: [enhancedFilter, commercialFilter],
               };
             } else {
               enhancedFilter = commercialFilter;
             }
-
-            console.log(
-              '🔍 SEARCH DEBUG - Filtro final aplicado:',
-              JSON.stringify(enhancedFilter, null, 2),
-            );
           }
         }
       }

@@ -8507,3 +8507,13 @@ msgstr "crwdns6040:0crwdne6040:0"
 #: src/modules/billing/components/SettingsBillingContent.tsx
 msgid "Your workspace will be disabled"
 msgstr "crwdns817:0crwdne817:0"
+
+#. js-lingui-id: 1q2w3e
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
+msgid "Can only view records they created or are assigned to"
+msgstr "እንደሚፈጠረው ወይም እርሱ የተመደበውን መዝገቦች ብቻ መመልከት ይችላል"
+
+#. js-lingui-id: 4r5t6y
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
+msgid "View Only Own or Assigned Records"
+msgstr "የራሱን ወይም የተመደበውን መዝገቦች ብቻ ማሳያ"

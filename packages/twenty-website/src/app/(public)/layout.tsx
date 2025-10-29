@@ -12,7 +12,7 @@ import './layout.css';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Twenty.com',
+  title: 'NodiaFlow.com',
   description: 'Open Source CRM',
   icons: '/images/core/logo.svg',
 };
