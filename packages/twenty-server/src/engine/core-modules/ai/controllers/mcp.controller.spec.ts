@@ -80,13 +80,18 @@ describe('McpController', () => {
         mockWorkspace,
         mockApiKey,
         mockUserWorkspaceId,
+        {},
       );
 
-      expect(mcpService.handleMCPCoreQuery).toHaveBeenCalledWith(mockRequest, {
-        workspace: mockWorkspace,
-        userWorkspaceId: mockUserWorkspaceId,
-        apiKey: mockApiKey,
-      });
+      expect(mcpService.handleMCPCoreQuery).toHaveBeenCalledWith(
+        mockRequest,
+        {
+          workspace: mockWorkspace,
+          userWorkspaceId: mockUserWorkspaceId,
+          apiKey: mockApiKey,
+        },
+        {},
+      );
       expect(result).toEqual(mockResponse);
     });
 
@@ -117,13 +122,18 @@ describe('McpController', () => {
         mockWorkspace,
         mockApiKey,
         mockUserWorkspaceId,
+        {},
       );
 
-      expect(mcpService.handleMCPCoreQuery).toHaveBeenCalledWith(mockRequest, {
-        workspace: mockWorkspace,
-        userWorkspaceId: mockUserWorkspaceId,
-        apiKey: mockApiKey,
-      });
+      expect(mcpService.handleMCPCoreQuery).toHaveBeenCalledWith(
+        mockRequest,
+        {
+          workspace: mockWorkspace,
+          userWorkspaceId: mockUserWorkspaceId,
+          apiKey: mockApiKey,
+        },
+        {},
+      );
       expect(result).toEqual(mockResponse);
     });
 
@@ -159,13 +169,18 @@ describe('McpController', () => {
         mockWorkspace,
         mockApiKey,
         mockUserWorkspaceId,
+        {},
       );
 
-      expect(mcpService.handleMCPCoreQuery).toHaveBeenCalledWith(mockRequest, {
-        workspace: mockWorkspace,
-        userWorkspaceId: mockUserWorkspaceId,
-        apiKey: mockApiKey,
-      });
+      expect(mcpService.handleMCPCoreQuery).toHaveBeenCalledWith(
+        mockRequest,
+        {
+          workspace: mockWorkspace,
+          userWorkspaceId: mockUserWorkspaceId,
+          apiKey: mockApiKey,
+        },
+        {},
+      );
       expect(result).toEqual(mockResponse);
     });
   });

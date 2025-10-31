@@ -6,6 +6,7 @@ import { McpController } from 'src/engine/core-modules/ai/controllers/mcp.contro
 import { AIBillingService } from 'src/engine/core-modules/ai/services/ai-billing.service';
 import { AiModelRegistryService } from 'src/engine/core-modules/ai/services/ai-model-registry.service';
 import { AiService } from 'src/engine/core-modules/ai/services/ai.service';
+import { McpConnectionManagerService } from 'src/engine/core-modules/ai/services/mcp-connection-manager.service';
 import { McpService } from 'src/engine/core-modules/ai/services/mcp.service';
 import { ToolAdapterService } from 'src/engine/core-modules/ai/services/tool-adapter.service';
 import { ToolService } from 'src/engine/core-modules/ai/services/tool.service';
@@ -46,6 +47,7 @@ import { MessagingModule } from 'src/modules/messaging/messaging.module';
     ToolAdapterService,
     ToolRegistryService,
     AIBillingService,
+    McpConnectionManagerService,
     McpService,
     SendEmailTool,
   ],
@@ -56,6 +58,7 @@ import { MessagingModule } from 'src/modules/messaging/messaging.module';
     ToolService,
     ToolAdapterService,
     ToolRegistryService,
+    McpConnectionManagerService,
     McpService,
     SendEmailTool,
   ],

@@ -14,6 +14,13 @@ const createToolSchema = (
   inputProperties: Record<string, JSONSchema7Definition>,
   required?: string[],
 ) => {
+  // Generate a readable description of the input properties
+  const propertyNames = Object.keys(inputProperties);
+  const inputDescription =
+    propertyNames.length > 0
+      ? `Object containing the following properties: ${propertyNames.join(', ')}`
+      : 'Input parameters for the operation';
+
   return jsonSchema({
     type: 'object',
     properties: {
@@ -24,11 +31,13 @@ const createToolSchema = (
       },
       input: {
         type: 'object',
+        description: inputDescription,
         properties: inputProperties,
         ...(required && { required }),
       },
     },
-  });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } as any);
 };
 
 export const getRecordInputSchema = (objectMetadata: ObjectMetadataEntity) => {

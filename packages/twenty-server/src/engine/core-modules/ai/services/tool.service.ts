@@ -49,7 +49,34 @@ export class ToolService {
         relations: ['fields'],
       });
 
-    const filteredObjectMetadata = allObjectMetadata.filter(
+    // Also include system objects for taskTarget and noteTarget
+    const taskTargetMetadata =
+      await this.objectMetadataService.findManyWithinWorkspace(workspaceId, {
+        where: {
+          isActive: true,
+          isSystem: true,
+          nameSingular: 'taskTarget',
+        },
+        relations: ['fields'],
+      });
+
+    const noteTargetMetadata =
+      await this.objectMetadataService.findManyWithinWorkspace(workspaceId, {
+        where: {
+          isActive: true,
+          isSystem: true,
+          nameSingular: 'noteTarget',
+        },
+        relations: ['fields'],
+      });
+
+    const combinedObjectMetadata = [
+      ...allObjectMetadata,
+      ...taskTargetMetadata,
+      ...noteTargetMetadata,
+    ];
+
+    const filteredObjectMetadata = combinedObjectMetadata.filter(
       (objectMetadata) => !isWorkflowRunObject(objectMetadata),
     );
 

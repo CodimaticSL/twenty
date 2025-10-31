@@ -35,33 +35,34 @@ export class MCPMetadataService {
     >;
   }
 
-  async checkAiEnabled(workspaceId: string): Promise<void> {
-    const isAiEnabled = await this.featureFlagService.isFeatureEnabled(
-      FeatureFlagKey.IS_AI_ENABLED,
-      workspaceId,
-    );
-
-    if (!isAiEnabled) {
-      throw new HttpException(
-        'AI feature is not enabled for this workspace',
-        HttpStatus.FORBIDDEN,
-      );
-    }
-  }
-
   handleInitialize(requestId: string | number) {
-    return wrapJsonRpcResponse(requestId, {
-      result: {
-        capabilities: {
-          tools: { listChanged: false },
-          resources: { listChanged: false },
-          prompts: { listChanged: false },
-        },
-        tools: [],
-        resources: [],
-        prompts: [],
+    console.log('🔧 MCP Metadata handleInitialize called with ID:', requestId);
+    
+    const response = {
+      protocolVersion: '2025-03-26',
+      capabilities: {
+        tools: { listChanged: false },
+        resources: { listChanged: false },
+        prompts: { listChanged: false },
       },
+      serverInfo: {
+        name: 'Twenty CRM MCP Metadata Server',
+        version: '0.0.1',
+      },
+      tools: [],
+      resources: [],
+      prompts: [],
+    };
+    
+    console.log('🔧 MCP Metadata response before wrap:', JSON.stringify(response, null, 2));
+    
+    const wrapped = wrapJsonRpcResponse(requestId, {
+      result: response,
     });
+    
+    console.log('🔧 MCP Metadata final response:', JSON.stringify(wrapped, null, 2));
+    
+    return wrapped;
   }
 
   get tools() {
@@ -131,20 +132,15 @@ export class MCPMetadataService {
     }: { workspace: Workspace; userWorkspaceId?: string; apiKey?: string },
   ): Promise<Record<string, unknown>> {
     try {
-      await this.checkAiEnabled(workspace.id);
 
       if (request.body.method === 'initialize') {
         return this.handleInitialize(request.body.id);
       }
 
       if (request.body.method === 'ping') {
-        return wrapJsonRpcResponse(
-          request.body.id,
-          {
-            result: {},
-          },
-          true,
-        );
+        return wrapJsonRpcResponse(request.body.id, {
+          result: {},
+        });
       }
 
       if (request.body.method === 'tools/call' && request.body.params) {

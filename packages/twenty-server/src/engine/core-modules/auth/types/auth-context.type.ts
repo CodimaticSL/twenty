@@ -81,6 +81,8 @@ export type ApiKeyTokenJwtPayload = CommonPropertiesJwtPayload & {
   workspaceId: string;
   workspaceMemberId?: string;
   jti?: string;
+  exp?: number; // Token expiration time (OAuth 2.1 compliance)
+  aud?: string | string[]; // Token audience (OAuth 2.1 compliance)
 };
 
 export type AccessTokenJwtPayload = CommonPropertiesJwtPayload & {

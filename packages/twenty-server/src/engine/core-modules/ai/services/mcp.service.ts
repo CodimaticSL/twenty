@@ -6,9 +6,9 @@ import { isDefined } from 'twenty-shared/utils';
 import { Repository } from 'typeorm';
 
 import { type JsonRpc } from 'src/engine/core-modules/ai/dtos/json-rpc';
+import { McpConnectionManagerService } from 'src/engine/core-modules/ai/services/mcp-connection-manager.service';
 import { ToolService } from 'src/engine/core-modules/ai/services/tool.service';
 import { wrapJsonRpcResponse } from 'src/engine/core-modules/ai/utils/wrap-jsonrpc-response.util';
-import { FeatureFlagKey } from 'src/engine/core-modules/feature-flag/enums/feature-flag-key.enum';
 import { FeatureFlagService } from 'src/engine/core-modules/feature-flag/services/feature-flag.service';
 import { type Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 import { RoleEntity } from 'src/engine/metadata-modules/role/role.entity';
@@ -21,35 +21,56 @@ export class McpService {
     private readonly featureFlagService: FeatureFlagService,
     private readonly toolService: ToolService,
     private readonly userRoleService: UserRoleService,
+    private readonly connectionManager: McpConnectionManagerService,
     @InjectRepository(RoleEntity)
     private readonly roleRepository: Repository<RoleEntity>,
   ) {}
 
-  async checkAiEnabled(workspaceId: string): Promise<void> {
-    const isAiEnabled = await this.featureFlagService.isFeatureEnabled(
-      FeatureFlagKey.IS_AI_ENABLED,
-      workspaceId,
-    );
+  async handleInitialize(
+    requestId: string | number,
+    roleId: string,
+    workspaceId: string,
+  ) {
+    const toolSet = await this.toolService.listTools(roleId, workspaceId);
 
-    if (!isAiEnabled) {
-      throw new HttpException(
-        'AI feature is not enabled for this workspace',
-        HttpStatus.FORBIDDEN,
-      );
+    // Validar que toolSet no sea null/undefined antes de procesarlo
+    if (!toolSet || typeof toolSet !== 'object') {
+      return wrapJsonRpcResponse(requestId, {
+        result: {
+          protocolVersion: '2025-03-26',
+          capabilities: {
+            tools: { listChanged: true },
+            resources: { listChanged: false },
+            prompts: { listChanged: false },
+          },
+          serverInfo: {
+            name: 'Twenty CRM MCP Server',
+            version: '0.0.1',
+          },
+        },
+      });
     }
-  }
 
-  handleInitialize(requestId: string | number) {
+    Object.entries(toolSet || {})
+      .filter(([, def]) => !!def.inputSchema)
+      .map(([name, def]) => ({
+        name,
+        description: def.description,
+        inputSchema: def.inputSchema,
+      }));
+
     return wrapJsonRpcResponse(requestId, {
       result: {
+        protocolVersion: '2025-03-26',
         capabilities: {
-          tools: { listChanged: false },
+          tools: { listChanged: true },
           resources: { listChanged: false },
           prompts: { listChanged: false },
         },
-        tools: [],
-        resources: [],
-        prompts: [],
+        serverInfo: {
+          name: 'Twenty CRM MCP Server',
+          version: '0.0.1',
+        },
       },
     });
   }
@@ -100,38 +121,74 @@ export class McpService {
       userWorkspaceId,
       apiKey,
     }: { workspace: Workspace; userWorkspaceId?: string; apiKey?: string },
+    headers?: Record<string, string>,
   ): Promise<Record<string, unknown>> {
-    try {
-      await this.checkAiEnabled(workspace.id);
+    // Obtener o crear conexión para seguimiento
+    const roleId = await this.getRoleId(workspace.id, userWorkspaceId, apiKey);
+    const connection = this.connectionManager.getOrCreateConnection(
+      workspace.id,
+      roleId,
+      headers || {},
+    );
 
+    try {
+      // Manejo especial para handshake MCP
       if (method === 'initialize') {
-        return this.handleInitialize(id);
+        this.connectionManager.recordInitialize(connection.id);
+        const result = await this.handleInitialize(id, roleId, workspace.id);
+
+        // Agregar información de diagnóstico a la respuesta
+        if (
+          'result' in result &&
+          result.result &&
+          typeof result.result === 'object'
+        ) {
+          const resultObj = result.result as Record<string, unknown>;
+
+          resultObj.connectionId = connection.id;
+
+          resultObj.diagnostics = this.connectionManager.getDiagnostics(
+            connection.id,
+          );
+        }
+
+        return result;
+      }
+
+      if (method === 'initialized') {
+        this.connectionManager.recordInitialized(connection.id);
+
+        return wrapJsonRpcResponse(id, {
+          result: {},
+        });
       }
 
       if (method === 'ping') {
-        return wrapJsonRpcResponse(
-          id,
-          {
-            result: {},
+        return wrapJsonRpcResponse(id, {
+          result: {
+            connectionId: connection.id,
+            diagnostics: this.connectionManager.getDiagnostics(connection.id),
           },
-          true,
-        );
+        });
       }
 
-      const roleId = await this.getRoleId(
-        workspace.id,
-        userWorkspaceId,
-        apiKey,
-      );
+      // Para métodos que requieren handshake completo
+      if (method === 'tools/list') {
+        this.connectionManager.recordToolsListRequest(connection.id);
+      }
+
+      // Verificar si usar modo compatibilidad
+      const useCompatibilityMode =
+        this.connectionManager.shouldUseCompatibilityMode(connection.id);
 
       const toolSet = await this.toolService.listTools(roleId, workspace.id);
 
       if (method === 'tools/call' && params) {
-        return await this.handleToolCall(id, toolSet, params);
+        return await this.handleToolCall(id, toolSet, params, connection.id);
       }
 
       if (method === 'tools/list') {
-        return await this.handleToolsListing(id, toolSet);
+        return await this.handleToolsListing(id, toolSet, connection.id);
       }
 
       if (method === 'prompts/list') {
@@ -141,6 +198,8 @@ export class McpService {
               prompts: { listChanged: false },
             },
             prompts: [],
+            connectionId: connection.id,
+            compatibilityMode: useCompatibilityMode,
           },
         });
       }
@@ -152,18 +211,27 @@ export class McpService {
               resources: { listChanged: false },
             },
             resources: [],
+            connectionId: connection.id,
+            compatibilityMode: useCompatibilityMode,
           },
         });
       }
 
       return wrapJsonRpcResponse(id, {
-        result: {},
+        result: {
+          connectionId: connection.id,
+          compatibilityMode: useCompatibilityMode,
+        },
       });
     } catch (error) {
+      // Registrar error en diagnóstico
+      this.connectionManager.recordError(connection.id, method, error.message);
+
       return wrapJsonRpcResponse(id, {
         error: {
           code: error.status || HttpStatus.INTERNAL_SERVER_ERROR,
           message: error.message || 'Failed to execute tool',
+          connectionId: connection.id,
         },
       });
     }
@@ -173,53 +241,112 @@ export class McpService {
     id: string | number,
     toolSet: ToolSet,
     params: Record<string, unknown>,
+    connectionId: string,
   ) {
     const toolName = params.name as keyof typeof toolSet;
     const tool = toolSet[toolName];
 
     if (isDefined(tool) && isDefined(tool.execute)) {
+      try {
+        const result = await tool.execute(params.arguments, {
+          toolCallId: id.toString(),
+          messages: [],
+        });
+
+        return wrapJsonRpcResponse(id, {
+          result: {
+            content: [
+              {
+                type: 'text',
+                text: JSON.stringify(result),
+              },
+            ],
+            isError: false,
+            connectionId,
+          },
+        });
+      } catch (error) {
+        this.connectionManager.recordError(
+          connectionId,
+          `tools/call:${toolName}`,
+          error.message,
+        );
+
+        return wrapJsonRpcResponse(id, {
+          result: {
+            content: [
+              {
+                type: 'text',
+                text: `Error executing tool ${toolName}: ${error.message}`,
+              },
+            ],
+            isError: true,
+            connectionId,
+          },
+        });
+      }
+    }
+
+    const errorMessage = `Tool '${params.name}' not found`;
+
+    this.connectionManager.recordError(
+      connectionId,
+      `tools/call:${params.name}`,
+      errorMessage,
+    );
+
+    throw new HttpException(errorMessage, HttpStatus.NOT_FOUND);
+  }
+
+  private handleToolsListing(
+    id: string | number,
+    toolSet: ToolSet,
+    connectionId: string,
+  ) {
+    try {
+      const toolsArray = Object.entries(toolSet)
+        .filter(([, def]) => !!def.inputSchema)
+        .map(([name, def]) => ({
+          name,
+          description: def.description,
+          inputSchema:
+            (def.inputSchema as unknown as { jsonSchema?: unknown })
+              .jsonSchema || def.inputSchema,
+        }));
+
+      const useCompatibilityMode =
+        this.connectionManager.shouldUseCompatibilityMode(connectionId);
+
       return wrapJsonRpcResponse(id, {
         result: {
-          content: [
-            {
-              type: 'text',
-              text: JSON.stringify(
-                await tool.execute(params.arguments, {
-                  toolCallId: '1',
-                  messages: [],
-                }),
-              ),
-            },
-          ],
-          isError: false,
+          capabilities: {
+            tools: { listChanged: false },
+          },
+          tools: toolsArray,
+          resources: [],
+          prompts: [],
+          connectionId,
+          compatibilityMode: useCompatibilityMode,
+          diagnostics: this.connectionManager.getDiagnostics(connectionId),
+        },
+      });
+    } catch {
+      return wrapJsonRpcResponse(id, {
+        error: {
+          code: HttpStatus.INTERNAL_SERVER_ERROR,
+          message: 'Failed to list tools',
         },
       });
     }
-
-    throw new HttpException(
-      `Tool '${params.name}' not found`,
-      HttpStatus.NOT_FOUND,
-    );
   }
 
-  private handleToolsListing(id: string | number, toolSet: ToolSet) {
-    const toolsArray = Object.entries(toolSet)
-      .filter(([, def]) => !!def.inputSchema)
-      .map(([name, def]) => ({
-        name,
-        description: def.description,
-        inputSchema: def.inputSchema,
-      }));
+  // Nuevo método para obtener estadísticas de conexiones
+  getConnectionStats() {
+    return this.connectionManager.getStats();
+  }
 
-    return wrapJsonRpcResponse(id, {
-      result: {
-        capabilities: {
-          tools: { listChanged: false },
-        },
-        tools: toolsArray,
-        resources: [],
-        prompts: [],
-      },
-    });
+  // Nuevo método para obtener diagnóstico de una conexión específica
+  getConnectionDiagnostics(connectionId: string) {
+    return this.connectionManager.getDiagnostics(connectionId);
   }
 }

@@ -42,9 +42,70 @@ export class ToolAdapterService {
   private createToolSet(tool: Tool) {
     return {
       description: tool.description,
-      inputSchema: tool.inputSchema,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      inputSchema: this.addInputTypeRecursively(tool.inputSchema as any),
       execute: async (parameters: { input: ToolInput }) =>
         tool.execute(parameters.input),
     };
+  }
+
+  // Add inputType recursively for dual compatibility (MCP + n8n)
+  // We use 'any' here because we need to traverse and modify deeply nested
+  // schema structures that come from the ai SDK's FlexibleSchema type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private addInputTypeRecursively(schema: any): any {
+    try {
+      // Handle null, undefined, or non-object cases
+      if (
+        schema === null ||
+        schema === undefined ||
+        typeof schema !== 'object'
+      ) {
+        return schema;
+      }
+
+      // Handle arrays - process each item
+      if (Array.isArray(schema)) {
+        return schema.map((item) => this.addInputTypeRecursively(item));
+      }
+
+      // Clone the schema to avoid mutation
+      const result = { ...schema };
+
+      // Only add inputType if type exists and is a string/number, and inputType doesn't already exist
+      if (
+        'type' in result &&
+        result.type !== null &&
+        result.type !== undefined &&
+        (typeof result.type === 'string' || typeof result.type === 'number') &&
+        !('inputType' in result)
+      ) {
+        result.inputType = result.type;
+      }
+
+      // Recursively process nested objects with safety checks
+      for (const key in result) {
+        if (
+          Object.prototype.hasOwnProperty.call(result, key) &&
+          result[key] !== null &&
+          result[key] !== undefined &&
+          typeof result[key] === 'object'
+        ) {
+          try {
+            result[key] = this.addInputTypeRecursively(result[key]);
+          } catch (error) {
+            // Log error but continue processing other properties
+            console.warn(`Error processing property ${key}:`, error);
+            // Keep original value if processing fails
+          }
+        }
+      }
+
+      return result;
+    } catch (error) {
+      console.error('Critical error in addInputTypeRecursively:', error);
+
+      return schema; // Return original schema if processing fails
+    }
   }
 }

@@ -6,7 +6,9 @@ import { jsonSchema } from 'ai';
 
 import { MCP_SERVER_METADATA } from 'src/engine/core-modules/ai/constants/mcp.const';
 import { type JsonRpc } from 'src/engine/core-modules/ai/dtos/json-rpc';
+// import { McpSessionService } from 'src/engine/core-modules/ai/services/mcp-session.service'; // Service doesn't exist
 import { McpService } from 'src/engine/core-modules/ai/services/mcp.service';
+import { McpConnectionManagerService } from 'src/engine/core-modules/ai/services/mcp-connection-manager.service';
 import { ToolService } from 'src/engine/core-modules/ai/services/tool.service';
 import { FeatureFlagKey } from 'src/engine/core-modules/feature-flag/enums/feature-flag-key.enum';
 import { FeatureFlagService } from 'src/engine/core-modules/feature-flag/services/feature-flag.service';
@@ -60,6 +62,14 @@ describe('McpService', () => {
           provide: UserRoleService,
           useValue: mockUserRoleService,
         },
+        // {
+        //   provide: McpSessionService,
+        //   useValue: mockMcpSessionService,
+        // },
+        {
+          provide: McpConnectionManagerService,
+          useValue: jest.fn(),
+        },
         {
           provide: getRepositoryToken(RoleEntity),
           useValue: {
@@ -79,35 +89,14 @@ describe('McpService', () => {
     expect(service).toBeDefined();
   });
 
-  describe('checkAiEnabled', () => {
-    it('should not throw when AI is enabled', async () => {
-      featureFlagService.isFeatureEnabled.mockResolvedValue(true);
-
-      await expect(
-        service.checkAiEnabled('workspace-1'),
-      ).resolves.not.toThrow();
-      expect(featureFlagService.isFeatureEnabled).toHaveBeenCalledWith(
-        FeatureFlagKey.IS_AI_ENABLED,
-        'workspace-1',
-      );
-    });
-
-    it('should throw when AI is disabled', async () => {
-      featureFlagService.isFeatureEnabled.mockResolvedValue(false);
-
-      await expect(service.checkAiEnabled('workspace-1')).rejects.toThrow(
-        new HttpException(
-          'AI feature is not enabled for this workspace',
-          HttpStatus.FORBIDDEN,
-        ),
-      );
-    });
-  });
-
   describe('handleInitialize', () => {
     it('should return correct initialization response', () => {
       const requestId = '123';
-      const result = service.handleInitialize(requestId);
+      const result = service.handleInitialize(
+        requestId,
+        mockWorkspace.id,
+        mockWorkspace.id,
+      );
 
       expect(result).toMatchObject({
         id: requestId,

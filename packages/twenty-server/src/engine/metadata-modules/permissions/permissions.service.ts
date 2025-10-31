@@ -104,6 +104,7 @@ export class PermissionsService {
         [PermissionFlagType.IMPORT_CSV]: false,
         [PermissionFlagType.EXPORT_CSV]: false,
         [PermissionFlagType.IMPERSONATE]: false,
+        [PermissionFlagType.VIEW_ONLY_OWN_OR_ASSIGNED_RECORDS]: false,
       },
       objectsPermissions: {},
     }) as const satisfies UserWorkspacePermissions;

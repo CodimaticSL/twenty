@@ -64,7 +64,7 @@ INSERT INTO core."featureFlag" (
     (gen_random_uuid(), 'IS_AIRTABLE_INTEGRATION_ENABLED', 'TU_WORKSPACE_ID_AQUI', true, NOW(), NOW()),
     
     -- IS_COMMON_API_ENABLED - API unificada (GraphQL/REST)
-    (gen_random_uuid(), 'IS_COMMON_API_ENABLED', 'TU_WORKSPACE_ID_AQUI', true, NOW(), NOW())
+    (gen_random_uuid(), 'IS_COMMON_API_ENABLED', '45b16c8b-5e8f-4b64-a6e1-1a7263ac59f7', true, NOW(), NOW())
     
 -- Usar ON CONFLICT para actualizar si ya existen
 ON CONFLICT ("key", "workspaceId") 
