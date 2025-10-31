@@ -6,12 +6,12 @@ import crypto from 'crypto';
 import { Repository } from 'typeorm';
 
 import {
-    AppToken,
-    AppTokenType,
+  AppToken,
+  AppTokenType,
 } from 'src/engine/core-modules/app-token/app-token.entity';
 import {
-    EmailVerificationException,
-    EmailVerificationExceptionCode,
+  EmailVerificationException,
+  EmailVerificationExceptionCode,
 } from 'src/engine/core-modules/email-verification/email-verification.exception';
 import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { User } from 'src/engine/core-modules/user/user.entity';

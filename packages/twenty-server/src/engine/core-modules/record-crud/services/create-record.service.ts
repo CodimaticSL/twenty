@@ -28,7 +28,8 @@ export class CreateRecordService {
   ) {}
 
   async execute(params: CreateRecordParams): Promise<ToolOutput> {
-    const { objectName, objectRecord, workspaceId, roleId } = params;
+    const { objectName, objectRecord, workspaceId, roleId, apiKeyName } =
+      params;
 
     if (!workspaceId) {
       return {
@@ -52,7 +53,9 @@ export class CreateRecordService {
           workspaceId,
         );
 
+      // Solo validar para workflows (sin roleId), no para agents/API (con roleId)
       if (
+        !roleId &&
         !canObjectBeManagedByWorkflow({
           nameSingular: objectMetadataItemWithFieldsMaps.nameSingular,
           isSystem: objectMetadataItemWithFieldsMaps.isSystem,
@@ -64,14 +67,53 @@ export class CreateRecordService {
         );
       }
 
-      const position = await this.recordPositionService.buildRecordPosition({
-        value: 'first',
-        objectMetadata: objectMetadataItemWithFieldsMaps,
-        workspaceId,
-      });
+      // Solo agregar position si el objeto tiene ese campo
+      const hasPositionField = isDefined(
+        objectMetadataItemWithFieldsMaps.fieldIdByName.position,
+      );
+
+      const position = hasPositionField
+        ? await this.recordPositionService.buildRecordPosition({
+            value: 'first',
+            objectMetadata: objectMetadataItemWithFieldsMaps,
+            workspaceId,
+          })
+        : undefined;
+
+      // Solo agregar createdBy si el objeto tiene ese campo
+      const hasCreatedByField = isDefined(
+        objectMetadataItemWithFieldsMaps.fieldIdByName.createdBy,
+      );
+
+      // Mapear campos con sufijo 'Id' a nombres de relación
+      // Ej: taskId -> task, companyId -> company
+      const mappedObjectRecord = Object.fromEntries(
+        Object.entries(objectRecord).map(([key, value]) => {
+          // Si el campo termina en 'Id' y no existe en el metadata
+          if (
+            key.endsWith('Id') &&
+            !isDefined(objectMetadataItemWithFieldsMaps.fieldIdByName[key])
+          ) {
+            // Intentar con el nombre sin 'Id'
+            const fieldNameWithoutId = key.slice(0, -2);
+
+            if (
+              isDefined(
+                objectMetadataItemWithFieldsMaps.fieldIdByName[
+                  fieldNameWithoutId
+                ],
+              )
+            ) {
+              return [fieldNameWithoutId, { id: value }];
+            }
+          }
+
+          return [key, value];
+        }),
+      );
 
       const validObjectRecord = Object.fromEntries(
-        Object.entries(objectRecord).filter(([key]) =>
+        Object.entries(mappedObjectRecord).filter(([key]) =>
           isDefined(objectMetadataItemWithFieldsMaps.fieldIdByName[key]),
         ),
       );
@@ -82,14 +124,22 @@ export class CreateRecordService {
           objectMetadataMapItem: objectMetadataItemWithFieldsMaps,
         });
 
-      const insertResult = await repository.insert({
+      const recordToInsert = {
         ...transformedObjectRecord,
-        position,
-        createdBy: {
-          source: roleId ? FieldActorSource.AGENT : FieldActorSource.WORKFLOW,
-          name: roleId ? 'Agent' : 'Workflow',
-        },
-      });
+        ...(hasPositionField && position !== undefined ? { position } : {}),
+        ...(hasCreatedByField
+          ? {
+              createdBy: {
+                source: roleId
+                  ? FieldActorSource.API
+                  : FieldActorSource.WORKFLOW,
+                name: roleId ? apiKeyName || 'API' : 'Workflow',
+              },
+            }
+          : {}),
+      };
+
+      const insertResult = await repository.insert(recordToInsert);
 
       const [createdRecord] = insertResult.generatedMaps;
 

@@ -1,4 +1,4 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { HttpStatus, Injectable } from '@nestjs/common';
 
 import { validationMetadatasToSchemas } from 'class-validator-jsonschema';
 import { type Request } from 'express';
@@ -9,7 +9,6 @@ import { DeleteToolsService } from 'src/engine/api/mcp/services/tools/delete.too
 import { GetToolsService } from 'src/engine/api/mcp/services/tools/get.tools.service';
 import { UpdateToolsService } from 'src/engine/api/mcp/services/tools/update.tools.service';
 import { wrapJsonRpcResponse } from 'src/engine/core-modules/ai/utils/wrap-jsonrpc-response.util';
-import { FeatureFlagKey } from 'src/engine/core-modules/feature-flag/enums/feature-flag-key.enum';
 import { FeatureFlagService } from 'src/engine/core-modules/feature-flag/services/feature-flag.service';
 import { MetricsService } from 'src/engine/core-modules/metrics/metrics.service';
 import { MetricsKeys } from 'src/engine/core-modules/metrics/types/metrics-keys.type';
@@ -37,7 +36,7 @@ export class MCPMetadataService {
 
   handleInitialize(requestId: string | number) {
     console.log('🔧 MCP Metadata handleInitialize called with ID:', requestId);
-    
+
     const response = {
       protocolVersion: '2025-03-26',
       capabilities: {
@@ -53,15 +52,21 @@ export class MCPMetadataService {
       resources: [],
       prompts: [],
     };
-    
-    console.log('🔧 MCP Metadata response before wrap:', JSON.stringify(response, null, 2));
-    
+
+    console.log(
+      '🔧 MCP Metadata response before wrap:',
+      JSON.stringify(response, null, 2),
+    );
+
     const wrapped = wrapJsonRpcResponse(requestId, {
       result: response,
     });
-    
-    console.log('🔧 MCP Metadata final response:', JSON.stringify(wrapped, null, 2));
-    
+
+    console.log(
+      '🔧 MCP Metadata final response:',
+      JSON.stringify(wrapped, null, 2),
+    );
+
     return wrapped;
   }
 
@@ -132,7 +137,6 @@ export class MCPMetadataService {
     }: { workspace: Workspace; userWorkspaceId?: string; apiKey?: string },
   ): Promise<Record<string, unknown>> {
     try {
-
       if (request.body.method === 'initialize') {
         return this.handleInitialize(request.body.id);
       }

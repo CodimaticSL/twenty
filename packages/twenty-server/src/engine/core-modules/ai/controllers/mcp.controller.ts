@@ -44,7 +44,6 @@ export class McpController {
     @AuthUserWorkspaceId() userWorkspaceId: string | undefined,
     @Headers() headers: Record<string, string>,
   ) {
-    
     // Validación opcional de MCP-Protocol-Version - solo si está presente
     const protocolVersion = headers['mcp-protocol-version'];
 
@@ -69,10 +68,8 @@ export class McpController {
         headers,
       );
 
-
       return result;
     } catch (error) {
-     
       throw error;
     }
   }

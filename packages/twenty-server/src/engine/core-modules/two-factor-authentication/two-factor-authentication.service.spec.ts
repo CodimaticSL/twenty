@@ -4,16 +4,16 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { TwoFactorAuthenticationStrategy } from 'twenty-shared/types';
 
 import {
-    AuthException,
-    AuthExceptionCode,
+  AuthException,
+  AuthExceptionCode,
 } from 'src/engine/core-modules/auth/auth.exception';
 import { SimpleSecretEncryptionUtil } from 'src/engine/core-modules/two-factor-authentication/utils/simple-secret-encryption.util';
 import { UserWorkspaceService } from 'src/engine/core-modules/user-workspace/user-workspace.service';
 import { type Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 
 import {
-    TwoFactorAuthenticationException,
-    TwoFactorAuthenticationExceptionCode,
+  TwoFactorAuthenticationException,
+  TwoFactorAuthenticationExceptionCode,
 } from './two-factor-authentication.exception';
 import { TwoFactorAuthenticationService } from './two-factor-authentication.service';
 

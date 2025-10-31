@@ -30,7 +30,7 @@ export class WorkspaceQueryHookService {
     payload: WorkspacePreQueryHookPayload<T>,
   ): Promise<WorkspacePreQueryHookPayload<T>> {
     const key: WorkspaceQueryHookKey = `${objectName}.${methodName}`;
-    
+
     const preHookInstances =
       this.workspaceQueryHookStorage.getWorkspaceQueryPreHookInstances(key);
 

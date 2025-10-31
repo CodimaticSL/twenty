@@ -1,5 +1,7 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
+import { REQUEST } from '@nestjs/core';
 
+import { type Request } from 'express';
 import { type ToolSet } from 'ai';
 
 import { CreateRecordService } from 'src/engine/core-modules/record-crud/services/create-record.service';
@@ -28,10 +30,14 @@ export class ToolService {
     private readonly updateRecordService: UpdateRecordService,
     private readonly deleteRecordService: DeleteRecordService,
     private readonly findRecordsService: FindRecordsService,
+    @Inject(REQUEST) private readonly request: Request,
   ) {}
 
   async listTools(roleId: string, workspaceId: string): Promise<ToolSet> {
     const tools: ToolSet = {};
+
+    // Obtener el nombre de la API Key desde el request (establecido por el middleware)
+    const apiKeyName = this.request?.apiKey?.name;
 
     const { data: rolesPermissions } =
       await this.workspacePermissionsCacheService.getRolesPermissionsFromCache({
@@ -97,6 +103,7 @@ export class ToolService {
               objectRecord: parameters.input,
               workspaceId,
               roleId,
+              apiKeyName,
             });
           },
         };

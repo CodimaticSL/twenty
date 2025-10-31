@@ -5,4 +5,5 @@ export type CreateRecordParams = {
   objectRecord: ObjectRecordProperties;
   workspaceId: string;
   roleId?: string;
+  apiKeyName?: string;
 };

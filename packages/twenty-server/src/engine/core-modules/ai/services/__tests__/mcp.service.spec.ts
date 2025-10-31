@@ -10,7 +10,6 @@ import { type JsonRpc } from 'src/engine/core-modules/ai/dtos/json-rpc';
 import { McpService } from 'src/engine/core-modules/ai/services/mcp.service';
 import { McpConnectionManagerService } from 'src/engine/core-modules/ai/services/mcp-connection-manager.service';
 import { ToolService } from 'src/engine/core-modules/ai/services/tool.service';
-import { FeatureFlagKey } from 'src/engine/core-modules/feature-flag/enums/feature-flag-key.enum';
 import { FeatureFlagService } from 'src/engine/core-modules/feature-flag/services/feature-flag.service';
 import { type Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 import { ADMIN_ROLE_LABEL } from 'src/engine/metadata-modules/permissions/constants/admin-role-label.constants';

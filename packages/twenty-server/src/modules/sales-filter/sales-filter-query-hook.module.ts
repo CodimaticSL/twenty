@@ -8,10 +8,12 @@ import { ApiKeyModule } from 'src/engine/core-modules/api-key/api-key.module';
 import { TwentyORMModule } from 'src/engine/twenty-orm/twenty-orm.module';
 
 @Module({
-  imports: [UserRoleModule, ApiKeyModule, WorkspaceMetadataCacheModule, TwentyORMModule],
-  providers: [
-    SalesFilterFindManyPreQueryHook,
-    SalesFilterFindOnePreQueryHook,
+  imports: [
+    UserRoleModule,
+    ApiKeyModule,
+    WorkspaceMetadataCacheModule,
+    TwentyORMModule,
   ],
+  providers: [SalesFilterFindManyPreQueryHook, SalesFilterFindOnePreQueryHook],
 })
 export class SalesFilterQueryHookModule {}

@@ -12,8 +12,8 @@ import { Repository } from 'typeorm';
 
 import { ApprovedAccessDomain as ApprovedAccessDomainEntity } from 'src/engine/core-modules/approved-access-domain/approved-access-domain.entity';
 import {
-    ApprovedAccessDomainException,
-    ApprovedAccessDomainExceptionCode,
+  ApprovedAccessDomainException,
+  ApprovedAccessDomainExceptionCode,
 } from 'src/engine/core-modules/approved-access-domain/approved-access-domain.exception';
 import { approvedAccessDomainValidator } from 'src/engine/core-modules/approved-access-domain/approved-access-domain.validate';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';

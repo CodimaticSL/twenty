@@ -36,7 +36,8 @@ export const PUBLIC_FEATURE_FLAGS: PublicFeatureFlag[] = [
     metadata: {
       label: 'Calendar View',
       description: 'View and manage calendar events',
-      imagePath: 'https://nodiaflow.com/images/lab/is-calendar-view-enabled.png',
+      imagePath:
+        'https://nodiaflow.com/images/lab/is-calendar-view-enabled.png',
     },
   },
   ...(process.env.CLOUDFLARE_API_KEY

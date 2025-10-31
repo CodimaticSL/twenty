@@ -12,8 +12,11 @@ export const canObjectBeManagedByWorkflow = ({
     'dashboard',
   ];
 
+  // Allow system objects for taskTarget and noteTarget
+  const allowedSystemObjects = ['taskTarget', 'noteTarget'];
+
   return (
     !excludedNonSystemObjectMetadataItemNames.includes(nameSingular) &&
-    !isSystem
+    (!isSystem || allowedSystemObjects.includes(nameSingular))
   );
 };

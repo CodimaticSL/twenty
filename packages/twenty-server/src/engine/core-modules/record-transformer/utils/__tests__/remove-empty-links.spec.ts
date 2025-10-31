@@ -1,6 +1,6 @@
 import {
-    RecordTransformerException,
-    RecordTransformerExceptionCode,
+  RecordTransformerException,
+  RecordTransformerExceptionCode,
 } from 'src/engine/core-modules/record-transformer/record-transformer.exception';
 import { removeEmptyLinks } from 'src/engine/core-modules/record-transformer/utils/remove-empty-links';
 

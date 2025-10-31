@@ -47,8 +47,7 @@ export class McpConnectionManagerService {
     const auth = headers['authorization'] || 'no-auth';
     const timestamp = Date.now();
 
-    return `${workspaceId}-${Buffer
-      .from(`${userAgent}-${auth}`)
+    return `${workspaceId}-${Buffer.from(`${userAgent}-${auth}`)
       .toString('base64')
       .slice(0, 8)}-${timestamp}`;
   }
@@ -147,7 +146,8 @@ export class McpConnectionManagerService {
 
       // Mantener solo los últimos 10 errores
       if (connection.diagnostics.errors.length > 10) {
-        connection.diagnostics.errors = connection.diagnostics.errors.slice(-10);
+        connection.diagnostics.errors =
+          connection.diagnostics.errors.slice(-10);
       }
     }
   }
@@ -168,32 +168,34 @@ export class McpConnectionManagerService {
     return connection?.diagnostics.compatibilityMode || false;
   }
 
-  getDiagnostics(connectionId: string): {
-    connectionId: string;
-    workspaceId: string;
-    protocolVersion: string;
-    isInitialized: boolean;
-    isHandshakeCompleted: boolean;
-    lastActivity: Date;
-    clientInfo: {
-      userAgent?: string;
-      authorization?: string;
-    };
-    diagnostics: {
-      initializeReceived?: Date;
-      initializedReceived?: Date;
-      toolsListRequested?: Date;
-      handshakeCompleted?: Date;
-      compatibilityMode?: boolean;
-      handshakeDuration: number | null;
-      errorCount: number;
-      recentErrors: Array<{
-        timestamp: Date;
-        method: string;
-        error: string;
-      }>;
-    };
-  } | { error: string } {
+  getDiagnostics(connectionId: string):
+    | {
+        connectionId: string;
+        workspaceId: string;
+        protocolVersion: string;
+        isInitialized: boolean;
+        isHandshakeCompleted: boolean;
+        lastActivity: Date;
+        clientInfo: {
+          userAgent?: string;
+          authorization?: string;
+        };
+        diagnostics: {
+          initializeReceived?: Date;
+          initializedReceived?: Date;
+          toolsListRequested?: Date;
+          handshakeCompleted?: Date;
+          compatibilityMode?: boolean;
+          handshakeDuration: number | null;
+          errorCount: number;
+          recentErrors: Array<{
+            timestamp: Date;
+            method: string;
+            error: string;
+          }>;
+        };
+      }
+    | { error: string } {
     const connection = this.connections.get(connectionId);
 
     if (!connection) {
@@ -275,7 +277,8 @@ export class McpConnectionManagerService {
       activeConnections: connections.filter(
         (c) => now - c.lastActivity.getTime() < 5 * 60 * 1000,
       ).length,
-      handshakeCompleted: connections.filter((c) => c.isHandshakeCompleted).length,
+      handshakeCompleted: connections.filter((c) => c.isHandshakeCompleted)
+        .length,
       compatibilityModeActive: connections.filter(
         (c) => c.diagnostics.compatibilityMode,
       ).length,
