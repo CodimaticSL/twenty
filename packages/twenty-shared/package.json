@@ -48,6 +48,11 @@
       "import": "./dist/constants.mjs",
       "require": "./dist/constants.cjs"
     },
+    "./metadata": {
+      "types": "./dist/metadata/index.d.ts",
+      "import": "./dist/metadata.mjs",
+      "require": "./dist/metadata.cjs"
+    },
     "./testing": {
       "types": "./dist/testing/index.d.ts",
       "import": "./dist/testing.mjs",
@@ -83,6 +88,7 @@
     "dist",
     "ai",
     "constants",
+    "metadata",
     "testing",
     "translations",
     "types",
@@ -97,6 +103,9 @@
       ],
       "constants": [
         "dist/constants/index.d.ts"
+      ],
+      "metadata": [
+        "dist/metadata/index.d.ts"
       ],
       "testing": [
         "dist/testing/index.d.ts"

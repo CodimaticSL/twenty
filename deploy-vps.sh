@@ -21,7 +21,11 @@ git fetch origin
 git checkout NodiaFlow
 git pull origin NodiaFlow
 
-# 3. Construir imagen
+# 3. Instalar dependencias (necesario para builds locales)
+echo "📦 Instalando dependencias..."
+yarn install --frozen-lockfile
+
+# 4. Construir imagen
 echo "🔨 Construyendo imagen Docker..."
 docker build -t twenty-custom:$VERSION \
   --build-arg APP_VERSION=$VERSION \
