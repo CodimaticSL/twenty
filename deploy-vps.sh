@@ -25,7 +25,7 @@ git pull origin NodiaFlow
 echo "🔨 Construyendo imagen Docker..."
 docker build -t twenty-custom:$VERSION \
   --build-arg APP_VERSION=$VERSION \
-  -f packages/twenty-docker/Dockerfile .
+  -f packages/twenty-docker/twenty/Dockerfile .
 
 # 4. Actualizar configuración
 echo "⚙️ Actualizando configuración..."
