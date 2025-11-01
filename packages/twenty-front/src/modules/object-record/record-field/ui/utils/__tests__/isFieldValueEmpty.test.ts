@@ -1,10 +1,11 @@
 import {
-    booleanFieldDefinition,
-    fieldMetadataId,
-    fullNameFieldDefinition,
-    linksFieldDefinition,
-    relationFieldDefinition,
-    selectFieldDefinition,
+  booleanFieldDefinition,
+  fieldMetadataId,
+  fullNameFieldDefinition,
+  linksFieldDefinition,
+  morphRelationFieldDefinition,
+  relationFieldDefinition,
+  selectFieldDefinition,
 } from '@/object-record/record-field/ui/__mocks__/fieldDefinitions';
 import { type FieldDefinition } from '@/object-record/record-field/ui/types/FieldDefinition';
 import { type FieldCurrencyMetadata } from '@/object-record/record-field/ui/types/FieldMetadata';
@@ -139,8 +140,8 @@ describe('isFieldValueEmpty', () => {
       isFieldValueEmpty({
         fieldDefinition: linksFieldDefinition,
         fieldValue: {
-          primaryLinkUrl: 'https://www.nodiaflow.com',
-          primaryLinkLabel: 'NodiaFlow Website',
+          primaryLinkUrl: 'https://www.twenty.com',
+          primaryLinkLabel: 'Twenty Website',
           secondaryLinks: [],
         },
       }),
@@ -154,7 +155,7 @@ describe('isFieldValueEmpty', () => {
           primaryLinkUrl: null,
           primaryLinkLabel: null,
           secondaryLinks: [
-            { url: 'https://docs.nodiaflow.com', label: 'Documentation' },
+            { url: 'https://docs.twenty.com', label: 'Documentation' },
           ],
         },
       }),
@@ -168,7 +169,7 @@ describe('isFieldValueEmpty', () => {
           primaryLinkUrl: 'lydia,com',
           primaryLinkLabel: 'Invalid URL',
           secondaryLinks: [
-            { url: 'https://docs.nodiaflow.com', label: 'Documentation' },
+            { url: 'https://docs.twenty.com', label: 'Documentation' },
           ],
         },
       }),
@@ -179,8 +180,8 @@ describe('isFieldValueEmpty', () => {
       isFieldValueEmpty({
         fieldDefinition: linksFieldDefinition,
         fieldValue: {
-          primaryLinkUrl: 'https://www.nodiaflow.com',
-          primaryLinkLabel: 'NodiaFlow Website',
+          primaryLinkUrl: 'https://www.twenty.com',
+          primaryLinkLabel: 'Twenty Website',
           secondaryLinks: [{ url: 'wikipedia', label: 'Invalid URL' }],
         },
       }),
@@ -207,9 +208,30 @@ describe('isFieldValueEmpty', () => {
           primaryLinkLabel: null,
           secondaryLinks: [
             { url: 'wikipedia', label: 'Invalid URL' },
-            { url: 'https://docs.nodiaflow.com', label: 'Documentation' },
+            { url: 'https://docs.twenty.com', label: 'Documentation' },
           ],
         },
+      }),
+    ).toBe(false);
+  });
+
+  it('should return correct value for morph relation field', () => {
+    expect(
+      isFieldValueEmpty({
+        fieldDefinition: morphRelationFieldDefinition,
+        fieldValue: null,
+      }),
+    ).toBe(true);
+    expect(
+      isFieldValueEmpty({
+        fieldDefinition: morphRelationFieldDefinition,
+        fieldValue: [{ value: null }, { value: [] }],
+      }),
+    ).toBe(true);
+    expect(
+      isFieldValueEmpty({
+        fieldDefinition: morphRelationFieldDefinition,
+        fieldValue: [{ value: [{ id: '123' }] }],
       }),
     ).toBe(false);
   });
