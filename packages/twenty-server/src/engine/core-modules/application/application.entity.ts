@@ -1,3 +1,5 @@
+import { ObjectType } from '@nestjs/graphql';
+
 import {
   Column,
   CreateDateColumn,
@@ -7,20 +9,19 @@ import {
   JoinColumn,
   ManyToOne,
   OneToMany,
-  OneToOne,
   PrimaryGeneratedColumn,
   Relation,
   UpdateDateColumn,
 } from 'typeorm';
 
-import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
+import { ApplicationVariableEntity } from 'src/engine/core-modules/applicationVariable/application-variable.entity';
+import { WorkspaceEntity } from 'src/engine/core-modules/workspace/workspace.entity';
 import { AgentEntity } from 'src/engine/metadata-modules/agent/agent.entity';
 import { ObjectMetadataEntity } from 'src/engine/metadata-modules/object-metadata/object-metadata.entity';
-import { ServerlessFunctionLayerEntity } from 'src/engine/metadata-modules/serverless-function-layer/serverless-function-layer.entity';
 import { ServerlessFunctionEntity } from 'src/engine/metadata-modules/serverless-function/serverless-function.entity';
-import { ApplicationVariable } from 'src/engine/core-modules/applicationVariable/application-variable.entity';
 
 @Entity({ name: 'application', schema: 'core' })
+@ObjectType('Application')
 @Index('IDX_APPLICATION_WORKSPACE_ID', ['workspaceId'])
 @Index(
   'IDX_APPLICATION_UNIVERSAL_IDENTIFIER_WORKSPACE_ID_UNIQUE',
@@ -58,15 +59,11 @@ export class ApplicationEntity {
   @Column({ nullable: false, type: 'uuid' })
   serverlessFunctionLayerId: string;
 
-  @OneToOne(
-    () => ServerlessFunctionLayerEntity,
-    (serverlessFunctionLayer) => serverlessFunctionLayer.application,
-    {
-      onDelete: 'CASCADE',
-    },
-  )
-  @JoinColumn({ name: 'serverlessFunctionLayerId' })
-  serverlessFunctionLayer: Relation<ServerlessFunctionLayerEntity>;
+  @ManyToOne(() => WorkspaceEntity, {
+    onDelete: 'CASCADE',
+  })
+  @JoinColumn({ name: 'workspaceId' })
+  workspace: Relation<WorkspaceEntity>;
 
   @OneToMany(() => AgentEntity, (agent) => agent.application, {
     onDelete: 'CASCADE',
@@ -88,19 +85,13 @@ export class ApplicationEntity {
   objects: Relation<ObjectMetadataEntity[]>;
 
   @OneToMany(
-    () => ApplicationVariable,
+    () => ApplicationVariableEntity,
     (applicationVariable) => applicationVariable.application,
     {
       onDelete: 'CASCADE',
     },
   )
-  applicationVariables: Relation<ApplicationVariable[]>;
-
-  @ManyToOne(() => Workspace, {
-    onDelete: 'CASCADE',
-  })
-  @JoinColumn({ name: 'workspaceId' })
-  workspace: Relation<Workspace>;
+  applicationVariables: Relation<ApplicationVariableEntity[]>;
 
   @CreateDateColumn({ type: 'timestamptz' })
   createdAt: Date;

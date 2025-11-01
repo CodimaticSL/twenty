@@ -15,7 +15,7 @@ import {
 import { RestApiExceptionFilter } from 'src/engine/api/rest/rest-api-exception.filter';
 import { JsonRpc } from 'src/engine/core-modules/ai/dtos/json-rpc';
 import { McpService } from 'src/engine/core-modules/ai/services/mcp.service';
-import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
+import { WorkspaceEntity } from 'src/engine/core-modules/workspace/workspace.entity';
 import { AuthApiKey } from 'src/engine/decorators/auth/auth-api-key.decorator';
 import { AuthUserWorkspaceId } from 'src/engine/decorators/auth/auth-user-workspace-id.decorator';
 import { AuthWorkspace } from 'src/engine/decorators/auth/auth-workspace.decorator';
@@ -39,7 +39,7 @@ export class McpController {
   )
   async handleMcpCore(
     @Body() body: JsonRpc,
-    @AuthWorkspace() workspace: Workspace,
+    @AuthWorkspace() workspace: WorkspaceEntity,
     @AuthApiKey() apiKey: string | undefined,
     @AuthUserWorkspaceId() userWorkspaceId: string | undefined,
     @Headers() headers: Record<string, string>,
@@ -57,20 +57,16 @@ export class McpController {
     // Eliminamos completamente la validación del Accept header
     // para máxima compatibilidad con Kilo Code y otros clientes MCP
 
-    try {
-      const result = await this.mcpService.handleMCPCoreQuery(
-        body,
-        {
-          workspace,
-          userWorkspaceId,
-          apiKey,
-        },
-        headers,
-      );
+    const result = await this.mcpService.handleMCPCoreQuery(
+      body,
+      {
+        workspace,
+        userWorkspaceId,
+        apiKey,
+      },
+      headers,
+    );
 
-      return result;
-    } catch (error) {
-      throw error;
-    }
+    return result;
   }
 }

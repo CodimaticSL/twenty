@@ -11,8 +11,8 @@ import { SearchArgs } from 'src/engine/core-modules/search/dtos/search-args';
 import { SearchResultConnectionDTO } from 'src/engine/core-modules/search/dtos/search-result-connection.dto';
 import { SearchApiExceptionFilter } from 'src/engine/core-modules/search/filters/search-api-exception.filter';
 import { SearchService } from 'src/engine/core-modules/search/services/search.service';
-import { User } from 'src/engine/core-modules/user/user.entity';
-import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
+import { UserEntity } from 'src/engine/core-modules/user/user.entity';
+import { WorkspaceEntity } from 'src/engine/core-modules/workspace/workspace.entity';
 import { AuthUser } from 'src/engine/decorators/auth/auth-user.decorator';
 import { AuthUserWorkspaceId } from 'src/engine/decorators/auth/auth-user-workspace-id.decorator';
 import { AuthWorkspace } from 'src/engine/decorators/auth/auth-workspace.decorator';
@@ -36,8 +36,8 @@ export class SearchResolver {
   @Query(() => SearchResultConnectionDTO)
   @UseGuards(WorkspaceAuthGuard)
   async search(
-    @AuthWorkspace() workspace: Workspace,
-    @AuthUser({ allowUndefined: true }) user: User | undefined,
+    @AuthWorkspace() workspace: WorkspaceEntity,
+    @AuthUser({ allowUndefined: true }) user: UserEntity | undefined,
     @AuthUserWorkspaceId() userWorkspaceId: string | undefined,
     @Args()
     {

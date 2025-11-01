@@ -17,7 +17,7 @@ export type { ConfigVariableValue } from './ConfigVariableValue';
 export { ConnectedAccountProvider } from './ConnectedAccountProvider';
 export type { EnumFieldMetadataType } from './EnumFieldMetadataType';
 export type { ExcludeFunctions } from './ExcludeFunctions';
-export type { ExtractPropertiesThatEndsWithId } from './extract-properties-that-ends-with-id';
+export type { ExtractPropertiesThatEndsWithId } from './ExtractPropertiesThatEndsWithId';
 export type { FieldMetadataMultiItemSettings } from './FieldMetadataMultiItemSettings';
 export { FieldMetadataType } from './FieldMetadataType';
 export type { FieldRatingValue } from './FieldRatingValue';
@@ -34,7 +34,6 @@ export type { NonNullableRequired } from './NonNullableRequired';
 export type { Nullable } from './Nullable';
 export type { NullablePartial } from './NullablePartial';
 export type { ObjectPermissions } from './ObjectPermissions';
-export type { ObjectPermissionsDeprecated } from './ObjectPermissionsDeprecated';
 export type { ObjectRecord } from './ObjectRecord';
 export type {
   AggregateOrderByWithGroupByField,
@@ -47,8 +46,6 @@ export { OrderByDirection } from './ObjectRecordGroupBy';
 export { ObjectRecordGroupByDateGranularity } from './ObjectRecordGroupByDateGranularity';
 export type { ObjectsPermissions } from './ObjectsPermissions';
 export type { ObjectsPermissionsByRoleId } from './ObjectsPermissionsByRoleId';
-export type { ObjectsPermissionsByRoleIdDeprecated } from './ObjectsPermissionsByRoleIdDeprecated';
-export type { ObjectsPermissionsDeprecated } from './ObjectsPermissionsDeprecated';
 export type { PartialFieldMetadataItem } from './PartialFieldMetadataItem';
 export type { PartialFieldMetadataItemOption } from './PartialFieldMetadataOption';
 export { RecordFilterGroupLogicalOperator } from './RecordFilterGroupLogicalOperator';

@@ -11,7 +11,7 @@ import { McpService } from 'src/engine/core-modules/ai/services/mcp.service';
 import { McpConnectionManagerService } from 'src/engine/core-modules/ai/services/mcp-connection-manager.service';
 import { ToolService } from 'src/engine/core-modules/ai/services/tool.service';
 import { FeatureFlagService } from 'src/engine/core-modules/feature-flag/services/feature-flag.service';
-import { type Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
+import { type WorkspaceEntity } from 'src/engine/core-modules/workspace/workspace.entity';
 import { ADMIN_ROLE_LABEL } from 'src/engine/metadata-modules/permissions/constants/admin-role-label.constants';
 import { RoleEntity } from 'src/engine/metadata-modules/role/role.entity';
 import { UserRoleService } from 'src/engine/metadata-modules/user-role/user-role.service';
@@ -22,7 +22,7 @@ describe('McpService', () => {
   let toolService: jest.Mocked<ToolService>;
   let userRoleService: jest.Mocked<UserRoleService>;
 
-  const mockWorkspace = { id: 'workspace-1' } as Workspace;
+  const mockWorkspace = { id: 'workspace-1' } as WorkspaceEntity;
   const mockUserWorkspaceId = 'user-workspace-1';
   const mockRoleId = 'role-1';
   const mockAdminRoleId = 'admin-role-1';
@@ -273,7 +273,7 @@ describe('McpService', () => {
       });
 
       expect(toolService.listTools).toHaveBeenCalledWith(
-        mockAdminRoleId,
+        { unionOf: [mockAdminRoleId] },
         mockWorkspace.id,
       );
       expect(mockTool.execute).toHaveBeenCalledWith(

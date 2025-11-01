@@ -10,7 +10,7 @@ import { McpConnectionManagerService } from 'src/engine/core-modules/ai/services
 import { ToolService } from 'src/engine/core-modules/ai/services/tool.service';
 import { wrapJsonRpcResponse } from 'src/engine/core-modules/ai/utils/wrap-jsonrpc-response.util';
 import { FeatureFlagService } from 'src/engine/core-modules/feature-flag/services/feature-flag.service';
-import { type Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
+import { WorkspaceEntity } from 'src/engine/core-modules/workspace/workspace.entity';
 import { RoleEntity } from 'src/engine/metadata-modules/role/role.entity';
 import { UserRoleService } from 'src/engine/metadata-modules/user-role/user-role.service';
 import { ADMIN_ROLE } from 'src/engine/workspace-manager/workspace-sync-metadata/standard-roles/roles/admin-role';
@@ -31,7 +31,10 @@ export class McpService {
     roleId: string,
     workspaceId: string,
   ) {
-    const toolSet = await this.toolService.listTools(roleId, workspaceId);
+    const toolSet = await this.toolService.listTools(
+      { unionOf: [roleId] },
+      workspaceId,
+    );
 
     // Validar que toolSet no sea null/undefined antes de procesarlo
     if (!toolSet || typeof toolSet !== 'object') {
@@ -120,7 +123,7 @@ export class McpService {
       workspace,
       userWorkspaceId,
       apiKey,
-    }: { workspace: Workspace; userWorkspaceId?: string; apiKey?: string },
+    }: { workspace: WorkspaceEntity; userWorkspaceId?: string; apiKey?: string },
     headers?: Record<string, string>,
   ): Promise<Record<string, unknown>> {
     // Obtener o crear conexión para seguimiento
@@ -181,7 +184,10 @@ export class McpService {
       const useCompatibilityMode =
         this.connectionManager.shouldUseCompatibilityMode(connection.id);
 
-      const toolSet = await this.toolService.listTools(roleId, workspace.id);
+      const toolSet = await this.toolService.listTools(
+        { unionOf: [roleId] },
+        workspace.id,
+      );
 
       if (method === 'tools/call' && params) {
         return await this.handleToolCall(id, toolSet, params, connection.id);

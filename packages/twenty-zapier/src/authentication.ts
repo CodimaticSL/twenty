@@ -1,4 +1,4 @@
-import { Bundle, ZObject } from 'zapier-platform-core';
+import { type Bundle, type ZObject } from 'zapier-platform-core';
 
 import requestDb from './utils/requestDb';
 
@@ -27,11 +27,10 @@ export default {
       computed: false,
       key: 'apiUrl',
       required: false,
-      label: 'Api Url',
+      label: 'Self hosted instance url',
       type: 'string',
       placeholder: 'https://api.nodiaflow.com',
-      helpText:
-        'Set this only if you self-host NodiaFlow. Use the same value as `REACT_APP_SERVER_BASE_URL` in https://docs.nodiaflow.com/start/self-hosting/',
+      helpText: 'Set this only if you self-host NodiaFlow. Use the same value as `REACT_APP_SERVER_BASE_URL` in https://docs.nodiaflow.com/start/self-hosting/',
     },
   ],
   connectionLabel: '{{data.currentWorkspace.displayName}}',

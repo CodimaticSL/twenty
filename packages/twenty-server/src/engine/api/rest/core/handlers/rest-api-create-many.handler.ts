@@ -6,17 +6,17 @@ import {
 
 import isEmpty from 'lodash.isempty';
 import { type ObjectRecord } from 'twenty-shared/types';
-import { isDefined } from 'twenty-shared/utils';
+import { capitalize, isDefined } from 'twenty-shared/utils';
 
 import { RestApiBaseHandler } from 'src/engine/api/rest/core/interfaces/rest-api-base.handler';
 
 import { CommonCreateManyQueryRunnerService } from 'src/engine/api/common/common-query-runners/common-create-many-query-runner/common-create-many-query-runner.service';
+import { CommonQueryNames } from 'src/engine/api/common/types/common-query-args.type';
 import { parseDepthRestRequest } from 'src/engine/api/rest/input-request-parsers/depth-parser-utils/parse-depth-rest-request.util';
 import { parseUpsertRestRequest } from 'src/engine/api/rest/input-request-parsers/upsert-parser-utils/parse-upsert-rest-request.util';
 import { AuthenticatedRequest } from 'src/engine/api/rest/types/authenticated-request';
 import { workspaceQueryRunnerRestApiExceptionHandler } from 'src/engine/api/rest/utils/workspace-query-runner-rest-api-exception-handler.util';
 import { getAllSelectableFields } from 'src/engine/api/utils/get-all-selectable-fields.utils';
-
 @Injectable()
 export class RestApiCreateManyHandler extends RestApiBaseHandler {
   constructor(
@@ -35,19 +35,22 @@ export class RestApiCreateManyHandler extends RestApiBaseHandler {
         objectMetadataMaps,
       } = await this.buildCommonOptions(request);
 
-      const selectedFieldsResult = await this.computeSelectedFields({
+      const selectedFields = await this.computeSelectedFields({
         depth,
         objectMetadataMapItem: objectMetadataItemWithFieldMaps,
         objectMetadataMaps,
         authContext,
       });
 
-      const records = await this.commonCreateManyQueryRunnerService.run({
-        args: { data, selectedFieldsResult, upsert },
-        authContext,
-        objectMetadataMaps,
-        objectMetadataItemWithFieldMaps,
-      });
+      const records = await this.commonCreateManyQueryRunnerService.execute(
+        { data, selectedFields, upsert },
+        {
+          authContext,
+          objectMetadataMaps,
+          objectMetadataItemWithFieldMaps,
+        },
+        CommonQueryNames.CREATE_MANY,
+      );
 
       return this.formatRestResponse(
         records,
@@ -62,7 +65,7 @@ export class RestApiCreateManyHandler extends RestApiBaseHandler {
     records: ObjectRecord[],
     objectNamePlural: string,
   ) {
-    return { data: { [objectNamePlural]: records } };
+    return { data: { [`create${capitalize(objectNamePlural)}`]: records } };
   }
 
   private parseRequestArgs(request: AuthenticatedRequest) {
