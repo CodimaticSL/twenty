@@ -15,14 +15,14 @@ La imagen ya está compilada correctamente con arquitectura AMD64. Ahora sigue e
 
 ```bash
 # 1. Empaquetar la imagen
-docker save twenty-custom:v1.8.2 | gzip > twenty-custom-v1.8.2-amd64.tar.gz
+docker save twenty-custom:v1.8.2 | gzip > twenty-custom-v1.8.2-amd64-01-11-25.tar.gz
 
 # 2. Verificar el tamaño del archivo
 ls -lh twenty-custom-v1.8.2-amd64.tar.gz
 # Debería ser ~500-800MB
 
 # 3. Transferir al VPS (reemplaza con tus datos)
-scp twenty-custom-v1.8.2-amd64.tar.gz usuario@tu-vps-ip:/tmp/
+scp twenty-custom-v1.8.2-amd64-01-11-25.tar.gz root@72.60.214.54:/tmp/
 
 # Ejemplo real:
 # scp twenty-custom-v1.8.2-amd64.tar.gz root@192.168.1.100:/tmp/
@@ -33,7 +33,7 @@ scp twenty-custom-v1.8.2-amd64.tar.gz usuario@tu-vps-ip:/tmp/
 ## **PASO 2: Conectar al VPS**
 
 ```bash
-ssh usuario@tu-vps-ip
+ssh root@72.60.214.54
 ```
 
 ---
@@ -42,13 +42,13 @@ ssh usuario@tu-vps-ip
 
 ```bash
 # 1. Navegar al directorio de Twenty
-cd /opt/twenty  # o la ruta donde tengas docker-compose.yml
+cd twenty  # o la ruta donde tengas docker-compose.yml
 
 # 2. Hacer BACKUP de la base de datos (CRÍTICO)
-docker-compose exec -T db pg_dump -U postgres default > backup-$(date +%Y%m%d-%H%M%S).sql
+docker compose exec -T db pg_dump -U postgres default > backup-$(date +%Y%m%d-%H%M%S).sql
 
 # Si el comando anterior falla (contenedor no corriendo), usa:
-docker-compose exec -T db pg_dump -U twenty twenty > backup-$(date +%Y%m%d-%H%M%S).sql
+docker compose exec -T db pg_dump -U twenty twenty > backup-$(date +%Y%m%d-%H%M%S).sql
 
 # 3. Verificar que el backup se creó
 ls -lh backup-*.sql
@@ -60,7 +60,7 @@ ls -lh backup-*.sql
 
 ```bash
 # 1. Cargar la imagen desde el archivo
-docker load < /tmp/twenty-custom-v1.8.2-amd64.tar.gz
+docker load < /tmp/twenty-custom-v1.8.2-amd64-01-11-25.tar.gz
 
 # Deberías ver:
 # Loaded image: twenty-custom:v1.8.2
