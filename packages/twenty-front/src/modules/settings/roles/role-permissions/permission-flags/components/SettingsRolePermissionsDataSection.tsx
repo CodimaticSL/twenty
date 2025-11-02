@@ -1,12 +1,11 @@
 import { SettingsRolePermissionsSettingsTableHeader } from '@/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsTableHeader';
 import { SettingsRolePermissionsSettingsTableRow } from '@/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsTableRow';
 import { type SettingsRolePermissionsSettingPermission } from '@/settings/roles/role-permissions/permission-flags/types/SettingsRolePermissionsSettingPermission';
+import { settingsDraftRoleFamilyState } from '@/settings/roles/states/settingsDraftRoleFamilyState';
 import styled from '@emotion/styled';
 import { t } from '@lingui/core/macro';
-import {
-  H2Title,
-  IconEye,
-} from 'twenty-ui/display';
+import { useRecoilValue } from 'recoil';
+import { H2Title, IconEye } from 'twenty-ui/display';
 import { Section } from 'twenty-ui/layout';
 import { PermissionFlagType } from '~/generated-metadata/graphql';
 
@@ -28,6 +27,10 @@ export const SettingsRolePermissionsDataSection = ({
   roleId,
   isEditable,
 }: SettingsRolePermissionsDataSectionProps) => {
+  const settingsDraftRole = useRecoilValue(
+    settingsDraftRoleFamilyState(roleId),
+  );
+
   const dataPermissionsConfig: SettingsRolePermissionsSettingPermission[] = [
     {
       key: PermissionFlagType.VIEW_ONLY_OWN_OR_ASSIGNED_RECORDS,

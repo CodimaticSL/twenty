@@ -213,7 +213,6 @@ describe('McpService', () => {
         id: '123',
         jsonrpc: '2.0',
         result: {
-          ...MCP_SERVER_METADATA,
           content: [
             {
               type: 'text',
@@ -261,7 +260,6 @@ describe('McpService', () => {
         id: '123',
         jsonrpc: '2.0',
         result: {
-          ...MCP_SERVER_METADATA,
           content: [
             {
               type: 'text',
@@ -309,11 +307,7 @@ describe('McpService', () => {
       expect(result).toMatchObject({
         id: '123',
         jsonrpc: '2.0',
-        result: expect.objectContaining({
-          ...MCP_SERVER_METADATA,
-          capabilities: {
-            tools: { listChanged: false },
-          },
+        result: {
           tools: [
             {
               name: 'testTool',
@@ -321,7 +315,7 @@ describe('McpService', () => {
               inputSchema: { type: 'object', properties: {} },
             },
           ],
-        }),
+        },
       });
     });
 
@@ -343,7 +337,6 @@ describe('McpService', () => {
         id: '123',
         jsonrpc: '2.0',
         error: {
-          ...MCP_SERVER_METADATA,
           code: HttpStatus.FORBIDDEN,
           message: 'AI feature is not enabled for this workspace',
         },
@@ -371,7 +364,6 @@ describe('McpService', () => {
         id: '123',
         jsonrpc: '2.0',
         error: {
-          ...MCP_SERVER_METADATA,
           code: HttpStatus.NOT_FOUND,
           message: "Tool 'nonExistentTool' not found",
         },

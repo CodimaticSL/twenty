@@ -140,21 +140,6 @@ export class McpService {
         this.connectionManager.recordInitialize(connection.id);
         const result = await this.handleInitialize(id, roleId, workspace.id);
 
-        // Agregar información de diagnóstico a la respuesta
-        if (
-          'result' in result &&
-          result.result &&
-          typeof result.result === 'object'
-        ) {
-          const resultObj = result.result as Record<string, unknown>;
-
-          resultObj.connectionId = connection.id;
-
-          resultObj.diagnostics = this.connectionManager.getDiagnostics(
-            connection.id,
-          );
-        }
-
         return result;
       }
 
@@ -168,10 +153,7 @@ export class McpService {
 
       if (method === 'ping') {
         return wrapJsonRpcResponse(id, {
-          result: {
-            connectionId: connection.id,
-            diagnostics: this.connectionManager.getDiagnostics(connection.id),
-          },
+          result: {},
         });
       }
 
@@ -200,12 +182,7 @@ export class McpService {
       if (method === 'prompts/list') {
         return wrapJsonRpcResponse(id, {
           result: {
-            capabilities: {
-              prompts: { listChanged: false },
-            },
             prompts: [],
-            connectionId: connection.id,
-            compatibilityMode: useCompatibilityMode,
           },
         });
       }
@@ -213,21 +190,13 @@ export class McpService {
       if (method === 'resources/list') {
         return wrapJsonRpcResponse(id, {
           result: {
-            capabilities: {
-              resources: { listChanged: false },
-            },
             resources: [],
-            connectionId: connection.id,
-            compatibilityMode: useCompatibilityMode,
           },
         });
       }
 
       return wrapJsonRpcResponse(id, {
-        result: {
-          connectionId: connection.id,
-          compatibilityMode: useCompatibilityMode,
-        },
+        result: {},
       });
     } catch (error) {
       // Registrar error en diagnóstico
@@ -237,7 +206,6 @@ export class McpService {
         error: {
           code: error.status || HttpStatus.INTERNAL_SERVER_ERROR,
           message: error.message || 'Failed to execute tool',
-          connectionId: connection.id,
         },
       });
     }
@@ -268,7 +236,6 @@ export class McpService {
               },
             ],
             isError: false,
-            connectionId,
           },
         });
       } catch (error) {
@@ -287,7 +254,6 @@ export class McpService {
               },
             ],
             isError: true,
-            connectionId,
           },
         });
       }
@@ -330,20 +296,9 @@ export class McpService {
           };
         });
 
-      const useCompatibilityMode =
-        this.connectionManager.shouldUseCompatibilityMode(connectionId);
-
       return wrapJsonRpcResponse(id, {
         result: {
-          capabilities: {
-            tools: { listChanged: false },
-          },
           tools: toolsArray,
-          resources: [],
-          prompts: [],
-          connectionId,
-          compatibilityMode: useCompatibilityMode,
-          diagnostics: this.connectionManager.getDiagnostics(connectionId),
         },
       });
     } catch {

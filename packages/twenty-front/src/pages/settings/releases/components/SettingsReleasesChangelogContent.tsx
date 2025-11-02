@@ -79,7 +79,7 @@ export const SettingsReleasesChangelogContent = () => {
   const [releases, setReleases] = useState<ReleaseNote[]>([]);
 
   useEffect(() => {
-    fetch('https://nodiaflow.com/api/releases').then(async (res) => {
+    fetch('https://twenty.com/api/releases').then(async (res) => {
       const json = await res.json();
       for (const release of json) {
         release.html = String(

@@ -11,8 +11,8 @@ import { WorkflowStepDecorator } from '~/testing/decorators/WorkflowStepDecorato
 import { WorkspaceDecorator } from '~/testing/decorators/WorkspaceDecorator';
 import { graphqlMocks } from '~/testing/graphqlMocks';
 import {
-    getMockedConnectedAccount,
-    mockedConnectedAccounts,
+  getMockedConnectedAccount,
+  mockedConnectedAccounts,
 } from '~/testing/mock-data/connected-accounts';
 import { getWorkflowNodeIdMock } from '~/testing/mock-data/workflow';
 import { WorkflowEditActionSendEmail } from '../WorkflowEditActionSendEmail';
@@ -26,6 +26,7 @@ const DEFAULT_ACTION: WorkflowSendEmailAction = {
     input: {
       connectedAccountId: '',
       email: '',
+      files: [],
       subject: '',
       body: '',
     },
@@ -50,6 +51,7 @@ const CONFIGURED_ACTION: WorkflowSendEmailAction = {
     input: {
       connectedAccountId: mockedConnectedAccounts[0].accountOwnerId,
       email: 'test@nodiaflow.com',
+      files: [],
       subject: 'Welcome to NodiaFlow!',
       body: 'Dear Tim,\n\nWelcome to NodiaFlow! We are excited to have you on board.\n\nBest regards,\nThe Team',
     },
