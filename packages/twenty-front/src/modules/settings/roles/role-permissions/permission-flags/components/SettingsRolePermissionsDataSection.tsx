@@ -37,6 +37,7 @@ export const SettingsRolePermissionsDataSection = ({
       name: t`View Only Own or Assigned Records`,
       description: t`Can only view records they created or are assigned to`,
       Icon: IconEye,
+      isDataPermission: true,
     },
   ];
 

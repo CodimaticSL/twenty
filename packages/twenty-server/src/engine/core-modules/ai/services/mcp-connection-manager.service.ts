@@ -80,9 +80,6 @@ export class McpConnectionManagerService {
       };
 
       this.connections.set(connectionId, connection);
-      console.log(
-        `MCP Connection Manager: New connection created - ${connectionId}`,
-      );
     } else {
       connection.lastActivity = new Date();
     }
@@ -96,9 +93,6 @@ export class McpConnectionManagerService {
     if (connection) {
       connection.isInitialized = true;
       connection.diagnostics.initializeReceived = new Date();
-      console.log(
-        `MCP Connection Manager: Initialize received - ${connectionId}`,
-      );
 
       // Auto-completar handshake para clientes como Kilo Code
       this.scheduleAutoHandshakeCompletion(connectionId);
@@ -112,9 +106,6 @@ export class McpConnectionManagerService {
       connection.isHandshakeCompleted = true;
       connection.diagnostics.initializedReceived = new Date();
       connection.diagnostics.handshakeCompleted = new Date();
-      console.log(
-        `MCP Connection Manager: Handshake completed - ${connectionId}`,
-      );
     }
   }
 
@@ -127,9 +118,6 @@ export class McpConnectionManagerService {
       // Si el handshake no está completado, activar modo compatibilidad
       if (!connection.isHandshakeCompleted) {
         connection.diagnostics.compatibilityMode = true;
-        console.log(
-          `MCP Connection Manager: Compatibility mode activated - ${connectionId}`,
-        );
       }
     }
   }
@@ -234,9 +222,6 @@ export class McpConnectionManagerService {
         connection.isInitialized &&
         !connection.isHandshakeCompleted
       ) {
-        console.log(
-          `MCP Connection Manager: Auto-completing handshake for ${connectionId}`,
-        );
         this.recordInitialized(connectionId);
       }
     }, 2000);
@@ -253,9 +238,6 @@ export class McpConnectionManagerService {
     }
 
     if (expiredConnections.length > 0) {
-      console.log(
-        `MCP Connection Manager: Cleaning up ${expiredConnections.length} expired connections`,
-      );
       expiredConnections.forEach((id) => this.connections.delete(id));
     }
   }

@@ -64,6 +64,7 @@ export const SettingsRolePermissionsSettingsTableRow = ({
 
   const isAllSettingsOverride =
     !permission.isToolPermission &&
+    !permission.isDataPermission &&
     settingsDraftRole.canUpdateAllSettings === true;
   const isAllToolsOverride =
     permission.isToolPermission && settingsDraftRole.canAccessAllTools === true;
