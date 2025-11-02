@@ -8,6 +8,7 @@ import {
   RecordCrudExceptionCode,
 } from 'src/engine/core-modules/record-crud/exceptions/record-crud.exception';
 import { type CreateRecordParams } from 'src/engine/core-modules/record-crud/types/create-record-params.type';
+import { getSelectedColumnsFromRestrictedFields } from 'src/engine/core-modules/record-crud/utils/get-selected-columns-from-restricted-fields.util';
 import { RecordPositionService } from 'src/engine/core-modules/record-position/services/record-position.service';
 import { RecordInputTransformerService } from 'src/engine/core-modules/record-transformer/services/record-input-transformer.service';
 import { type ToolOutput } from 'src/engine/core-modules/tool/types/tool-output.type';
@@ -28,8 +29,14 @@ export class CreateRecordService {
   ) {}
 
   async execute(params: CreateRecordParams): Promise<ToolOutput> {
-    const { objectName, objectRecord, workspaceId, roleId, apiKeyName, rolePermissionConfig } =
-      params;
+    const {
+      objectName,
+      objectRecord,
+      workspaceId,
+      roleId,
+      apiKeyName,
+      rolePermissionConfig,
+    } = params;
 
     if (!workspaceId) {
       return {
@@ -124,12 +131,22 @@ export class CreateRecordService {
           objectMetadataMapItem: objectMetadataItemWithFieldsMaps,
         });
 
+      const restrictedFields =
+        repository.objectRecordsPermissions?.[
+          objectMetadataItemWithFieldsMaps.id
+        ]?.restrictedFields;
+
+      const selectedColumns = getSelectedColumnsFromRestrictedFields(
+        restrictedFields,
+        objectMetadataItemWithFieldsMaps,
+      );
+
       const recordToInsert = {
         ...transformedObjectRecord,
         ...(hasPositionField && position !== undefined ? { position } : {}),
         ...(hasCreatedByField
           ? {
-              createdBy: {
+              createdBy: params.createdBy ?? {
                 source: roleId
                   ? FieldActorSource.API
                   : FieldActorSource.WORKFLOW,
@@ -139,7 +156,11 @@ export class CreateRecordService {
           : {}),
       };
 
-      const insertResult = await repository.insert(recordToInsert);
+      const insertResult = await repository.insert(
+        recordToInsert,
+        undefined,
+        selectedColumns,
+      );
 
       const [createdRecord] = insertResult.generatedMaps;
 
