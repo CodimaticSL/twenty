@@ -62,28 +62,29 @@ export const useAddNewRecordAndOpenRightDrawer = ({
   return {
     createNewRecordAndOpenRightDrawer: async (searchInput?: string) => {
       const newRecordId = v4();
-      const labelIdentifierType = getLabelIdentifierFieldMetadataItem(
+      const labelIdentifierField = getLabelIdentifierFieldMetadataItem(
         relationObjectMetadataItem,
-      )?.type;
+      );
+      const labelIdentifierType = labelIdentifierField?.type;
+      const labelIdentifierName = labelIdentifierField?.name;
+
       const createRecordPayload: {
         id: string;
-        name:
-          | string
-          | { firstName: string | undefined; lastName: string | undefined };
         [key: string]: any;
-      } =
-        labelIdentifierType === FieldMetadataType.FULL_NAME
-          ? {
-              id: newRecordId,
-              name:
-                searchInput && searchInput.split(' ').length > 1
-                  ? {
-                      firstName: searchInput.split(' ')[0],
-                      lastName: searchInput.split(' ').slice(1).join(' '),
-                    }
-                  : { firstName: searchInput, lastName: '' },
-            }
-          : { id: newRecordId, name: searchInput ?? '' };
+      } = { id: newRecordId };
+
+      // Use the actual label identifier field name instead of hardcoded 'name'
+      if (labelIdentifierType === FieldMetadataType.FULL_NAME) {
+        createRecordPayload[labelIdentifierName!] =
+          searchInput && searchInput.split(' ').length > 1
+            ? {
+                firstName: searchInput.split(' ')[0],
+                lastName: searchInput.split(' ').slice(1).join(' '),
+              }
+            : { firstName: searchInput, lastName: '' };
+      } else {
+        createRecordPayload[labelIdentifierName!] = searchInput ?? '';
+      }
 
       if (relationFieldMetadataItemRelationType === RelationType.MANY_TO_ONE) {
         const gqlField =

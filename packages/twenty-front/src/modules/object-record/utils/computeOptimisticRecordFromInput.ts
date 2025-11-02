@@ -59,10 +59,22 @@ export const computeOptimisticRecordFromInput = ({
           });
         });
 
+      // Check if this is a foreign key field for a self-referencing relation
+      const isSelfReferencingForeignKey =
+        recordKey.endsWith('Id') &&
+        objectMetadataItem.fields.some((field) => {
+          if (field.type !== FieldMetadataType.RELATION) return false;
+          const foreignKeyName = getForeignKeyNameFromRelationFieldName(
+            field.name,
+          );
+          return foreignKeyName === recordKey;
+        });
+
       const isUnknownField =
         !isDefined(correspondingFieldMetadataItem) &&
         !isDefined(potentialRelationJoinColumnNameFieldMetadataItem) &&
-        !isDefined(potentialMorphRelationJoinColumnNameFieldMetadataItem);
+        !isDefined(potentialMorphRelationJoinColumnNameFieldMetadataItem) &&
+        !isSelfReferencingForeignKey;
 
       const isTypenameField = recordKey === GRAPHQL_TYPENAME_KEY;
       return isUnknownField && !isTypenameField;
