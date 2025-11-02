@@ -3008,15 +3008,15 @@ msgstr "網域必須小於 256 個字符，不能包含空格，也不能包含�
 msgid "Don’t auto-create contacts."
 msgstr "不要自動創建聯繫人。"
 
-#. js-lingui-id: cx0Ws8
+#. js-lingui-id: Emrbzc
 #: src/modules/settings/accounts/components/SettingsAccountsMessageChannelDetails.tsx
-msgid "Don’t create contacts from/to Gmail, Outlook emails"
-msgstr "不要從/向 Gmail、Outlook 電子郵件創建聯繫人"
+msgid "Don't create contacts from/to Gmail, Outlook emails"
+msgstr ""
 
-#. js-lingui-id: 3qDEYI
+#. js-lingui-id: yjhBSV
 #: src/modules/settings/accounts/components/SettingsAccountsMessageChannelDetails.tsx
-msgid "Don’t sync emails from team@ support@ noreply@..."
-msgstr "不要從 team@ support@ noreply@... 同步電子郵件……"
+msgid "Don't sync emails from team@ support@ noreply@..."
+msgstr ""
 
 #. js-lingui-id: bd+DPX
 #: src/modules/settings/experience/components/NumberFormatSelect.tsx
@@ -3987,6 +3987,11 @@ msgstr "第五"
 #: src/modules/object-record/record-merge/utils/getPositionWordLabel.ts
 msgid "Fifth"
 msgstr "第五"
+
+#. js-lingui-id: sWmIx3
+#: src/modules/advanced-text-editor/hooks/useUploadWorkflowFile.ts
+msgid "File \"{fileName}\" exceeds {maxUploadSize}"
+msgstr ""
 
 #. js-lingui-id: o7J4JM
 #: src/modules/views/components/ViewBarFilterDropdownFieldSelectMenu.tsx
