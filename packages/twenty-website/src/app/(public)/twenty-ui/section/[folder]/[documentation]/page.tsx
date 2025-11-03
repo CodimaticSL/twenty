@@ -15,7 +15,7 @@ export async function generateMetadata(
   const formattedSlug = formatSlug(documentation);
   const mainPost = await fetchArticleFromSlug(documentation, basePath);
   return {
-    title: 'Twenty - ' + formattedSlug,
+    title: 'NodiaFlow - ' + formattedSlug,
     description: mainPost?.itemInfo?.info,
   };
 }

@@ -1493,10 +1493,10 @@ msgstr "兩者"
 msgid "Brief explanation of this output field"
 msgstr "這個輸出欄位的簡要說明"
 
-#. js-lingui-id: 8Pfllj
+#. js-lingui-id: cyMMx1
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "使用 Twenty 即表示您同意"
+msgid "By using NodiaFlow, you agree to the"
+msgstr "使用 NodiaFlow 即表示您同意"
 
 #. js-lingui-id: PmmvzS
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterValue.tsx
@@ -1577,6 +1577,11 @@ msgstr "日曆檢視"
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Calendars"
 msgstr "日曆"
+
+#. js-lingui-id: /cNW5J
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
+msgid "Can only view records they created or are assigned to"
+msgstr "只能查看他們建立或被指派的記錄"
 
 #. js-lingui-id: msssZq
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectAboutForm.tsx
@@ -1746,10 +1751,10 @@ msgstr "檢查驗證"
 msgid "Check your Emails"
 msgstr "檢查您的電子郵件"
 
-#. js-lingui-id: SxwQE8
+#. js-lingui-id: 9PsNUh
 #: src/modules/billing/hooks/useHandleCheckoutSession.ts
-msgid "Checkout session error. Please retry or contact Twenty team"
-msgstr "結賬會話錯誤。請重試或聯繫 Twenty 團隊"
+msgid "Checkout session error. Please retry or contact NodiaFlow team"
+msgstr "結賬會話錯誤。請重試或聯繫 NodiaFlow 團隊"
 
 #. js-lingui-id: SviKkE
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
@@ -2517,6 +2522,7 @@ msgid "Dark"
 msgstr "深色模式"
 
 #. js-lingui-id: HKH+W+
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
 #: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectAction.tsx
 msgid "Data"
 msgstr "數據"
@@ -2561,6 +2567,11 @@ msgstr "數據模型 - 設定"
 #: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
 msgid "Data on display"
 msgstr "顯示的數據"
+
+#. js-lingui-id: ZsYYw/
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
+msgid "Data permissions"
+msgstr "數據權限"
 
 #. js-lingui-id: r+cVRP
 #: src/pages/settings/data-model/SettingsObjectFieldTable.tsx
@@ -3170,8 +3181,8 @@ msgstr "編輯代理"
 
 #. js-lingui-id: X8x8v5
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid "Edit Connection"
-msgstr "編輯連接"
+#~ msgid "Edit Connection"
+#~ msgstr "編輯連接"
 
 #. js-lingui-id: 6vZ75d
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
@@ -3226,8 +3237,8 @@ msgstr "編輯所有物件的記錄"
 
 #. js-lingui-id: vjOt/P
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid "Edit the information to connect your database"
-msgstr "編輯資料庫連接資訊"
+#~ msgid "Edit the information to connect your database"
+#~ msgstr "編輯資料庫連接資訊"
 
 #. js-lingui-id: 6o1M/Q
 #: src/pages/settings/domains/SettingsDomains.tsx
@@ -3601,9 +3612,9 @@ msgstr "取消計量層級切換時出現錯誤。"
 msgid "Error while cancelling plan switching."
 msgstr "取消方案切換時出現錯誤。"
 
-#. js-lingui-id: QmR+2U
+#. js-lingui-id: IMXj3j
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
+msgid "Error while ending trial period. Please contact NodiaFlow team."
 msgstr "結束試用期時發生錯誤。請聯繫Twenty團隊。"
 
 #. js-lingui-id: QEee5f
@@ -4652,7 +4663,6 @@ msgstr "AI 指示"
 #. js-lingui-id: nbfdhU
 #: src/pages/settings/integrations/SettingsIntegrations.tsx
 #: src/pages/settings/integrations/SettingsIntegrations.tsx
-#: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Integrations"
 msgstr "集成"
@@ -8855,6 +8865,11 @@ msgstr ""
 msgid "View Jobs"
 msgstr "查看工作"
 
+#. js-lingui-id: ORdAdQ
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
+msgid "View Only Own or Assigned Records"
+msgstr "僅查看您自己的或已指派的記錄"
+
 #. js-lingui-id: ecVcAx
 #: src/modules/ai/components/AIChatTab.tsx
 #: src/modules/action-menu/actions/record-agnostic-actions/constants/RecordAgnosticActionsConfig.tsx
@@ -9195,12 +9210,12 @@ msgstr "您可以根據需要設置 IMAP（接收電子郵件）、SMTP（發送
 
 #. js-lingui-id: aiJY7y
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid ""
-"You cannot edit this connection because it has tracked tables.\n"
-"If you need to make changes, please create a new connection or unsync the tables first."
-msgstr ""
-"您無法編輯此連接，因為它有跟蹤的表格。\n"
-"如果您需要更改，請創建新的連接或先取消同步表格。"
+#~ msgid ""
+#~ "You cannot edit this connection because it has tracked tables.\n"
+#~ "If you need to make changes, please create a new connection or unsync the tables first."
+#~ msgstr ""
+#~ "您無法編輯此連接，因為它有跟蹤的表格。\n"
+#~ "如果您需要更改，請創建新的連接或先取消同步表格。"
 
 #. js-lingui-id: eqUj2Z
 #: src/modules/page-layout/widgets/components/PageLayoutWidgetForbiddenDisplay.tsx

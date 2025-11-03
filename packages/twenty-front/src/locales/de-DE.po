@@ -1493,10 +1493,10 @@ msgstr "Beide"
 msgid "Brief explanation of this output field"
 msgstr "Kurze Erklärung dieses Ausgabefeldes"
 
-#. js-lingui-id: 8Pfllj
+#. js-lingui-id: cyMMx1
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "Durch die Nutzung von Twenty stimmen Sie den"
+msgid "By using NodiaFlow, you agree to the"
+msgstr "Durch die Nutzung von NodiaFlow stimmen Sie den"
 
 #. js-lingui-id: PmmvzS
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterValue.tsx
@@ -1577,6 +1577,11 @@ msgstr "Kalenderansicht"
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Calendars"
 msgstr "Kalender"
+
+#. js-lingui-id: /cNW5J
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
+msgid "Can only view records they created or are assigned to"
+msgstr "Kann nur Datensätze anzeigen, die sie erstellt haben oder die ihnen zugewiesen sind"
 
 #. js-lingui-id: msssZq
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectAboutForm.tsx
@@ -1746,10 +1751,10 @@ msgstr "Verifizierung prüfen"
 msgid "Check your Emails"
 msgstr "Überprüfen Sie Ihre E-Mails"
 
-#. js-lingui-id: SxwQE8
+#. js-lingui-id: 9PsNUh
 #: src/modules/billing/hooks/useHandleCheckoutSession.ts
-msgid "Checkout session error. Please retry or contact Twenty team"
-msgstr "Fehler bei der Checkout-Sitzung. Bitte versuchen Sie es erneut oder kontaktieren Sie das Twenty-Team"
+msgid "Checkout session error. Please retry or contact NodiaFlow team"
+msgstr "Fehler bei der Checkout-Sitzung. Bitte versuchen Sie es erneut oder kontaktieren Sie das NodiaFlow-Team"
 
 #. js-lingui-id: SviKkE
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
@@ -2517,6 +2522,7 @@ msgid "Dark"
 msgstr "Dunkel"
 
 #. js-lingui-id: HKH+W+
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
 #: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectAction.tsx
 msgid "Data"
 msgstr "Daten"
@@ -2561,6 +2567,11 @@ msgstr "Datenmodell - Einstellungen"
 #: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
 msgid "Data on display"
 msgstr "Angezeigte Daten"
+
+#. js-lingui-id: ZsYYw/
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
+msgid "Data permissions"
+msgstr "Datengenehmigungen"
 
 #. js-lingui-id: r+cVRP
 #: src/pages/settings/data-model/SettingsObjectFieldTable.tsx
@@ -3170,8 +3181,8 @@ msgstr "Agent bearbeiten"
 
 #. js-lingui-id: X8x8v5
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid "Edit Connection"
-msgstr "Verbindung bearbeiten"
+#~ msgid "Edit Connection"
+#~ msgstr "Verbindung bearbeiten"
 
 #. js-lingui-id: 6vZ75d
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
@@ -3226,8 +3237,8 @@ msgstr "Datensätze auf allen Objekten bearbeiten"
 
 #. js-lingui-id: vjOt/P
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid "Edit the information to connect your database"
-msgstr "Bearbeiten Sie die Informationen, um Ihre Datenbank zu verbinden"
+#~ msgid "Edit the information to connect your database"
+#~ msgstr "Bearbeiten Sie die Informationen, um Ihre Datenbank zu verbinden"
 
 #. js-lingui-id: 6o1M/Q
 #: src/pages/settings/domains/SettingsDomains.tsx
@@ -3601,10 +3612,10 @@ msgstr "Fehler beim Abbrechen des Zählertarifwechsels."
 msgid "Error while cancelling plan switching."
 msgstr "Fehler beim Abbrechen des Tarifwechsels."
 
-#. js-lingui-id: QmR+2U
+#. js-lingui-id: IMXj3j
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
-msgstr "Fehler beim Beenden der Testphase. Bitte kontaktieren Sie das Twenty-Team."
+msgid "Error while ending trial period. Please contact NodiaFlow team."
+msgstr "Fehler beim Beenden der Testphase. Bitte kontaktieren Sie das NodiaFlow-Team."
 
 #. js-lingui-id: QEee5f
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
@@ -4652,7 +4663,6 @@ msgstr "Anweisungen für die KI"
 #. js-lingui-id: nbfdhU
 #: src/pages/settings/integrations/SettingsIntegrations.tsx
 #: src/pages/settings/integrations/SettingsIntegrations.tsx
-#: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Integrations"
 msgstr "Integrationen"
@@ -8855,6 +8865,11 @@ msgstr ""
 msgid "View Jobs"
 msgstr "Aufgaben anzeigen"
 
+#. js-lingui-id: ORdAdQ
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
+msgid "View Only Own or Assigned Records"
+msgstr "Nur eigene oder zugewiesene Datensätze anzeigen"
+
 #. js-lingui-id: ecVcAx
 #: src/modules/ai/components/AIChatTab.tsx
 #: src/modules/action-menu/actions/record-agnostic-actions/constants/RecordAgnosticActionsConfig.tsx
@@ -9195,12 +9210,12 @@ msgstr "Sie können jede Kombination von IMAP (E-Mails empfangen), SMTP (E-Mails
 
 #. js-lingui-id: aiJY7y
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid ""
-"You cannot edit this connection because it has tracked tables.\n"
-"If you need to make changes, please create a new connection or unsync the tables first."
-msgstr ""
-"Sie können diese Verbindung nicht bearbeiten, da sie verfolgte Tabellen enthält.\n"
-"Wenn Sie Änderungen vornehmen müssen, erstellen Sie bitte eine neue Verbindung oder trennen Sie zuerst die Tabellen."
+#~ msgid ""
+#~ "You cannot edit this connection because it has tracked tables.\n"
+#~ "If you need to make changes, please create a new connection or unsync the tables first."
+#~ msgstr ""
+#~ "Sie können diese Verbindung nicht bearbeiten, da sie verfolgte Tabellen enthält.\n"
+#~ "Wenn Sie Änderungen vornehmen müssen, erstellen Sie bitte eine neue Verbindung oder trennen Sie zuerst die Tabellen."
 
 #. js-lingui-id: eqUj2Z
 #: src/modules/page-layout/widgets/components/PageLayoutWidgetForbiddenDisplay.tsx

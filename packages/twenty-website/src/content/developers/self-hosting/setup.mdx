@@ -9,10 +9,10 @@ import OptionTable from '@site/src/theme/OptionTable'
 # Configuration Management
 
 <ArticleWarning>
-**First time installing?** Follow the [Docker Compose installation guide](https://nodiaflow.com/developers/section/self-hosting/docker-compose) to get Twenty running, then return here for configuration.
+**First time installing?** Follow the [Docker Compose installation guide](https://nodiaflow.com/developers/section/self-hosting/docker-compose) to get NodiaFlow running, then return here for configuration.
 </ArticleWarning>
 
-Twenty offers **two configuration modes** to suit different deployment needs:
+NodiaFlow offers **two configuration modes** to suit different deployment needs:
 
 **Admin panel access:** Only users with admin privileges (`canAccessFullAdminPanel: true`) can access the configuration interface.
 
@@ -24,8 +24,8 @@ IS_CONFIG_VARIABLES_IN_DB_ENABLED=true  # default
 
 **Most configuration happens through the UI** after installation:
 
-1. Access your Twenty instance (usually `http://localhost:3000`)
-2. Go to **Settings / Admin Panel / Configuration Variables**  
+1. Access your NodiaFlow instance (usually `http://localhost:3000`)
+2. Go to **Settings / Admin Panel / Configuration Variables**
 3. Configure integrations, email, storage, and more
 4. Changes take effect immediately (within 15 seconds for multi-container deployments)
 
@@ -35,7 +35,7 @@ IS_CONFIG_VARIABLES_IN_DB_ENABLED=true  # default
 
 **What you can configure through the admin panel:**
 - **Authentication** - Google/Microsoft OAuth, password settings
-- **Email** - SMTP settings, templates, verification  
+- **Email** - SMTP settings, templates, verification
 - **Storage** - S3 configuration, local storage paths
 - **Integrations** - Gmail, Google Calendar, Microsoft services
 - **Workflow & Rate Limiting** - Execution limits, API throttling
@@ -44,7 +44,7 @@ IS_CONFIG_VARIABLES_IN_DB_ENABLED=true  # default
 ![Admin Panel Configuration Variables](/images/user-guide/setup/admin-panel-config-variables.png)
 
 <ArticleWarning>
-Each variable is documented with descriptions in your admin panel at **Settings → Admin Panel → Configuration Variables**. 
+Each variable is documented with descriptions in your admin panel at **Settings → Admin Panel → Configuration Variables**.
 Some infrastructure settings like database connections (`PG_DATABASE_URL`), server URLs (`SERVER_URL`), and app secrets (`APP_SECRET`) can only be configured via `.env` file.
 
 [Complete technical reference →](https://github.com/twentyhq/twenty/blob/main/packages/twenty-server/src/engine/core-modules/twenty-config/config-variables.ts)
@@ -82,7 +82,7 @@ IS_CONFIG_VARIABLES_IN_DB_ENABLED=false
    - `https://<your-domain>/auth/google/redirect` (for SSO)
    - `https://<your-domain>/auth/google-apis/get-access-token` (for integrations)
 
-### Configure in Twenty
+### Configure in NodiaFlow
 
 1. Go to **Settings → Admin Panel → Configuration Variables**
 2. Find the **Google Auth** section
@@ -101,7 +101,7 @@ IS_CONFIG_VARIABLES_IN_DB_ENABLED=false
 **Required scopes** (automatically configured):
 [See relevant source code](https://github.com/twentyhq/twenty/blob/main/packages/twenty-server/src/engine/core-modules/auth/utils/get-google-apis-oauth-scopes.ts#L4-L10)
 - `https://www.googleapis.com/auth/calendar.events`
-- `https://www.googleapis.com/auth/gmail.readonly`  
+- `https://www.googleapis.com/auth/gmail.readonly`
 - `https://www.googleapis.com/auth/profile.emails.read`
 
 ### If your app is in test mode
@@ -113,7 +113,7 @@ Under [OAuth consent screen](https://console.cloud.google.com/apis/credentials/c
 ## Microsoft 365 Integration
 
 <ArticleWarning>
-Users must have a [Microsoft 365 Licence](https://admin.microsoft.com/Adminportal/Home) to be able to use the Calendar and Messaging API. They will not be able to sync their account on Twenty without one.
+Users must have a [Microsoft 365 Licence](https://admin.microsoft.com/Adminportal/Home) to be able to use the Calendar and Messaging API. They will not be able to sync their account on NodiaFlow without one.
 </ArticleWarning>
 
 ### Create a project in Microsoft Azure
@@ -141,7 +141,7 @@ You need to add the following redirect URIs to your project:
 - `https://<your-domain>/auth/microsoft/redirect` if you want to use Microsoft SSO
 - `https://<your-domain>/auth/microsoft-apis/get-access-token`
 
-### Configure in Twenty
+### Configure in NodiaFlow
 
 1. Go to **Settings → Admin Panel → Configuration Variables**
 2. Find the **Microsoft Auth** section

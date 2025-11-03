@@ -45,7 +45,7 @@ export class MCPMetadataService {
         prompts: { listChanged: false },
       },
       serverInfo: {
-        name: 'Twenty CRM MCP Metadata Server',
+        name: 'NodiaFlow CRM MCP Metadata Server',
         version: '0.0.1',
       },
       tools: [],

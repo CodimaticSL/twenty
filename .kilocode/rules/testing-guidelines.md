@@ -1,5 +1,5 @@
 ---
-description: Testing guidelines for Twenty CRM
+description: Testing guidelines for NodiaFlow CRM
 alwaysApply: false
 ---
 # Testing Guidelines

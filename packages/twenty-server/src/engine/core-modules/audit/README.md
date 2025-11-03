@@ -1,6 +1,6 @@
 # Analytics Module
 
-This module provides analytics tracking functionality for the Twenty application.
+This module provides analytics tracking functionality for the NodiaFlow application.
 
 ## Usage
 
@@ -30,14 +30,14 @@ export class MyService {
 
     // Track a workspace event
     auditService.insertWorkspaceEvent(CUSTOM_DOMAIN_ACTIVATED_EVENT, {});
-    
+
     // Track an object event
     auditService.createObjectEvent(OBJECT_RECORD_CREATED_EVENT, {
       recordId: 'record-id',
       objectMetadataId: 'object-metadata-id',
       // other properties
     });
-    
+
     // Track a pageview
     auditService.createPageviewEvent('page-name', {
       href: '/path',
@@ -85,7 +85,7 @@ Then update the `events.type.ts` file:
 import { MY_EVENT, MyEventTrackEvent } from '../utils/events/track/my-feature/my-event';
 
 // Add to the union type
-export type TrackEventName = 
+export type TrackEventName =
   | typeof MY_EVENT
   // ... other event names;
 

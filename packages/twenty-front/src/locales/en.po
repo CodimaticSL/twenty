@@ -1488,10 +1488,10 @@ msgstr "Both"
 msgid "Brief explanation of this output field"
 msgstr "Brief explanation of this output field"
 
-#. js-lingui-id: 8Pfllj
+#. js-lingui-id: cyMMx1
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "By using Twenty, you agree to the"
+msgid "By using NodiaFlow, you agree to the"
+msgstr "By using NodiaFlow, you agree to the"
 
 #. js-lingui-id: PmmvzS
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterValue.tsx
@@ -1572,6 +1572,11 @@ msgstr "Calendar View"
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Calendars"
 msgstr "Calendars"
+
+#. js-lingui-id: /cNW5J
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
+msgid "Can only view records they created or are assigned to"
+msgstr "Can only view records they created or are assigned to"
 
 #. js-lingui-id: msssZq
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectAboutForm.tsx
@@ -1741,10 +1746,10 @@ msgstr "Check verification"
 msgid "Check your Emails"
 msgstr "Check your Emails"
 
-#. js-lingui-id: SxwQE8
+#. js-lingui-id: 9PsNUh
 #: src/modules/billing/hooks/useHandleCheckoutSession.ts
-msgid "Checkout session error. Please retry or contact Twenty team"
-msgstr "Checkout session error. Please retry or contact Twenty team"
+msgid "Checkout session error. Please retry or contact NodiaFlow team"
+msgstr "Checkout session error. Please retry or contact NodiaFlow team"
 
 #. js-lingui-id: SviKkE
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
@@ -2512,6 +2517,7 @@ msgid "Dark"
 msgstr "Dark"
 
 #. js-lingui-id: HKH+W+
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
 #: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectAction.tsx
 msgid "Data"
 msgstr "Data"
@@ -2556,6 +2562,11 @@ msgstr "Data model - Settings"
 #: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
 msgid "Data on display"
 msgstr "Data on display"
+
+#. js-lingui-id: ZsYYw/
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
+msgid "Data permissions"
+msgstr "Data permissions"
 
 #. js-lingui-id: r+cVRP
 #: src/pages/settings/data-model/SettingsObjectFieldTable.tsx
@@ -3165,8 +3176,8 @@ msgstr "Edit Agent"
 
 #. js-lingui-id: X8x8v5
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid "Edit Connection"
-msgstr "Edit Connection"
+#~ msgid "Edit Connection"
+#~ msgstr "Edit Connection"
 
 #. js-lingui-id: 6vZ75d
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
@@ -3221,8 +3232,8 @@ msgstr "Edit Records on All Objects"
 
 #. js-lingui-id: vjOt/P
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid "Edit the information to connect your database"
-msgstr "Edit the information to connect your database"
+#~ msgid "Edit the information to connect your database"
+#~ msgstr "Edit the information to connect your database"
 
 #. js-lingui-id: 6o1M/Q
 #: src/pages/settings/domains/SettingsDomains.tsx
@@ -3596,10 +3607,10 @@ msgstr "Error while cancelling metered tier switching."
 msgid "Error while cancelling plan switching."
 msgstr "Error while cancelling plan switching."
 
-#. js-lingui-id: QmR+2U
+#. js-lingui-id: IMXj3j
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
-msgstr "Error while ending trial period. Please contact Twenty team."
+msgid "Error while ending trial period. Please contact NodiaFlow team."
+msgstr "Error while ending trial period. Please contact NodiaFlow team."
 
 #. js-lingui-id: QEee5f
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
@@ -4647,7 +4658,6 @@ msgstr "Instructions for AI"
 #. js-lingui-id: nbfdhU
 #: src/pages/settings/integrations/SettingsIntegrations.tsx
 #: src/pages/settings/integrations/SettingsIntegrations.tsx
-#: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Integrations"
 msgstr "Integrations"
@@ -8850,6 +8860,11 @@ msgstr "view group"
 msgid "View Jobs"
 msgstr "View Jobs"
 
+#. js-lingui-id: ORdAdQ
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
+msgid "View Only Own or Assigned Records"
+msgstr "View Only Own or Assigned Records"
+
 #. js-lingui-id: ecVcAx
 #: src/modules/ai/components/AIChatTab.tsx
 #: src/modules/action-menu/actions/record-agnostic-actions/constants/RecordAgnosticActionsConfig.tsx
@@ -9190,12 +9205,12 @@ msgstr "You can set up any combination of IMAP (receiving emails), SMTP (sending
 
 #. js-lingui-id: aiJY7y
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid ""
-"You cannot edit this connection because it has tracked tables.\n"
-"If you need to make changes, please create a new connection or unsync the tables first."
-msgstr ""
-"You cannot edit this connection because it has tracked tables.\n"
-"If you need to make changes, please create a new connection or unsync the tables first."
+#~ msgid ""
+#~ "You cannot edit this connection because it has tracked tables.\n"
+#~ "If you need to make changes, please create a new connection or unsync the tables first."
+#~ msgstr ""
+#~ "You cannot edit this connection because it has tracked tables.\n"
+#~ "If you need to make changes, please create a new connection or unsync the tables first."
 
 #. js-lingui-id: eqUj2Z
 #: src/modules/page-layout/widgets/components/PageLayoutWidgetForbiddenDisplay.tsx

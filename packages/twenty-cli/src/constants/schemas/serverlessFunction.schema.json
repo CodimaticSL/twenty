@@ -1,13 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-cli/src/constants/schemas/serverlessFunction.schema.json",
-  "title": "Twenty Serverless Function Manifest",
-  "description": "Schema for Twenty AI serverless function configuration files",
+  "title": "NodiaFlow Serverless Function Manifest",
+  "description": "Schema for NodiaFlow AI serverless function configuration files",
   "type": "object",
-  "required": [
-    "universalIdentifier",
-    "name"
-  ],
+  "required": ["universalIdentifier", "name"],
   "properties": {
     "$schema": {
       "type": "string",
@@ -41,7 +38,9 @@
       "description": "Serverless function's triggers",
       "items": {
         "anyOf": [
-          { "$ref": "https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-cli/src/constants/schemas/trigger.schema.json" },
+          {
+            "$ref": "https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-cli/src/constants/schemas/trigger.schema.json"
+          },
           {
             "type": "object",
             "required": ["$ref"],
@@ -58,12 +57,12 @@
       "properties": {
         "src": {
           "type": "object",
-          "description":"Serverless function source folder",
+          "description": "Serverless function source folder",
           "required": ["index.ts"],
           "properties": {
             "index.ts": {
               "type": "string",
-              "description":"Serverless function index.ts file"
+              "description": "Serverless function index.ts file"
             },
             "additionalProperties": true
           }

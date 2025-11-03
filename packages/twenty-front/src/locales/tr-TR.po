@@ -1466,7 +1466,7 @@ msgstr "Engellenmiş Liste"
 #. js-lingui-id: 2yl5lQ
 #: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
 msgid "Book a Call"
-msgstr "\"Twenty\"'yi kullanarak"
+msgstr "\"NodiaFlow\"'yi kullanarak"
 
 #. js-lingui-id: d/yr35
 #: src/pages/onboarding/BookCallDecision.tsx
@@ -1493,10 +1493,10 @@ msgstr "Her ikisi"
 msgid "Brief explanation of this output field"
 msgstr "Bu çıktı alanının kısa açıklaması"
 
-#. js-lingui-id: 8Pfllj
+#. js-lingui-id: cyMMx1
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "Twenty'i kullanarak,"
+msgid "By using NodiaFlow, you agree to the"
+msgstr "NodiaFlow'i kullanarak,"
 
 #. js-lingui-id: PmmvzS
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterValue.tsx
@@ -1577,6 +1577,11 @@ msgstr "Takvim Görünümü"
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Calendars"
 msgstr "Takvimler"
+
+#. js-lingui-id: /cNW5J
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
+msgid "Can only view records they created or are assigned to"
+msgstr "Yalnızca oluşturduğu veya kendisine atanan kayıtları görüntüleyebilir"
 
 #. js-lingui-id: msssZq
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectAboutForm.tsx
@@ -1746,10 +1751,10 @@ msgstr "Doğrulama kontrolü"
 msgid "Check your Emails"
 msgstr "E-postalarınızı kontrol edin"
 
-#. js-lingui-id: SxwQE8
+#. js-lingui-id: 9PsNUh
 #: src/modules/billing/hooks/useHandleCheckoutSession.ts
-msgid "Checkout session error. Please retry or contact Twenty team"
-msgstr "Ödeme oturumu hatası. Lütfen tekrar deneyin veya Twenty ekibi ile iletişime geçin"
+msgid "Checkout session error. Please retry or contact NodiaFlow team"
+msgstr "Ödeme oturumu hatası. Lütfen tekrar deneyin veya NodiaFlow ekibi ile iletişime geçin"
 
 #. js-lingui-id: SviKkE
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
@@ -2517,6 +2522,7 @@ msgid "Dark"
 msgstr "Karanlık"
 
 #. js-lingui-id: HKH+W+
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
 #: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectAction.tsx
 msgid "Data"
 msgstr "Veri"
@@ -2561,6 +2567,11 @@ msgstr "Veri Modeli - Ayarlar"
 #: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
 msgid "Data on display"
 msgstr "Görüntülenen veriler"
+
+#. js-lingui-id: ZsYYw/
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
+msgid "Data permissions"
+msgstr "Veri İzinleri"
 
 #. js-lingui-id: r+cVRP
 #: src/pages/settings/data-model/SettingsObjectFieldTable.tsx
@@ -3170,8 +3181,8 @@ msgstr "Temsilciyi Düzenle"
 
 #. js-lingui-id: X8x8v5
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid "Edit Connection"
-msgstr "Bağlantıyı Düzenle"
+#~ msgid "Edit Connection"
+#~ msgstr "Bağlantıyı Düzenle"
 
 #. js-lingui-id: 6vZ75d
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
@@ -3226,8 +3237,8 @@ msgstr "Tüm Nesnelerdeki Kayıtları Düzenle"
 
 #. js-lingui-id: vjOt/P
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid "Edit the information to connect your database"
-msgstr "Veritabanınıza bağlanmak için bilgileri düzenleyin"
+#~ msgid "Edit the information to connect your database"
+#~ msgstr "Veritabanınıza bağlanmak için bilgileri düzenleyin"
 
 #. js-lingui-id: 6o1M/Q
 #: src/pages/settings/domains/SettingsDomains.tsx
@@ -3601,10 +3612,10 @@ msgstr "Ölçümlü seviye değişikliği iptalinde hata oluştu."
 msgid "Error while cancelling plan switching."
 msgstr "Plan değişikliği iptalinde hata oluştu."
 
-#. js-lingui-id: QmR+2U
+#. js-lingui-id: IMXj3j
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
-msgstr "Deneme süresi sona erdirilirken hata oluştu. Lütfen Twenty ekibiyle iletişime geçin."
+msgid "Error while ending trial period. Please contact NodiaFlow team."
+msgstr "Deneme süresi sona erdirilirken hata oluştu. Lütfen NodiaFlow ekibiyle iletişime geçin."
 
 #. js-lingui-id: QEee5f
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
@@ -4652,7 +4663,6 @@ msgstr "AI için Talimatlar"
 #. js-lingui-id: nbfdhU
 #: src/pages/settings/integrations/SettingsIntegrations.tsx
 #: src/pages/settings/integrations/SettingsIntegrations.tsx
-#: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Integrations"
 msgstr "Entegrasyonlar"
@@ -8855,6 +8865,11 @@ msgstr ""
 msgid "View Jobs"
 msgstr "İşleri Görüntüle"
 
+#. js-lingui-id: ORdAdQ
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
+msgid "View Only Own or Assigned Records"
+msgstr "Yalnızca kendi veya atanmış kayıtları görüntüle"
+
 #. js-lingui-id: ecVcAx
 #: src/modules/ai/components/AIChatTab.tsx
 #: src/modules/action-menu/actions/record-agnostic-actions/constants/RecordAgnosticActionsConfig.tsx
@@ -9195,12 +9210,12 @@ msgstr "IMAP (e-posta alma), SMTP (e-posta gönderme) ve CalDAV (takvim senkroni
 
 #. js-lingui-id: aiJY7y
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid ""
-"You cannot edit this connection because it has tracked tables.\n"
-"If you need to make changes, please create a new connection or unsync the tables first."
-msgstr ""
-"Bağlantıyı düzenleyemezsiniz çünkü izlendiğini tablolara sahiptir.\n"
-"Değişiklik yapmanız gerekiyorsa, lütfen yeni bir bağlantı oluşturun veya önce tabloların eşzamanlılığını kaldırın."
+#~ msgid ""
+#~ "You cannot edit this connection because it has tracked tables.\n"
+#~ "If you need to make changes, please create a new connection or unsync the tables first."
+#~ msgstr ""
+#~ "Bağlantıyı düzenleyemezsiniz çünkü izlendiğini tablolara sahiptir.\n"
+#~ "Değişiklik yapmanız gerekiyorsa, lütfen yeni bir bağlantı oluşturun veya önce tabloların eşzamanlılığını kaldırın."
 
 #. js-lingui-id: eqUj2Z
 #: src/modules/page-layout/widgets/components/PageLayoutWidgetForbiddenDisplay.tsx

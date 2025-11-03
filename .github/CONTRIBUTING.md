@@ -1,15 +1,15 @@
-# Contributing to Twenty
+# Contributing to NodiaFlow
 
-Thanks for considering contributing to Twenty! 
+Thanks for considering contributing to NodiaFlow!
 
-Please make sure to go through the [documentation](https://docs.nodiaflow.com) before. 
+Please make sure to go through the [documentation](https://docs.nodiaflow.com) before.
 
 <br>
 
 
 ## Good first issues
 
-Good first issues are a great way to start contributing and get familiar with the codebase. You can find them on by filtering on the [good first issue](https://github.com/twentyhq/twenty/labels/good%20first%20issue) label. 
+Good first issues are a great way to start contributing and get familiar with the codebase. You can find them on by filtering on the [good first issue](https://github.com/twentyhq/twenty/labels/good%20first%20issue) label.
 
 ## Issue assignment
 
@@ -35,7 +35,7 @@ cd twenty
 git checkout -b your-branch-name
 ```
 
-4. **Make Changes:** Make your desired changes and ensure that your code adheres to Twenty's coding standards.
+4. **Make Changes:** Make your desired changes and ensure that your code adheres to NodiaFlow's coding standards.
 
 
 5. **Test Locally:** Test your changes locally to ensure they work as expected.
@@ -53,7 +53,7 @@ git commit -m "Add your detailed description here"
 git push origin your-branch-name
 ```
 
-8. **Create a Pull Request:** Go to the original Twenty repository and create a pull request. Please provide a detailed description of your changes. Submitting a PR means you agree to the CLA.
+8. **Create a Pull Request:** Go to the original NodiaFlow repository and create a pull request. Please provide a detailed description of your changes. Submitting a PR means you agree to the CLA.
 
 9. **Code Review:** Your pull request will undergo a code review.
 
@@ -63,4 +63,4 @@ git push origin your-branch-name
 
 ## Reporting Issues
 
-If you face any issues or have suggestions, please feel free to (create an issue on Twenty's GitHub repository)[https://github.com/twentyhq/twenty/issues/new]. Please provide as much detail as possible.
+If you face any issues or have suggestions, please feel free to (create an issue on NodiaFlow's GitHub repository)[https://github.com/twentyhq/twenty/issues/new]. Please provide as much detail as possible.

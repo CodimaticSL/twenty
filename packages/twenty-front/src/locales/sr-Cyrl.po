@@ -1493,10 +1493,10 @@ msgstr "Оба"
 msgid "Brief explanation of this output field"
 msgstr "Кратко објашњење овог излазног поља"
 
-#. js-lingui-id: 8Pfllj
+#. js-lingui-id: cyMMx1
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "Коришћењем Twenty, слажете се са"
+msgid "By using NodiaFlow, you agree to the"
+msgstr "Коришћењем NodiaFlow, слажете се са"
 
 #. js-lingui-id: PmmvzS
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterValue.tsx
@@ -1577,6 +1577,11 @@ msgstr "Преглед календара"
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Calendars"
 msgstr "Календари"
+
+#. js-lingui-id: /cNW5J
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
+msgid "Can only view records they created or are assigned to"
+msgstr "Може видети само записе које је направио или му је додељено"
 
 #. js-lingui-id: msssZq
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectAboutForm.tsx
@@ -1746,10 +1751,10 @@ msgstr "Провера верификације"
 msgid "Check your Emails"
 msgstr "Проверите имејл пошту"
 
-#. js-lingui-id: SxwQE8
+#. js-lingui-id: 9PsNUh
 #: src/modules/billing/hooks/useHandleCheckoutSession.ts
-msgid "Checkout session error. Please retry or contact Twenty team"
-msgstr "Грешка у сесији наплате. Молимо да покушате поново или контактирајте Twenty тим"
+msgid "Checkout session error. Please retry or contact NodiaFlow team"
+msgstr "Грешка у сесији наплате. Молимо да покушате поново или контактирајте NodiaFlow тим"
 
 #. js-lingui-id: SviKkE
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
@@ -2517,6 +2522,7 @@ msgid "Dark"
 msgstr "Тамни"
 
 #. js-lingui-id: HKH+W+
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
 #: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectAction.tsx
 msgid "Data"
 msgstr "Подаци"
@@ -2561,6 +2567,11 @@ msgstr "Модел података - Подешавања"
 #: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
 msgid "Data on display"
 msgstr "Приказ података"
+
+#. js-lingui-id: ZsYYw/
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
+msgid "Data permissions"
+msgstr "Дозволе за податке"
 
 #. js-lingui-id: r+cVRP
 #: src/pages/settings/data-model/SettingsObjectFieldTable.tsx
@@ -3170,8 +3181,8 @@ msgstr "Измени агента"
 
 #. js-lingui-id: X8x8v5
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid "Edit Connection"
-msgstr "Уреди повезивање"
+#~ msgid "Edit Connection"
+#~ msgstr "Уреди повезивање"
 
 #. js-lingui-id: 6vZ75d
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
@@ -3226,8 +3237,8 @@ msgstr "Измени записе на свим објектима"
 
 #. js-lingui-id: vjOt/P
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid "Edit the information to connect your database"
-msgstr "Уредите информације за повезивање ваше базе података"
+#~ msgid "Edit the information to connect your database"
+#~ msgstr "Уредите информације за повезивање ваше базе података"
 
 #. js-lingui-id: 6o1M/Q
 #: src/pages/settings/domains/SettingsDomains.tsx
@@ -3601,10 +3612,10 @@ msgstr "Грешка при отказивању промене мерног н�
 msgid "Error while cancelling plan switching."
 msgstr "Грешка при отказивању промене плана."
 
-#. js-lingui-id: QmR+2U
+#. js-lingui-id: IMXj3j
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
-msgstr "Грешка приликом завршетка пробног периода. Молимо вас контактирајте Twenty тим."
+msgid "Error while ending trial period. Please contact NodiaFlow team."
+msgstr "Грешка приликом завршетка пробног периода. Молимо вас контактирајте NodiaFlow тим."
 
 #. js-lingui-id: QEee5f
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
@@ -4652,7 +4663,6 @@ msgstr "Упутства за AI"
 #. js-lingui-id: nbfdhU
 #: src/pages/settings/integrations/SettingsIntegrations.tsx
 #: src/pages/settings/integrations/SettingsIntegrations.tsx
-#: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Integrations"
 msgstr "Интеграције"
@@ -8855,6 +8865,11 @@ msgstr ""
 msgid "View Jobs"
 msgstr "Приказ послова"
 
+#. js-lingui-id: ORdAdQ
+#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsDataSection.tsx
+msgid "View Only Own or Assigned Records"
+msgstr "Приказ само властитих или додељених записа"
+
 #. js-lingui-id: ecVcAx
 #: src/modules/ai/components/AIChatTab.tsx
 #: src/modules/action-menu/actions/record-agnostic-actions/constants/RecordAgnosticActionsConfig.tsx
@@ -9195,12 +9210,12 @@ msgstr "Можете подесити било коју комбинацију �
 
 #. js-lingui-id: aiJY7y
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid ""
-"You cannot edit this connection because it has tracked tables.\n"
-"If you need to make changes, please create a new connection or unsync the tables first."
-msgstr ""
-"Не можете измењивати ову везу јер има праћене табеле.\n"
-"Ако желите да извршите измене, креирајте нову везу или најпре искључите табеле."
+#~ msgid ""
+#~ "You cannot edit this connection because it has tracked tables.\n"
+#~ "If you need to make changes, please create a new connection or unsync the tables first."
+#~ msgstr ""
+#~ "Не можете измењивати ову везу јер има праћене табеле.\n"
+#~ "Ако желите да извршите измене, креирајте нову везу или најпре искључите табеле."
 
 #. js-lingui-id: eqUj2Z
 #: src/modules/page-layout/widgets/components/PageLayoutWidgetForbiddenDisplay.tsx

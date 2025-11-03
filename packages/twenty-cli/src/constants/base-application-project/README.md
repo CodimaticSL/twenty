@@ -7,7 +7,7 @@
 - an `apiKey`. Go to `https://nodiaflow.com/settings/api-webhooks` to generate one
 
 
-## Install to your Twenty workspace
+## Install to your NodiaFlow workspace
 
 ```bash
 twenty auth login

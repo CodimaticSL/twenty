@@ -15,7 +15,7 @@
     "TWENTY_API_KEY": {
       "isSecret": true,
       "value": "",
-      "description": "Twenty api key"
+      "description": "NodiaFlow api key"
     }
   },
   "dependencies": {

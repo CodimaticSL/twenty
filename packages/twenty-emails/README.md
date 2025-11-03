@@ -1,6 +1,6 @@
-# Twenty Emails
+# NodiaFlow Emails
 
-This package contains the email templates used by Twenty.
+This package contains the email templates used by NodiaFlow.
 
 ## Features
 

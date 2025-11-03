@@ -1,6 +1,6 @@
 # README
 DISCLAIMER: The k8s and podman deployments are not maintained by the core team.
-These files are provided and maintained by the community. Twenty core team
+These files are provided and maintained by the community. NodiaFlow core team
 maintains support for docker deployment.
 
 ## Overview

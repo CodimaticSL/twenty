@@ -1,7 +1,7 @@
 # How to deploy twenty on podman
 
 DISCLAIMER: The k8s and podman deployments are not maintained by the core team.
-These files are provided and maintained by the community. Twenty core team
+These files are provided and maintained by the community. NodiaFlow core team
 maintains support for docker deployment.
 
 
@@ -15,7 +15,7 @@ If you need to stop twenty, you can do so by running `podman-compose down`.
 
 ### Install systemd service (optional)
 
-If you want to install a systemd service to run twenty, you can use the provided systemd service. 
+If you want to install a systemd service to run twenty, you can use the provided systemd service.
 
 Edit `twentycrm.service` and change these two variables:
 

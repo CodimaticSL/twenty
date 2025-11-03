@@ -1,6 +1,6 @@
 # twenty-sdk
 
-A lightweight TypeScript SDK for Twenty CRM.
+A lightweight TypeScript SDK for NodiaFlow CRM.
 
 ## Installation
 

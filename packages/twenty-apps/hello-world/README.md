@@ -12,7 +12,7 @@ This example will gradually gain complexity and capabilities as the twenty-cli m
 - an `apiKey`. Go to `/settings/api-webhooks` to generate one
 
 
-## Install to your Twenty workspace
+## Install to your NodiaFlow workspace
 
 ```bash
 cp .env.example .env

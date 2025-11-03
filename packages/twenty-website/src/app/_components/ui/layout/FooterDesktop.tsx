@@ -128,7 +128,7 @@ export const FooterDesktop = () => {
       >
         <div>
           <span style={{ fontFamily: 'Inter, sans-serif' }}>©</span>
-          {new Date().getFullYear()} Twenty PBC
+          {new Date().getFullYear()} NodiaFlow PBC
         </div>
         <div
           style={{

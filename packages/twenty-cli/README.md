@@ -1,6 +1,6 @@
-# Why Twenty CLI?
+# Why NodiaFlow CLI?
 
-A command-line interface to easily scaffold, develop, and publish applications that extend Twenty CRM
+A command-line interface to easily scaffold, develop, and publish applications that extend NodiaFlow CRM
 
 ## Installation
 
@@ -33,7 +33,7 @@ twenty app add trigger
 # Add axios to your application
 yarn add axios
 
-# Start dev mode: automatically syncs changes to your Twenty workspace, so you can test new functions/objects instantly.
+# Start dev mode: automatically syncs changes to your NodiaFlow workspace, so you can test new functions/objects instantly.
 twenty app dev
 
 # Or use one time sync
@@ -82,5 +82,5 @@ Our team reviews contributions for quality, security, and reusability before mer
 
 ## Contributing
 
-- see our [Hacktoberfest 2025 notion page](https://twentycrm.notion.site/Hacktoberfest-27711d8417038037a149d4638a9cc510) 
+- see our [Hacktoberfest 2025 notion page](https://twentycrm.notion.site/Hacktoberfest-27711d8417038037a149d4638a9cc510)
 - our [Discord](https://discord.gg/cx5n4Jzs57)

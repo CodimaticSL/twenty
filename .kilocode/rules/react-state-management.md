@@ -1,5 +1,5 @@
 ---
-description: React state management guidelines for Twenty CRM
+description: React state management guidelines for NodiaFlow CRM
 alwaysApply: false
 ---
 # React State Management
@@ -36,7 +36,7 @@ const [error, setError] = useState<string | null>(null);
 const [data, setData] = useState<User[]>([]);
 
 // ✅ useReducer for complex state logic
-type FormAction = 
+type FormAction =
   | { type: 'SET_FIELD'; field: string; value: string }
   | { type: 'SET_ERRORS'; errors: Record<string, string> }
   | { type: 'RESET' };

@@ -1,5 +1,5 @@
 ---
-description: File structure guidelines for Twenty CRM
+description: File structure guidelines for NodiaFlow CRM
 globs: []
 alwaysApply: true
 ---
@@ -9,7 +9,7 @@ alwaysApply: true
 ```
 packages/twenty-front/src/
 ├── components/      # Reusable UI components
-├── pages/          # Route components  
+├── pages/          # Route components
 ├── modules/        # Feature modules
 ├── hooks/          # Custom hooks
 ├── services/       # API services
@@ -78,7 +78,7 @@ export const UserComponent = ({ user }: UserProps) => {
 
 ## File Size Guidelines
 - **Components**: Under 300 lines
-- **Services**: Under 500 lines  
+- **Services**: Under 500 lines
 - **Extract logic** into hooks/utilities when files grow large
 - **Use composition** over large monolithic components
 

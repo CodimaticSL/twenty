@@ -1,5 +1,5 @@
 ---
-description: React general guidelines for Twenty CRM
+description: React general guidelines for NodiaFlow CRM
 alwaysApply: false
 ---
 # React Guidelines
@@ -14,7 +14,7 @@ alwaysApply: false
 // ✅ Correct
 export const UserProfile = ({ user, onEdit }: UserProfileProps) => {
   const handleEdit = () => onEdit(user.id);
-  
+
   return (
     <StyledContainer>
       <h1>{user.name}</h1>

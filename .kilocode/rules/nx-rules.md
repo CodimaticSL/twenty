@@ -1,5 +1,5 @@
 ---
-description: Guidelines and best practices for working with Nx in the Twenty workspace, including workspace architecture understanding, configuration management, and generator usage.
+description: Guidelines and best practices for working with Nx in the NodiaFlow workspace, including workspace architecture understanding, configuration management, and generator usage.
 globs: ["**/nx.json", "**/project.json", "**/workspace.json"]
 alwaysApply: true
 ---

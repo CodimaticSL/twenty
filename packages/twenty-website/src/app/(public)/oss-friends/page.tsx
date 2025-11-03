@@ -5,9 +5,9 @@ import { ContentContainer } from '@/app/_components/oss-friends/ContentContainer
 import { Header } from '@/app/_components/oss-friends/Header';
 
 export const metadata = {
-  title: 'Twenty - OSS friends',
+  title: 'NodiaFlow - OSS friends',
   description:
-    'At Twenty, we are proud to be part of a global open-source movement. Here are some of our fellow open source friends.',
+    'At NodiaFlow, we are proud to be part of a global open-source movement. Here are some of our fellow open source friends.',
   icons: '/images/core/logo.svg',
 };
 

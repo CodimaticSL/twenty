@@ -1,8 +1,8 @@
-# User Management Scripts for Twenty CRM
+# User Management Scripts for NodiaFlow CRM
 
 ## Overview
 
-These scripts are designed to help manage user accounts in the Twenty CRM system, particularly for troubleshooting user registration issues and completely removing problematic users.
+These scripts are designed to help manage user accounts in the NodiaFlow CRM system, particularly for troubleshooting user registration issues and completely removing problematic users.
 
 ## Script 1: Check User Script
 
@@ -14,7 +14,7 @@ Verifies if a user exists in all possible locations in the database including co
 ```bash
 #!/bin/bash
 
-# Check User Script for Twenty CRM
+# Check User Script for NodiaFlow CRM
 # Usage: ./check-user.sh <email>
 # Example: ./check-user.sh modesto@codimatic.com
 
@@ -45,16 +45,16 @@ UNION ALL
 SELECT 'core.keyValuePair' as location, COUNT(*) as count FROM core.\"keyValuePair\" WHERE \"value\"::text ILIKE '%$EMAIL%'
 UNION ALL
 -- All workspace schemas
-SELECT 'workspace_44jak7mj6zxthd3tozvhwosfr.workspaceMember' as location, COUNT(*) as count 
-FROM workspace_44jak7mj6zxthd3tozvhwosfr.\"workspaceMember\" 
+SELECT 'workspace_44jak7mj6zxthd3tozvhwosfr.workspaceMember' as location, COUNT(*) as count
+FROM workspace_44jak7mj6zxthd3tozvhwosfr.\"workspaceMember\"
 WHERE \"userEmail\" = '$EMAIL'
 UNION ALL
-SELECT 'workspace_2lbgqh9z1g00ok1hazua7di1q.workspaceMember' as location, COUNT(*) as count 
-FROM workspace_2lbgqh9z1g00ok1hazua7di1q.\"workspaceMember\" 
+SELECT 'workspace_2lbgqh9z1g00ok1hazua7di1q.workspaceMember' as location, COUNT(*) as count
+FROM workspace_2lbgqh9z1g00ok1hazua7di1q.\"workspaceMember\"
 WHERE \"userEmail\" = '$EMAIL'
 UNION ALL
-SELECT 'workspace_7j3u8mcs7ct7q3d03qc037cm2.workspaceMember' as location, COUNT(*) as count 
-FROM workspace_7j3u8mcs7ct7q3d03qc037cm2.\"workspaceMember\" 
+SELECT 'workspace_7j3u8mcs7ct7q3d03qc037cm2.workspaceMember' as location, COUNT(*) as count
+FROM workspace_7j3u8mcs7ct7q3d03qc037cm2.\"workspaceMember\"
 WHERE \"userEmail\" = '$EMAIL';
 "
 
@@ -74,7 +74,7 @@ Completely removes a user from all locations in the database including core tabl
 ```bash
 #!/bin/bash
 
-# Delete User Script for Twenty CRM
+# Delete User Script for NodiaFlow CRM
 # Usage: ./delete-user.sh <email>
 # Example: ./delete-user.sh modesto@codimatic.com
 # ⚠️  WARNING: This will permanently delete the user and all related data!
@@ -116,13 +116,13 @@ echo ""
 echo "🗑️  Step 1: Deleting from workspaceMember tables..."
 
 docker exec -it twenty-db-1 psql -U postgres -d default -c "
-DELETE FROM workspace_44jak7mj6zxthd3tozvhwosfr.\"workspaceMember\" 
+DELETE FROM workspace_44jak7mj6zxthd3tozvhwosfr.\"workspaceMember\"
 WHERE \"userEmail\" = '$EMAIL';
 
-DELETE FROM workspace_2lbgqh9z1g00ok1hazua7di1q.\"workspaceMember\" 
+DELETE FROM workspace_2lbgqh9z1g00ok1hazua7di1q.\"workspaceMember\"
 WHERE \"userEmail\" = '$EMAIL';
 
-DELETE FROM workspace_7j3u8mcs7ct7q3d03qc037cm2.\"workspaceMember\" 
+DELETE FROM workspace_7j3u8mcs7ct7q3d03qc037cm2.\"workspaceMember\"
 WHERE \"userEmail\" = '$EMAIL';
 "
 
@@ -183,7 +183,7 @@ Cleans Redis cache related to a specific user without affecting other users.
 ```bash
 #!/bin/bash
 
-# Clean Redis Cache Script for Twenty CRM
+# Clean Redis Cache Script for NodiaFlow CRM
 # Usage: ./clean-redis-cache.sh <email>
 # Example: ./clean-redis-cache.sh modesto@codimatic.com
 

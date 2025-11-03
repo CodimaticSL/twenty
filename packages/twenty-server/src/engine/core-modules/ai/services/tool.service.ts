@@ -45,6 +45,16 @@ export class ToolService {
     // Obtener el nombre de la API Key desde el request (establecido por el middleware)
     const apiKeyName = this.request?.apiKey?.name;
 
+    // Extraer roleId del rolePermissionConfig para pasarlo a CreateRecordService
+    let roleId: string | undefined;
+
+    if (
+      'unionOf' in rolePermissionConfig &&
+      rolePermissionConfig.unionOf.length === 1
+    ) {
+      roleId = rolePermissionConfig.unionOf[0];
+    }
+
     const { data: rolesPermissions } =
       await this.workspacePermissionsCacheService.getRolesPermissionsFromCache({
         workspaceId,
@@ -132,6 +142,7 @@ export class ToolService {
               workspaceId,
               rolePermissionConfig,
               createdBy: actorContext,
+              roleId,
               apiKeyName,
             });
           },

@@ -13,11 +13,11 @@ To restore backup, run `cat databases_backup.sql | docker exec -i <db_container_
 
 If you used Docker Compose, follow these steps:
 
-1. In a terminal, on the host where Twenty is running, turn off Twenty: `docker compose down`
+1. In a terminal, on the host where NodiaFlow is running, turn off NodiaFlow: `docker compose down`
 
 2. Upgrade the version by changing the `TAG` value in the .env file near your docker-compose. ( We recommend consuming `major.minor` version such as `v0.53` )
 
-3. Bring Twenty back online with `docker compose up -d`
+3. Bring NodiaFlow back online with `docker compose up -d`
 
 If you want to upgrade your instance by few versions, e.g. from v0.33.0 to v0.35.0, you have to upgrade your instance sequentially, in this example from v0.33.0 to v0.34.0, then from v0.34.0 to v0.35.0.
 
@@ -27,7 +27,7 @@ If you want to upgrade your instance by few versions, e.g. from v0.33.0 to v0.35
 
 ## v1.0
 
-Hello Twenty v1.0! 🎉
+Hello NodiaFlow v1.0! 🎉
 
 ## v0.60
 
@@ -44,7 +44,7 @@ yarn command:prod cache:flush
 
 ### v0.55
 
-Upgrade your Twenty instance to use v0.55 image
+Upgrade your NodiaFlow instance to use v0.55 image
 
 You don't need to run any command anymore, the new image will automatically care about running all required migrations.
 
@@ -58,7 +58,7 @@ In your `twenty-server` container, run:
 yarn command:prod cache:flush
 ```
 
-This issue is specific to this Twenty version and should not be required for future upgrades.
+This issue is specific to this NodiaFlow version and should not be required for future upgrades.
 
 ### v0.54
 
@@ -77,7 +77,7 @@ Make sure to keep upgrading your instance sequentially, without skipping any maj
 
 To check if a workspace has been correctly migrated you can review its version in database in `core.workspace` table.
 
-It should always be in the range of your current Twenty's instance `major.minor` version, you can view your instance version in the admin panel (at `/settings/admin-panel`, accessible if your user has `canAccessFullAdminPanel` property set to true in the database) or by running `echo $APP_VERSION` in your `twenty-server` container.
+It should always be in the range of your current NodiaFlow's instance `major.minor` version, you can view your instance version in the admin panel (at `/settings/admin-panel`, accessible if your user has `canAccessFullAdminPanel` property set to true in the database) or by running `echo $APP_VERSION` in your `twenty-server` container.
 
 
 To fix a desynchronized workspace version, you will have to upgrade from the corresponding twenty's version following related upgrade guide sequentially and so on until it reaches desired version.
@@ -88,7 +88,7 @@ We've removed the auditLog standard object, which means your backup size might b
 
 ### v0.51 to v0.52
 
-Upgrade your Twenty instance to use v0.52 image
+Upgrade your NodiaFlow instance to use v0.52 image
 
 ```
 yarn database:migrate:prod
@@ -103,7 +103,7 @@ You will have to manually update your workspace version to `0.51.0` in database 
 
 ### v0.50 to v0.51
 
-Upgrade your Twenty instance to use v0.51 image
+Upgrade your NodiaFlow instance to use v0.51 image
 
 ```
 yarn database:migrate:prod
@@ -112,7 +112,7 @@ yarn command:prod upgrade
 
 ### v0.44.0 to v0.50.0
 
-Upgrade your Twenty instance to use v0.50.0 image
+Upgrade your NodiaFlow instance to use v0.50.0 image
 
 ```
 yarn database:migrate:prod
@@ -126,7 +126,7 @@ Please update your local `docker-compose.yml` with [v0.50.0 docker-compose.yml](
 
 ### v0.43.0 to v0.44.0
 
-Upgrade your Twenty instance to use v0.44.0 image
+Upgrade your NodiaFlow instance to use v0.44.0 image
 
 ```
 yarn database:migrate:prod
@@ -135,7 +135,7 @@ yarn command:prod upgrade
 
 ### v0.42.0 to v0.43.0
 
-Upgrade your Twenty instance to use v0.43.0 image
+Upgrade your NodiaFlow instance to use v0.43.0 image
 
 ```
 yarn database:migrate:prod
@@ -155,7 +155,7 @@ If you want to migrate your database to the new postgres:16 image, please follow
 1. Dump your database from the old postgres-spilo container
 
 ```
-docker exec -it twenty-db-1 sh 
+docker exec -it twenty-db-1 sh
 pg_dump -U {YOUR_POSTGRES_USER} -d {YOUR_POSTGRES_DB} > databases_backup.sql
 exit
 docker cp twenty-db-1:/home/postgres/databases_backup.sql .
@@ -176,7 +176,7 @@ exit
 
 ### v0.41.0 to v0.42.0
 
-Upgrade your Twenty instance to use v0.42.0 image
+Upgrade your NodiaFlow instance to use v0.42.0 image
 
 ```
 yarn database:migrate:prod
@@ -190,7 +190,7 @@ yarn command:prod upgrade-0.42
 
 ### v0.40.0 to v0.41.0
 
-Upgrade your Twenty instance to use v0.41.0 image
+Upgrade your NodiaFlow instance to use v0.41.0 image
 
 ```
 yarn database:migrate:prod
@@ -204,7 +204,7 @@ yarn command:prod upgrade-0.41
 
 ### v0.35.0 to v0.40.0
 
-Upgrade your Twenty instance to use v0.40.0 image
+Upgrade your NodiaFlow instance to use v0.40.0 image
 
 ```
 yarn database:migrate:prod
@@ -217,7 +217,7 @@ yarn command:prod upgrade-0.40
 
 ### v0.34.0 to v0.35.0
 
-Upgrade your Twenty instance to use v0.35.0 image
+Upgrade your NodiaFlow instance to use v0.35.0 image
 
 ```
 yarn database:migrate:prod
@@ -233,7 +233,7 @@ The `yarn command:prod upgrade-0.35` takes care of the data migration of all wor
 
 ### v0.33.0 to v0.34.0
 
-Upgrade your Twenty instance to use v0.34.0 image
+Upgrade your NodiaFlow instance to use v0.34.0 image
 
 ```
 yarn database:migrate:prod
@@ -248,13 +248,13 @@ The `yarn command:prod upgrade-0.34` takes care of the data migration of all wor
 - Removed: `FRONT_BASE_URL`
 - Added: `FRONT_DOMAIN`, `FRONT_PROTOCOL`, `FRONT_PORT`
 
-We have updated the way we handle the frontend URL. 
+We have updated the way we handle the frontend URL.
 You can now set the frontend URL using the `FRONT_DOMAIN`, `FRONT_PROTOCOL` and `FRONT_PORT` variables.
 If FRONT_DOMAIN is not set, the frontend URL will fall back to `SERVER_URL`.
 
 ### v0.32.0 to v0.33.0
 
-Upgrade your Twenty instance to use v0.33.0 image
+Upgrade your NodiaFlow instance to use v0.33.0 image
 
 ```
 yarn command:prod cache:flush
@@ -271,7 +271,7 @@ If you want to keep using twenty-postgres image, simply replace `twentycrm/twent
 
 ### v0.31.0 to v0.32.0
 
-Upgrade your Twenty instance to use v0.32.0 image
+Upgrade your NodiaFlow instance to use v0.32.0 image
 
 **Schema and data migration**
 ```
@@ -305,7 +305,7 @@ If you are using connected account to synchronize your Google emails and calenda
 
 ### v0.30.0 to v0.31.0
 
-Upgrade your Twenty instance to use v0.31.0 image
+Upgrade your NodiaFlow instance to use v0.31.0 image
 
 **Schema and data migration**:
 ```
@@ -318,10 +318,10 @@ The `yarn command:prod upgrade-0.31` takes care of the data migration of all wor
 
 ### v0.24.0 to v0.30.0
 
-Upgrade your Twenty instance to use v0.30.0 image
+Upgrade your NodiaFlow instance to use v0.30.0 image
 
-**Breaking change**: 
-To enhance performances, Twenty now requires redis cache to be configured. We have updated our [docker-compose.yml](https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-docker/docker-compose.yml) to reflect this.
+**Breaking change**:
+To enhance performances, NodiaFlow now requires redis cache to be configured. We have updated our [docker-compose.yml](https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-docker/docker-compose.yml) to reflect this.
 Make sure to update your configuration and to update your environment variables accordingly:
 ```
 REDIS_HOST={your-redis-host}
@@ -329,7 +329,7 @@ REDIS_PORT={your-redis-port}
 CACHE_STORAGE_TYPE=redis
 ```
 
-**Schema and data migration**: 
+**Schema and data migration**:
 ```
 yarn database:migrate:prod
 yarn command:prod upgrade-0.30
@@ -340,7 +340,7 @@ The `yarn command:prod upgrade-0.30` takes care of the data migration of all wor
 
 ### v0.23.0 to v0.24.0
 
-Upgrade your Twenty instance to use v0.24.0 image
+Upgrade your NodiaFlow instance to use v0.24.0 image
 
 Run the following commands:
 
@@ -354,7 +354,7 @@ The `yarn command:prod upgrade-0.24` takes care of the data migration of all wor
 
 ### v0.22.0 to v0.23.0
 
-Upgrade your Twenty instance to use v0.23.0 image
+Upgrade your NodiaFlow instance to use v0.23.0 image
 
 Run the following commands:
 
@@ -368,7 +368,7 @@ The `yarn command:prod upgrade-0.23` takes care of the data migration, including
 
 ### v0.21.0 to v0.22.0
 
-Upgrade your Twenty instance to use v0.22.0 image
+Upgrade your NodiaFlow instance to use v0.22.0 image
 
 Run the following commands:
 

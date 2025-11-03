@@ -1,5 +1,5 @@
 ---
-description: Code style guidelines for Twenty CRM
+description: Code style guidelines for NodiaFlow CRM
 globs: []
 alwaysApply: true
 ---
@@ -59,11 +59,11 @@ const processUserData = (
 ): ProcessedUser => {
   const processedUser = transformUserData(user);
   applyOptions(processedUser, options);
-  
+
   if (callback) {
     callback(processedUser);
   }
-  
+
   return processedUser;
 };
 ```

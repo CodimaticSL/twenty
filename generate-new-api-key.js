@@ -1,10 +1,10 @@
 const { execSync } = require('child_process');
 
 // Esta función simula la generación de una nueva API key
-// En un entorno real, esto se haría a través de la API de Twenty
+// En un entorno real, esto se haría a través de la API de NodiaFlow
 
 console.log('Para generar una nueva API key con el código corregido:');
-console.log('1. Ve a la interfaz de Twenty CRM');
+console.log('1. Ve a la interfaz de NodiaFlow CRM');
 console.log('2. Navega a Settings > APIs');
 console.log('3. Crea una nueva API Key');
 console.log('4. Copia el token generado');

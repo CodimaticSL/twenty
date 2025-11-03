@@ -1,5 +1,5 @@
 ---
-description: Translation guidelines for Twenty CRM
+description: Translation guidelines for NodiaFlow CRM
 alwaysApply: false
 ---
 # Translation Guidelines
@@ -75,11 +75,11 @@ src/locales/
     return (
       <form>
         <h1>{t('login.title')}</h1>
-        <input 
+        <input
           placeholder={t('login.email')}
           type="email"
         />
-        <input 
+        <input
           placeholder={t('login.password')}
           type="password"
         />
@@ -99,7 +99,7 @@ src/locales/
   // ✅ Correct
   const WelcomeMessage = ({ userName }: { userName: string }) => {
     const { t } = useTranslation('common');
-    
+
     return (
       <h1>{t('welcome.message', { name: userName })}</h1>
     );
@@ -121,7 +121,7 @@ src/locales/
   // ✅ Correct
   const ItemCount = ({ count }: { count: number }) => {
     const { t } = useTranslation('common');
-    
+
     return (
       <span>{t('items.count', { count })}</span>
     );
@@ -164,7 +164,7 @@ src/locales/
 - Validate interpolation parameters
   ```typescript
   // ✅ Correct - Type-safe translations
-  type TranslationKey = 
+  type TranslationKey =
     | 'auth.login.title'
     | 'auth.login.email'
     | 'auth.login.password'

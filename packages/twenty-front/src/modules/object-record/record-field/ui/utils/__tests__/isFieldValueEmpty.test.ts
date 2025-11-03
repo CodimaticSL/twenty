@@ -141,7 +141,7 @@ describe('isFieldValueEmpty', () => {
         fieldDefinition: linksFieldDefinition,
         fieldValue: {
           primaryLinkUrl: 'https://www.twenty.com',
-          primaryLinkLabel: 'Twenty Website',
+          primaryLinkLabel: 'NodiaFlow Website',
           secondaryLinks: [],
         },
       }),
@@ -181,7 +181,7 @@ describe('isFieldValueEmpty', () => {
         fieldDefinition: linksFieldDefinition,
         fieldValue: {
           primaryLinkUrl: 'https://www.twenty.com',
-          primaryLinkLabel: 'Twenty Website',
+          primaryLinkLabel: 'NodiaFlow Website',
           secondaryLinks: [{ url: 'wikipedia', label: 'Invalid URL' }],
         },
       }),

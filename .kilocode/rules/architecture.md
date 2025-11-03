@@ -1,10 +1,10 @@
 ---
-description: Twenty CRM architecture overview - monorepo structure, tech stack, and development principles
+description: NodiaFlow CRM architecture overview - monorepo structure, tech stack, and development principles
 globs: []
 alwaysApply: true
 ---
 
-# Twenty Architecture
+# NodiaFlow Architecture
 
 ## Tech Stack
 - **Frontend**: React 18, TypeScript, Recoil, Styled Components, Vite
@@ -15,7 +15,7 @@ alwaysApply: true
 ```
 packages/
 ├── twenty-front/     # React app
-├── twenty-server/    # NestJS API  
+├── twenty-server/    # NestJS API
 ├── twenty-ui/        # Shared components
 ├── twenty-shared/    # Common types/utils
 └── twenty-emails/    # Email templates

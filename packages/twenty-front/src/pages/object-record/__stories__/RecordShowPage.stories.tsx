@@ -64,7 +64,7 @@ export type Story = StoryObj<typeof RecordShowPage>;
 
 //     // await canvas.findAllByText(peopleMock[0].name.firstName);
 //     expect(
-//       await canvas.findByText('Twenty', undefined, {
+//       await canvas.findByText('NodiaFlow', undefined, {
 //         timeout: 5000,
 //       }),
 //     ).toBeInTheDocument();

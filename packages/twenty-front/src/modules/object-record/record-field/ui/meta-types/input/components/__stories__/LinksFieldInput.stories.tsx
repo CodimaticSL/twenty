@@ -163,14 +163,14 @@ export const PrimaryLinkOnly: Story = {
   args: {
     value: {
       primaryLinkUrl: 'https://www.nodiaflow.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'NodiaFlow Website',
       secondaryLinks: null,
     },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    const primaryLink = await canvas.findByText('Twenty Website');
+    const primaryLink = await canvas.findByText('NodiaFlow Website');
     expect(primaryLink).toBeVisible();
 
     const addButton = await canvas.findByText('Add URL');
@@ -184,7 +184,7 @@ export const WithSecondaryLinks: Story = {
   args: {
     value: {
       primaryLinkUrl: 'https://www.nodiaflow.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'NodiaFlow Website',
       secondaryLinks: [
         {
           url: 'https://docs.nodiaflow.com',
@@ -200,7 +200,7 @@ export const WithSecondaryLinks: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    const primaryLink = await canvas.findByText('Twenty Website');
+    const primaryLink = await canvas.findByText('NodiaFlow Website');
     expect(primaryLink).toBeVisible();
 
     await waitFor(() => {
@@ -250,14 +250,14 @@ export const AddSecondaryLink: Story = {
   args: {
     value: {
       primaryLinkUrl: 'https://www.nodiaflow.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'NodiaFlow Website',
       secondaryLinks: [],
     },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    const primaryLink = await canvas.findByText('Twenty Website');
+    const primaryLink = await canvas.findByText('NodiaFlow Website');
     expect(primaryLink).toBeVisible();
 
     expect(getPrimaryLinkBookmarkIcon(canvasElement)).not.toBeInTheDocument();
@@ -277,14 +277,14 @@ export const DeletePrimaryLink: Story = {
   args: {
     value: {
       primaryLinkUrl: 'https://www.nodiaflow.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'NodiaFlow Website',
       secondaryLinks: [],
     },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    const listItemToDelete = await canvas.findByText('Twenty Website');
+    const listItemToDelete = await canvas.findByText('NodiaFlow Website');
     expect(listItemToDelete).toBeVisible();
 
     expect(getPrimaryLinkBookmarkIcon(canvasElement)).not.toBeInTheDocument();
@@ -309,7 +309,7 @@ export const DeletePrimaryLinkAndUseSecondaryLinkAsTheNewPrimaryLink: Story = {
   args: {
     value: {
       primaryLinkUrl: 'https://www.nodiaflow.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'NodiaFlow Website',
       secondaryLinks: [
         {
           url: 'https://docs.nodiaflow.com',
@@ -321,7 +321,7 @@ export const DeletePrimaryLinkAndUseSecondaryLinkAsTheNewPrimaryLink: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    const listItemToDelete = await canvas.findByText('Twenty Website');
+    const listItemToDelete = await canvas.findByText('NodiaFlow Website');
     expect(listItemToDelete).toBeVisible();
 
     await waitFor(() => {
@@ -340,7 +340,7 @@ export const DeletePrimaryLinkAndUseSecondaryLinkAsTheNewPrimaryLink: Story = {
 
     const newPrimaryLink = await canvas.findByText('Documentation');
     expect(newPrimaryLink).toBeVisible();
-    const oldPrimaryLink = canvas.queryByText('Twenty Website');
+    const oldPrimaryLink = canvas.queryByText('NodiaFlow Website');
     expect(oldPrimaryLink).not.toBeInTheDocument();
 
     expect(getPrimaryLinkBookmarkIcon(canvasElement)).not.toBeInTheDocument();
@@ -351,7 +351,7 @@ export const DeleteSecondaryLink: Story = {
   args: {
     value: {
       primaryLinkUrl: 'https://www.nodiaflow.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'NodiaFlow Website',
       secondaryLinks: [
         {
           url: 'https://docs.nodiaflow.com',
@@ -380,7 +380,7 @@ export const DeleteSecondaryLink: Story = {
     ).findByText('Delete');
     await userEvent.click(deleteOption);
 
-    const primaryLink = await canvas.findByText('Twenty Website');
+    const primaryLink = await canvas.findByText('NodiaFlow Website');
     expect(primaryLink).toBeVisible();
     const secondaryLink = canvas.queryByText('Documentation');
     expect(secondaryLink).not.toBeInTheDocument();
@@ -454,7 +454,7 @@ export const MakeSecondaryLinkPrimary: Story = {
   args: {
     value: {
       primaryLinkUrl: 'https://www.nodiaflow.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'NodiaFlow Website',
       secondaryLinks: [
         {
           url: 'https://docs.nodiaflow.com',
@@ -466,7 +466,7 @@ export const MakeSecondaryLinkPrimary: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    const primaryLink = await canvas.findByText('Twenty Website');
+    const primaryLink = await canvas.findByText('NodiaFlow Website');
     expect(primaryLink).toBeVisible();
 
     const secondaryLink = await canvas.findByText('Documentation');
@@ -494,14 +494,14 @@ export const CanNotSetPrimaryLinkAsPrimaryLink: Story = {
   args: {
     value: {
       primaryLinkUrl: 'https://www.nodiaflow.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'NodiaFlow Website',
       secondaryLinks: [],
     },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    const primaryLink = await canvas.findByText('Twenty Website');
+    const primaryLink = await canvas.findByText('NodiaFlow Website');
     expect(primaryLink).toBeVisible();
 
     expect(getPrimaryLinkBookmarkIcon(canvasElement)).not.toBeInTheDocument();

@@ -1,17 +1,17 @@
 ---
 title: External Tool Integration
 icon: IconPlug
-info: These workflows focus on bringing data in and out of Twenty through API calls and webhooks.
+info: These workflows focus on bringing data in and out of NodiaFlow through API calls and webhooks.
 image: /images/user-guide/integrations/plug.png
 sectionInfo: Automate processes and integrate with external tools
 ---
-Below are workflow examples you could roll out to connect Twenty with the rest of your stack.
+Below are workflow examples you could roll out to connect NodiaFlow with the rest of your stack.
 
 
 ## Data Ingestion Use Cases
 
 ### Webform Submissions
-**Problem**: You need to capture leads from website forms, landing pages, or contact forms directly into Twenty.
+**Problem**: You need to capture leads from website forms, landing pages, or contact forms directly into NodiaFlow.
 
 **Solution**: Use webhook triggers to automatically create records from form submissions.
 
@@ -21,7 +21,7 @@ Below are workflow examples you could roll out to connect Twenty with the rest o
 - Set the webhook method to POST
 - Define the expected body structure in the trigger
 
-**Trigger**: Webhook (POST request from your form)  
+**Trigger**: Webhook (POST request from your form)
 
 **Actions**:
 - Search Records to check if person/company already exists
@@ -32,9 +32,9 @@ Below are workflow examples you could roll out to connect Twenty with the rest o
 ### Product Data Synchronization
 **Problem**: Your sales team needs visibility into product usage, billing, or feature adoption data stored in your data warehouse.
 
-**Solution**: Regularly sync product data into Twenty to give sellers context about their accounts.
+**Solution**: Regularly sync product data into NodiaFlow to give sellers context about their accounts.
 
-**Trigger**: On a Schedule (daily or weekly)  
+**Trigger**: On a Schedule (daily or weekly)
 
 **Actions**:
 - HTTP Request to your data warehouse API
@@ -49,7 +49,7 @@ Below are workflow examples you could roll out to connect Twenty with the rest o
 
 **Solution**: Automatically create notes and action items from call recording systems.
 
-**Trigger**: Webhook (from call recording platform)  
+**Trigger**: Webhook (from call recording platform)
 
 **Actions**:
 - Code action to extract meeting summary and action items
@@ -63,7 +63,7 @@ Below are workflow examples you could roll out to connect Twenty with the rest o
 
 **Solution**: Automatically enrich records using external data providers.
 
-**Trigger**: Record is Created (People or Companies object)  
+**Trigger**: Record is Created (People or Companies object)
 
 **Actions**:
 - HTTP Request to enrichment API
@@ -80,9 +80,9 @@ Below are workflow examples you could roll out to connect Twenty with the rest o
 
 **Solution**: Export subscriber lists to your email marketing platform when needed.
 
-**Setup**: Create a view in Twenty with all newsletter recipients
+**Setup**: Create a view in NodiaFlow with all newsletter recipients
 
-**Trigger**: Launch Manually (when no record is selected)  
+**Trigger**: Launch Manually (when no record is selected)
 
 **Actions**:
 - Search Records using the newsletter view criteria
@@ -96,7 +96,7 @@ Below are workflow examples you could roll out to connect Twenty with the rest o
 
 **Solution**: Send new leads or customers to your email automation platform when specific events occur.
 
-**Trigger**: Record is Created (People object with specific criteria)  
+**Trigger**: Record is Created (People object with specific criteria)
 
 **Actions**:
 - Code action to determine appropriate email sequence
@@ -111,7 +111,7 @@ Below are workflow examples you could roll out to connect Twenty with the rest o
 
 **Option 1 - External Tool**:
 
-**Trigger**: Record is Updated (People object)  
+**Trigger**: Record is Updated (People object)
 
 **Actions**:
 - HTTP Request to send lead data to scoring platform
@@ -121,7 +121,7 @@ Below are workflow examples you could roll out to connect Twenty with the rest o
 
 **Option 2 - Internal Logic**:
 
-**Trigger**: Record is Updated (People object)  
+**Trigger**: Record is Updated (People object)
 
 **Actions**:
 - Code action with scoring algorithm (company size, industry, behavior)
@@ -133,7 +133,7 @@ Below are workflow examples you could roll out to connect Twenty with the rest o
 
 **Solution**: Automatically send deal data to your invoicing system when opportunities are won.
 
-**Trigger**: Record is Updated (Opportunities object, Stage = "Closed Won")  
+**Trigger**: Record is Updated (Opportunities object, Stage = "Closed Won")
 
 **Actions**:
 - Search Records to get complete customer information
@@ -146,21 +146,21 @@ Below are workflow examples you could roll out to connect Twenty with the rest o
 ## Advanced Integration Patterns
 
 ### Bi-directional Sync
-**Problem**: You need to keep data synchronized between Twenty and another system in both directions.
+**Problem**: You need to keep data synchronized between NodiaFlow and another system in both directions.
 
 **Solution**: Combine scheduled workflows with webhook triggers for real-time sync.
 
-**From Twenty to External System**:
+**From NodiaFlow to External System**:
 
-**Trigger**: Record is Updated (any relevant object)  
+**Trigger**: Record is Updated (any relevant object)
 
 **Actions**:
 - HTTP Request to update external system
 - Update Record to track sync status and timestamp
 
-**From External System to Twenty**:
+**From External System to NodiaFlow**:
 
-**Trigger**: Webhook (from external system)  
+**Trigger**: Webhook (from external system)
 
 **Actions**:
 - Search Records to find matching record
@@ -168,11 +168,11 @@ Below are workflow examples you could roll out to connect Twenty with the rest o
 - Create Record for conflict resolution task if needed
 
 ### Multi-step Data Processing
-**Problem**: Data from external sources needs complex processing before it can be used in Twenty.
+**Problem**: Data from external sources needs complex processing before it can be used in NodiaFlow.
 
 **Solution**: Use Code actions for data transformation and validation.
 
-**Trigger**: Webhook or On a Schedule  
+**Trigger**: Webhook or On a Schedule
 
 **Actions**:
 - Code action to validate incoming data format

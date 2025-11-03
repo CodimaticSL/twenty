@@ -47,7 +47,7 @@ export class McpService {
             prompts: { listChanged: false },
           },
           serverInfo: {
-            name: 'Twenty CRM MCP Server',
+            name: 'NodiaFlow CRM MCP Server',
             version: '0.0.1',
           },
         },
@@ -71,7 +71,7 @@ export class McpService {
           prompts: { listChanged: false },
         },
         serverInfo: {
-          name: 'Twenty CRM MCP Server',
+          name: 'NodiaFlow CRM MCP Server',
           version: '0.0.1',
         },
       },

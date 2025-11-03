@@ -4,7 +4,7 @@
   "terminals": [
     {
       "name": "Development Server",
-      "command": "echo 'Waiting for database to be fully ready...' && sleep 30 && until docker exec twenty_pg pg_isready -U postgres -h localhost; do echo 'Waiting for PostgreSQL...'; sleep 2; done && echo 'Starting Twenty development server...' && export SERVER_URL=http://localhost:3000 && export PG_DATABASE_URL=postgres://postgres:postgres@localhost:5432/postgres && yarn start"
+      "command": "echo 'Waiting for database to be fully ready...' && sleep 30 && until docker exec twenty_pg pg_isready -U postgres -h localhost; do echo 'Waiting for PostgreSQL...'; sleep 2; done && echo 'Starting NodiaFlow development server...' && export SERVER_URL=http://localhost:3000 && export PG_DATABASE_URL=postgres://postgres:postgres@localhost:5432/postgres && yarn start"
     },
     {
       "name": "Database Management",
@@ -15,4 +15,4 @@
       "command": "sleep 10 && echo '=== Container Status Monitor ===' && while true; do echo '\\n=== Container Status at $(date) ===' && docker ps --filter name=twenty_ --format 'table {{.Names}}\\t{{.Status}}\\t{{.Ports}}' && echo '\\n=== PostgreSQL Status ===' && (docker exec twenty_pg pg_isready -U postgres -h localhost && echo 'PostgreSQL: ✅ Ready') || echo 'PostgreSQL: ❌ Not Ready' && echo '\\n=== Redis Status ===' && (docker exec twenty_redis redis-cli ping && echo 'Redis: ✅ Ready') || echo 'Redis: ❌ Not Ready' && sleep 30; done"
     }
   ]
-} 
+}

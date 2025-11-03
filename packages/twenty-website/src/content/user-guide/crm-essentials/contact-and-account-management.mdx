@@ -8,11 +8,11 @@ sectionInfo: "Essential CRM features for managing leads, sales, and customers"
 
 ## Getting data into your CRM
 
-When you start using Twenty, you'll want to get your contacts and companies into the system. There are several ways to populate your CRM depending on your workflow and data sources.
+When you start using NodiaFlow, you'll want to get your contacts and companies into the system. There are several ways to populate your CRM depending on your workflow and data sources.
 
 ### Manual entry
 
-The most straightforward approach is adding records directly through the Twenty interface. Go to the `People` section and click the `+` button to add a new contact. Fill in their name, email, phone, and link them to their company. For companies, head to the `Companies` section and add the organization details: company name, domain, industry, and size.
+The most straightforward approach is adding records directly through the NodiaFlow interface. Go to the `People` section and click the `+` button to add a new contact. Fill in their name, email, phone, and link them to their company. For companies, head to the `Companies` section and add the organization details: company name, domain, industry, and size.
 
 The domain field is particularly important for company identification, and the email field is essential for person identification.
 
@@ -22,19 +22,19 @@ When you have existing data from spreadsheets or other systems, CSV import is yo
 
 ### Automated data capture
 
-For ongoing lead generation, you can set up automated workflows that bring data directly into Twenty:
+For ongoing lead generation, you can set up automated workflows that bring data directly into NodiaFlow:
 
-**Website forms**: When someone fills out a form on your website, you can configure it to send the information to Twenty automatically. The form submission triggers a webhook that activates a workflow in Twenty, creating the new contact record without any manual work.
+**Website forms**: When someone fills out a form on your website, you can configure it to send the information to NodiaFlow automatically. The form submission triggers a webhook that activates a workflow in NodiaFlow, creating the new contact record without any manual work.
 
-**Integration with other systems**: If you use other business tools, you can connect them to Twenty using API calls and workflows. This lets you automatically sync data between systems: for example, bringing in new customers from your billing system or leads from your marketing platform.
+**Integration with other systems**: If you use other business tools, you can connect them to NodiaFlow using API calls and workflows. This lets you automatically sync data between systems: for example, bringing in new customers from your billing system or leads from your marketing platform.
 
 To learn more about setting up these automated data flows, check out our [Workflows](/user-guide/section/workflows) section.
 
 ### Email and calendar sync
 
-When you connect your mailbox and calendar to Twenty, the system can automatically create People and Companies records for people you email or meet with. If you send an email to someone who isn't already in your CRM, Twenty can create a new Person record for them. The same happens when you schedule meetings with new contacts through your calendar.
+When you connect your mailbox and calendar to NodiaFlow, the system can automatically create People and Companies records for people you email or meet with. If you send an email to someone who isn't already in your CRM, NodiaFlow can create a new Person record for them. The same happens when you schedule meetings with new contacts through your calendar.
 
-This is particularly useful for sales and business development teams who are constantly meeting new people. Instead of manually adding every new contact, Twenty captures them automatically as you communicate. Learn how to set this up in our [Emails and Calendars](/user-guide/section/collaboration/emails-and-calendars) guide.
+This is particularly useful for sales and business development teams who are constantly meeting new people. Instead of manually adding every new contact, NodiaFlow captures them automatically as you communicate. Learn how to set this up in our [Emails and Calendars](/user-guide/section/collaboration/emails-and-calendars) guide.
 
 ### Reducing manual work
 
@@ -44,13 +44,13 @@ Even when adding data manually, you can use workflows to streamline the process.
 
 ### Keeping data unique and clean
 
-Twenty automatically enforces uniqueness to keep your data organized. Each person's email address serves as a unique identifier: you can't have two people with the same email. Similarly, company domains are unique, so you won't accidentally create duplicate companies.
+NodiaFlow automatically enforces uniqueness to keep your data organized. Each person's email address serves as a unique identifier: you can't have two people with the same email. Similarly, company domains are unique, so you won't accidentally create duplicate companies.
 
 If your business needs other fields to be unique (like phone numbers, or reference codes), you can configure this in your data model. Head to our [Data Model](/user-guide/section/data-model/customize-your-data-model) section to learn how to set up additional uniqueness constraints for your specific needs.
 
 ### Handling duplicates
 
-Sometimes you'll end up with duplicate records. Twenty has a merge feature for both People and Companies: you can combine duplicate records to keep your database clean without losing any information.
+Sometimes you'll end up with duplicate records. NodiaFlow has a merge feature for both People and Companies: you can combine duplicate records to keep your database clean without losing any information.
 
 To merge records, select 2 records, open the command menu `Cmd+K` on Mac, `Ctrl+K` on Windows and click `Merge Records`.
 
@@ -77,7 +77,7 @@ When you open a Person or Company record, you'll see all their information organ
 - **Emails**: Email threads with this contact (when your team has connected their mailboxes)
 - **Calendar**: Meetings and appointments with this contact
 
-The Email and Calendar tabs are particularly powerful: they automatically show all email exchanges and meetings that anyone on your team has had with this contact, as long as they've connected their mailbox to Twenty. You can learn more about setting this up in our [Emails and Calendars](/user-guide/section/collaboration/emails-and-calendars) guide.
+The Email and Calendar tabs are particularly powerful: they automatically show all email exchanges and meetings that anyone on your team has had with this contact, as long as they've connected their mailbox to NodiaFlow. You can learn more about setting this up in our [Emails and Calendars](/user-guide/section/collaboration/emails-and-calendars) guide.
 
 ### Adding the fields you need
 
@@ -85,7 +85,7 @@ The standard fields might not capture everything important for your business. If
 
 ## Managing deleted records
 
-When you delete a record in Twenty, it's not gone forever. Records are "soft deleted," which means they're hidden but can be restored if needed. 
+When you delete a record in NodiaFlow, it's not gone forever. Records are "soft deleted," which means they're hidden but can be restored if needed.
 
 To access deleted records, open the command menu `Cmd+K` on Mac, `Ctrl+K` on Windows, then click `See deleted records`. From there, you can either restore records or permanently delete them if you're sure you don't need them.
 

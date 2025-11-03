@@ -1,4 +1,5 @@
-import { setupI18n, type I18n, type Messages } from '@lingui/core';
+import { setupI18n, type Messages } from '@lingui/core';
+import { type I18n } from '@lingui/react';
 import { type APP_LOCALES } from 'twenty-shared/translations';
 import { isDefined } from 'twenty-shared/utils';
 import { messages as afMessages } from '../locales/generated/af-ZA';

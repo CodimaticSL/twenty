@@ -13,7 +13,7 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   const basePath = '/src/content/twenty-ui';
   const mainPost = await fetchArticleFromSlug(slug, basePath);
   return {
-    title: 'Twenty - ' + formattedSlug,
+    title: 'NodiaFlow - ' + formattedSlug,
     description: mainPost?.itemInfo?.info,
   };
 }

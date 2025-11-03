@@ -9160,9 +9160,9 @@ msgstr "crwdns817:0crwdne817:0"
 #. js-lingui-id: 1q2w3e
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
 msgid "Can only view records they created or are assigned to"
-msgstr "እንደሚፈጠረው ወይም እርሱ የተመደበውን መዝገቦች ብቻ መመልከት ይችላል"
+msgstr "ሰዎቹ ከፈጠሩ ወይም ተመድበው የሆኑትን መዝገቦች ብቻ መመልከት ይችላሉ"
 
 #. js-lingui-id: 4r5t6y
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
 msgid "View Only Own or Assigned Records"
-msgstr "የራሱን ወይም የተመደበውን መዝገቦች ብቻ ማሳያ"
+msgstr "አማራ ወይም የተመደበ መዝገቦችን ብቻ ይመልከቱ"

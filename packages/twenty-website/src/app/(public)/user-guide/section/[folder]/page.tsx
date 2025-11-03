@@ -16,7 +16,7 @@ export async function generateMetadata(
   const basePath = '/src/content/user-guide';
   const mainPost = await fetchArticleFromSlug(folder, basePath);
   return {
-    title: 'Twenty - ' + formattedSlug,
+    title: 'NodiaFlow - ' + formattedSlug,
     description: mainPost?.itemInfo?.info,
   };
 }

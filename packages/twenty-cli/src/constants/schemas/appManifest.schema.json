@@ -1,10 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-cli/src/constants/schemas/appManifest.schema.json",
-  "title": "Twenty App Manifest",
-  "description": "Schema for Twenty application manifest files",
+  "title": "NodiaFlow App Manifest",
+  "description": "Schema for NodiaFlow application manifest files",
   "type": "object",
-  "required": ["universalIdentifier", "name", "version", "license", "engines", "packageManager"],
+  "required": [
+    "universalIdentifier",
+    "name",
+    "version",
+    "license",
+    "engines",
+    "packageManager"
+  ],
   "properties": {
     "$schema": {
       "type": "string",

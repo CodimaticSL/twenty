@@ -17,11 +17,11 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   const { slug } = await props.params;
   return {
     metadataBase: new URL(`https://nodiaflow.com`),
-    title: 'Twenty - ' + slug,
+    title: 'NodiaFlow - ' + slug,
     description:
       'Explore the impactful contributions of ' +
       slug +
-      ' on the Twenty Github Repo. Discover their merged pull requests, ongoing work, and top ranking. Join and contribute to the #1 Open-Source CRM thriving community!',
+      ' on the NodiaFlow Github Repo. Discover their merged pull requests, ongoing work, and top ranking. Join and contribute to the #1 Open-Source CRM thriving community!',
     openGraph: {
       images: [`https://nodiaflow.com/api/contributors/${slug}/og.png`],
     },

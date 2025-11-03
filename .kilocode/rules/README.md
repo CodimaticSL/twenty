@@ -1,11 +1,11 @@
 ---
-description: Twenty CRM development rules and best practices
+description: NodiaFlow CRM development rules and best practices
 globs: []
 alwaysApply: true
 ---
-# Twenty Development Rules
+# NodiaFlow Development Rules
 
-This directory contains Twenty's development guidelines and best practices in the modern Cursor Rules format (MDC). These rules are automatically applied based on file patterns and provide context-aware guidance to AI assistants.
+This directory contains NodiaFlow's development guidelines and best practices in the modern Cursor Rules format (MDC). These rules are automatically applied based on file patterns and provide context-aware guidance to AI assistants.
 
 ## Rules Overview
 
@@ -40,7 +40,7 @@ You can manually reference any rule using the `@ruleName` syntax:
 - `@testing-guidelines` - Get testing recommendations
 
 ### Rule Types Used
-- **Always Applied** - Loaded in every context (architecture.mdc, README.mdc)  
+- **Always Applied** - Loaded in every context (architecture.mdc, README.mdc)
 - **Auto Attached** - Loaded when matching file patterns are referenced
 - **Agent Requested** - Available for AI to include when relevant
 - **Manual** - Only included when explicitly mentioned

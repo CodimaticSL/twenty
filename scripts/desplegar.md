@@ -39,7 +39,7 @@ ssh root@72.60.214.54
 ## **PASO 3: Preparar el Entorno en el VPS**
 
 ```bash
-# 1. Navegar al directorio de Twenty
+# 1. Navegar al directorio de NodiaFlow
 cd twenty  # o la ruta donde tengas docker compose.yml
 
 # 2. Hacer BACKUP de la base de datos (CRÍTICO)
@@ -293,7 +293,7 @@ docker compose logs -f server
 
 ## **¡Listo!**
 
-Tu Twenty CRM personalizado con el módulo `sales-filter` debería estar corriendo en tu VPS. Accede a través de:
+Tu NodiaFlow CRM personalizado con el módulo `sales-filter` debería estar corriendo en tu VPS. Accede a través de:
 
 ```
 http://tu-vps-ip:3000

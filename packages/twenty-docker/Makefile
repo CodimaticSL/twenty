@@ -1,4 +1,4 @@
-# Makefile for building Twenty CRM docker images.
+# Makefile for building NodiaFlow CRM docker images.
 # Set the tag and/or target build platform using make command-line variables assignments.
 #
 # Optional make variables:
