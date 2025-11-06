@@ -3,7 +3,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { CronRegisterAllCommand } from 'src/database/commands/cron-register-all.command';
 import { DataSeedWorkspaceCommand } from 'src/database/commands/data-seed-dev-workspace.command';
-import { EnableDefaultFeatureFlagsCommand } from 'src/database/commands/enable-default-feature-flags.command';
 import { ConfirmationQuestion } from 'src/database/commands/questions/confirmation.question';
 import { UpgradeVersionCommandModule } from 'src/database/commands/upgrade-version-command/upgrade-version-command.module';
 import { TypeORMModule } from 'src/database/typeorm/typeorm.module';
@@ -59,7 +58,6 @@ import { AutomatedTriggerModule } from 'src/modules/workflow/workflow-trigger/au
     DataSeedWorkspaceCommand,
     ConfirmationQuestion,
     CronRegisterAllCommand,
-    EnableDefaultFeatureFlagsCommand,
   ],
 })
 export class DatabaseCommandModule {}

@@ -42,34 +42,30 @@ export class UpdateManyResolverFactory
           workspaceId: internalContext.authContext.workspace?.id as string,
         });
 
-      const featureFlagsMap = workspaceDataSource.featureFlagMap;
+      const selectedFields = graphqlFields(info);
 
-      if (featureFlagsMap[FeatureFlagKey.IS_COMMON_API_ENABLED]) {
-        const selectedFields = graphqlFields(info);
+      try {
+        const records = await this.commonUpdateManyQueryRunnerService.execute(
+          { ...args, selectedFields },
+          internalContext,
+        );
 
-        try {
-          const records = await this.commonUpdateManyQueryRunnerService.execute(
-            { ...args, selectedFields },
-            internalContext,
+        const typeORMObjectRecordsParser =
+          new ObjectRecordsToGraphqlConnectionHelper(
+            internalContext.objectMetadataMaps,
           );
 
-          const typeORMObjectRecordsParser =
-            new ObjectRecordsToGraphqlConnectionHelper(
-              internalContext.objectMetadataMaps,
-            );
-
-          return records.map((record: ObjectRecord) =>
-            typeORMObjectRecordsParser.processRecord({
-              objectRecord: record,
-              objectName:
-                internalContext.objectMetadataItemWithFieldMaps.nameSingular,
-              take: 1,
-              totalCount: 1,
-            }),
-          );
-        } catch (error) {
-          workspaceQueryRunnerGraphqlApiExceptionHandler(error);
-        }
+        return records.map((record: ObjectRecord) =>
+          typeORMObjectRecordsParser.processRecord({
+            objectRecord: record,
+            objectName:
+              internalContext.objectMetadataItemWithFieldMaps.nameSingular,
+            take: 1,
+            totalCount: 1,
+          }),
+        );
+      } catch (error) {
+        workspaceQueryRunnerGraphqlApiExceptionHandler(error);
       }
 
       const options: WorkspaceQueryRunnerOptions = {

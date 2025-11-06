@@ -41,32 +41,28 @@ export class DestroyOneResolverFactory
           workspaceId: internalContext.authContext.workspace?.id as string,
         });
 
-      const featureFlagsMap = workspaceDataSource.featureFlagMap;
+      const selectedFields = graphqlFields(info);
 
-      if (featureFlagsMap[FeatureFlagKey.IS_COMMON_API_ENABLED]) {
-        const selectedFields = graphqlFields(info);
+      try {
+        const record = await this.commonDestroyOneQueryRunnerService.execute(
+          { ...args, selectedFields },
+          internalContext,
+        );
 
-        try {
-          const record = await this.commonDestroyOneQueryRunnerService.execute(
-            { ...args, selectedFields },
-            internalContext,
+        const typeORMObjectRecordsParser =
+          new ObjectRecordsToGraphqlConnectionHelper(
+            internalContext.objectMetadataMaps,
           );
 
-          const typeORMObjectRecordsParser =
-            new ObjectRecordsToGraphqlConnectionHelper(
-              internalContext.objectMetadataMaps,
-            );
-
-          return typeORMObjectRecordsParser.processRecord({
-            objectRecord: record,
-            objectName:
-              internalContext.objectMetadataItemWithFieldMaps.nameSingular,
-            take: 1,
-            totalCount: 1,
-          });
-        } catch (error) {
-          workspaceQueryRunnerGraphqlApiExceptionHandler(error);
-        }
+        return typeORMObjectRecordsParser.processRecord({
+          objectRecord: record,
+          objectName:
+            internalContext.objectMetadataItemWithFieldMaps.nameSingular,
+          take: 1,
+          totalCount: 1,
+        });
+      } catch (error) {
+        workspaceQueryRunnerGraphqlApiExceptionHandler(error);
       }
 
       const options: WorkspaceQueryRunnerOptions = {

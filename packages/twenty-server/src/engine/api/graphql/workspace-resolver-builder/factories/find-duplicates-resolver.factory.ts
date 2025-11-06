@@ -42,38 +42,34 @@ export class FindDuplicatesResolverFactory
           workspaceId: internalContext.authContext.workspace?.id as string,
         });
 
-      const featureFlagsMap = workspaceDataSource.featureFlagMap;
+      const selectedFields = graphqlFields(info);
 
-      if (featureFlagsMap[FeatureFlagKey.IS_COMMON_API_ENABLED]) {
-        const selectedFields = graphqlFields(info);
-
-        try {
-          const paginatedDuplicates =
-            await this.commonFindDuplicatesQueryRunnerService.execute(
-              { ...args, selectedFields },
-              internalContext,
-            );
-
-          const typeORMObjectRecordsParser =
-            new ObjectRecordsToGraphqlConnectionHelper(
-              internalContext.objectMetadataMaps,
-            );
-
-          return paginatedDuplicates.map((duplicate) =>
-            typeORMObjectRecordsParser.createConnection({
-              objectRecords: duplicate.records,
-              objectName:
-                internalContext.objectMetadataItemWithFieldMaps.nameSingular,
-              take: duplicate.records.length,
-              totalCount: duplicate.totalCount,
-              order: [{ id: OrderByDirection.AscNullsFirst }],
-              hasNextPage: duplicate.hasNextPage,
-              hasPreviousPage: duplicate.hasPreviousPage,
-            }),
+      try {
+        const paginatedDuplicates =
+          await this.commonFindDuplicatesQueryRunnerService.execute(
+            { ...args, selectedFields },
+            internalContext,
           );
-        } catch (error) {
-          workspaceQueryRunnerGraphqlApiExceptionHandler(error);
-        }
+
+        const typeORMObjectRecordsParser =
+          new ObjectRecordsToGraphqlConnectionHelper(
+            internalContext.objectMetadataMaps,
+          );
+
+        return paginatedDuplicates.map((duplicate) =>
+          typeORMObjectRecordsParser.createConnection({
+            objectRecords: duplicate.records,
+            objectName:
+              internalContext.objectMetadataItemWithFieldMaps.nameSingular,
+            take: duplicate.records.length,
+            totalCount: duplicate.totalCount,
+            order: [{ id: OrderByDirection.AscNullsFirst }],
+            hasNextPage: duplicate.hasNextPage,
+            hasPreviousPage: duplicate.hasPreviousPage,
+          }),
+        );
+      } catch (error) {
+        workspaceQueryRunnerGraphqlApiExceptionHandler(error);
       }
 
       const options: WorkspaceQueryRunnerOptions = {

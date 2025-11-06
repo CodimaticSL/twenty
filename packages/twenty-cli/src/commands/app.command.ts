@@ -48,9 +48,9 @@ export class AppCommand {
       });
 
     appCommand
-      .command('delete')
-      .description('Delete application from Twenty')
-      .action(async () => {
+      .command('delete [appPath]')
+      .description('Delete application from NodiaFlow')
+      .action(async (appPath?: string) => {
         try {
           const result = await this.deleteCommand.execute({
             appPath: formatPath(appPath),
