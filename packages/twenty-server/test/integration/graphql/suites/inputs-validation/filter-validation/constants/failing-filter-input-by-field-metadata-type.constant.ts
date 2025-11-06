@@ -125,7 +125,7 @@ export const failingFilterInputByFieldMetadataType: {
     {
       gqlFilterInput: { dateTimeField: { eq: 'not-a-date-time' } },
       gqlErrorMessage:
-        'invalid input syntax for type timestamp with time zone: "0NaN-NaN-NaNTNaN:NaN:NaN.NaN+NaN:NaN"',
+        'invalid input syntax for type timestamp with time zone: "not-a-date-time"',
       restFilterInput: 'dateTimeField[eq]:"not-a-date-time"',
       restErrorMessage:
         'invalid input syntax for type timestamp with time zone',
@@ -133,7 +133,7 @@ export const failingFilterInputByFieldMetadataType: {
     {
       gqlFilterInput: { dateTimeField: { eq: {} } },
       gqlErrorMessage:
-        'invalid input syntax for type timestamp with time zone: "0NaN-NaN-NaNTNaN:NaN:NaN.NaN+NaN:NaN"',
+        'invalid input syntax for type timestamp with time zone: "{}"',
       restFilterInput: 'dateTimeField[eq]:"{}"',
       restErrorMessage:
         'invalid input syntax for type timestamp with time zone',
@@ -141,7 +141,7 @@ export const failingFilterInputByFieldMetadataType: {
     {
       gqlFilterInput: { dateTimeField: { eq: [] } },
       gqlErrorMessage:
-        'invalid input syntax for type timestamp with time zone: "0NaN-NaN-NaNTNaN:NaN:NaN.NaN+NaN:NaN"',
+        'invalid input syntax for type timestamp with time zone: "{}"',
       restFilterInput: 'dateTimeField[eq]:"[]"',
       restErrorMessage:
         'invalid input syntax for type timestamp with time zone',
@@ -156,22 +156,19 @@ export const failingFilterInputByFieldMetadataType: {
   [FieldMetadataType.DATE]: [
     {
       gqlFilterInput: { dateField: { eq: 'not-a-date' } },
-      gqlErrorMessage:
-        'invalid input syntax for type date: "0NaN-NaN-NaNTNaN:NaN:NaN.NaN+NaN:NaN"',
+      gqlErrorMessage: 'invalid input syntax for type date: "not-a-date"',
       restFilterInput: 'dateField[eq]:"{}"',
       restErrorMessage: 'invalid input syntax for type date',
     },
     {
       gqlFilterInput: { dateField: { eq: {} } },
-      gqlErrorMessage:
-        'invalid input syntax for type date: "0NaN-NaN-NaNTNaN:NaN:NaN.NaN+NaN:NaN"',
+      gqlErrorMessage: 'invalid input syntax for type date: "{}"',
       restFilterInput: 'dateField[eq]:"{}"',
       restErrorMessage: 'invalid input syntax for type date',
     },
     {
       gqlFilterInput: { dateField: { eq: [] } },
-      gqlErrorMessage:
-        'invalid input syntax for type date: "0NaN-NaN-NaNTNaN:NaN:NaN.NaN+NaN:NaN"',
+      gqlErrorMessage: 'invalid input syntax for type date: "{}"',
       restFilterInput: 'dateField[eq]:"[]"',
       restErrorMessage: 'invalid input syntax for type date',
     },

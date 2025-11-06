@@ -1,5 +1,3 @@
-[![Hacktoberfest 2025](packages/twenty-website/public/images/readme/hacktoberfest2025.png)](https://twentycrm.notion.site/)
-
 <p align="center">
   <a href="https://www.nodiaflow.com">
     <img src="./packages/twenty-website/public/images/core/logo.svg" width="100px" alt="NodiaFlow logo" />
@@ -8,7 +6,7 @@
 
 <h2 align="center" >The #1 Open-Source CRM </h2>
 
-<p align="center"><a href="https://nodiaflow.com">🌐 Website</a> · <a href="https://nodiaflow.com/developers">📚 Documentation</a> · <a href="https://github.com/orgs/twentyhq/projects/1"><img src="./packages/twenty-website/public/images/readme/planner-icon.svg" width="12" height="12"/> Roadmap </a> · <a href="https://discord.gg/cx5n4Jzs57"><img src="./packages/twenty-website/public/images/readme/discord-icon.svg" width="12" height="12"/> Discord</a> · <a href="https://www.figma.com/file/xt8O9mFeLl46C5InWwoMrN/NodiaFlow"><img src="./packages/twenty-website/public/images/readme/figma-icon.png"  width="12" height="12"/>  Figma</a></p>
+<p align="center"><a href="https://twenty.com">🌐 Website</a> · <a href="https://docs.twenty.com">📚 Documentation</a> · <a href="https://github.com/orgs/twentyhq/projects/1"><img src="./packages/twenty-website/public/images/readme/planner-icon.svg" width="12" height="12"/> Roadmap </a> · <a href="https://discord.gg/cx5n4Jzs57"><img src="./packages/twenty-website/public/images/readme/discord-icon.svg" width="12" height="12"/> Discord</a> · <a href="https://www.figma.com/file/xt8O9mFeLl46C5InWwoMrN/Twenty"><img src="./packages/twenty-website/public/images/readme/figma-icon.png"  width="12" height="12"/>  Figma</a></p>
 <br />
 
 
@@ -27,8 +25,8 @@
 # Installation
 
 See:
-🚀 [Self-hosting](https://nodiaflow.com/developers/section/self-hosting)
-🖥️ [Local Setup](https://nodiaflow.com/developers/local-setup)
+🚀 [Self-hosting](https://docs.twenty.com/developers/self-hosting/docker-compose)
+🖥️ [Local Setup](https://docs.twenty.com/developers/local-setup)
 
 # Does the world need another CRM?
 
@@ -48,11 +46,17 @@ Please feel free to flag any specific needs you have by creating an issue.
 
 Below are a few features we have implemented to date:
 
-+ [Personalize layouts with filters, sort, group by, kanban and table views](#personalize-layouts-with-filters-sort-group-by-kanban-and-table-views)
-+ [Customize your objects and fields](#customize-your-objects-and-fields)
-+ [Create and manage permissions with custom roles](#create-and-manage-permissions-with-custom-roles)
-+ [Automate workflow with triggers and actions](#automate-workflow-with-triggers-and-actions)
-+ [Emails, calendar events, files, and more](#emails-calendar-events-files-and-more)
+- [Installation](#installation)
+- [Does the world need another CRM?](#does-the-world-need-another-crm)
+- [What You Can Do With NodiaFlow](#what-you-can-do-with-nodiaflow)
+  - [Personalize layouts with filters, sort, group by, kanban and table views](#personalize-layouts-with-filters-sort-group-by-kanban-and-table-views)
+  - [Customize your objects and fields](#customize-your-objects-and-fields)
+  - [Create and manage permissions with custom roles](#create-and-manage-permissions-with-custom-roles)
+  - [Automate workflow with triggers and actions](#automate-workflow-with-triggers-and-actions)
+  - [Emails, calendar events, files, and more](#emails-calendar-events-files-and-more)
+- [Stack](#stack)
+- [Thanks](#thanks)
+- [Join the Community](#join-the-community)
 
 
 ## Personalize layouts with filters, sort, group by, kanban and table views

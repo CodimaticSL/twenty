@@ -58,97 +58,37 @@ export const useHandleDragOneCalendarCard = () => {
           .getLoadable(calendarDayRecordIdsSelector(destinationDate))
           .getValue() as string[];
 
-        const targetRecordId = destinationRecordIds[destinationIndex];
+        const targetDayIsEmpty = destinationRecordIds.length === 0;
 
-        // Si no hay un registro objetivo (ej: arrastrando a un día vacío),
-        // usar el primer registro del día o un position por defecto
-        if (!isDefined(targetRecordId)) {
-          // Si el día está vacío, la nueva posición es 0
-          if (destinationRecordIds.length === 0) {
-            const newPosition = 0;
-            const targetDate = parse(destinationDate, 'yyyy-MM-dd', new Date());
-            const currentFieldValue = record[calendarFieldMetadata.name];
-            let newDate: Date;
+        let newPosition: number;
 
-            if (
-              isDefined(currentFieldValue) &&
-              isFieldDateTime(calendarFieldMetadata)
-            ) {
-              const currentDateTime = new Date(currentFieldValue);
-              newDate = set(targetDate, {
-                hours: getHours(currentDateTime),
-                minutes: getMinutes(currentDateTime),
-                seconds: getSeconds(currentDateTime),
-                milliseconds: getMilliseconds(currentDateTime),
-              });
-            } else {
-              newDate = targetDate;
-            }
+        if (targetDayIsEmpty) {
+          newPosition = 1;
+        } else {
+          const recordsWithPosition = extractRecordPositions(
+            destinationRecordIds,
+            snapshot,
+          );
 
-            await updateOneRecord({
-              idToUpdate: recordId,
-              updateOneRecordInput: {
-                [calendarFieldMetadata.name]: formatISO(newDate),
-                position: newPosition,
-              },
-            });
-            return;
-          }
-          // Si el índice está fuera de rango, usar el último registro
-          const lastRecordId =
-            destinationRecordIds[destinationRecordIds.length - 1];
-          if (isDefined(lastRecordId)) {
-            const recordsWithPosition = extractRecordPositions(
-              destinationRecordIds,
-              snapshot,
+          const isDroppedAfterList =
+            destinationIndex >= recordsWithPosition.length;
+
+          const targetRecord = isDroppedAfterList
+            ? recordsWithPosition.at(-1)
+            : recordsWithPosition.at(destinationIndex);
+
+          if (!isDefined(targetRecord)) {
+            throw new Error(
+              `targetRecord cannot be found in passed recordsWithPosition, this should not happen.`,
             );
-
-            const newPosition = computeNewPositionOfDraggedRecord({
-              arrayOfRecordsWithPosition: recordsWithPosition,
-              idOfItemToMove: recordId,
-              idOfTargetItem: lastRecordId,
-            });
-
-            const targetDate = parse(destinationDate, 'yyyy-MM-dd', new Date());
-            const currentFieldValue = record[calendarFieldMetadata.name];
-            let newDate: Date;
-
-            if (
-              isDefined(currentFieldValue) &&
-              isFieldDateTime(calendarFieldMetadata)
-            ) {
-              const currentDateTime = new Date(currentFieldValue);
-              newDate = set(targetDate, {
-                hours: getHours(currentDateTime),
-                minutes: getMinutes(currentDateTime),
-                seconds: getSeconds(currentDateTime),
-                milliseconds: getMilliseconds(currentDateTime),
-              });
-            } else {
-              newDate = targetDate;
-            }
-
-            await updateOneRecord({
-              idToUpdate: recordId,
-              updateOneRecordInput: {
-                [calendarFieldMetadata.name]: formatISO(newDate),
-                position: newPosition,
-              },
-            });
-            return;
           }
+
+          newPosition = computeNewPositionOfDraggedRecord({
+            arrayOfRecordsWithPosition: recordsWithPosition,
+            idOfItemToMove: recordId,
+            idOfTargetItem: targetRecord.id,
+          });
         }
-
-        const recordsWithPosition = extractRecordPositions(
-          destinationRecordIds,
-          snapshot,
-        );
-
-        const newPosition = computeNewPositionOfDraggedRecord({
-          arrayOfRecordsWithPosition: recordsWithPosition,
-          idOfItemToMove: recordId,
-          idOfTargetItem: targetRecordId,
-        });
 
         const targetDate = parse(destinationDate, 'yyyy-MM-dd', new Date());
         const currentFieldValue = record[calendarFieldMetadata.name];
