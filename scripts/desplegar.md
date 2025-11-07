@@ -3,11 +3,11 @@
 
 ```bash
 # En tu Mac
-docker build --platform linux/amd64 -f packages/twenty-docker/twenty/Dockerfile -t twenty-custom:v1.8.2 .
+cd packages/twenty-docker && make prod-build PLATFORM=linux/amd64 TAG=v1.10.1
 ```
-# 🚀 Guía Completa de Despliegue en VPS
+# 🚀 Guía Completa de Despliegue en VPS (v1.10.1)
 
-La imagen ya está compilada correctamente con arquitectura AMD64. Ahora sigue estos pasos en tu VPS:
+La imagen se compilará usando el Makefile con arquitectura AMD64 para la versión 1.10.1. Ahora sigue estos pasos:
 
 ---
 
@@ -15,14 +15,14 @@ La imagen ya está compilada correctamente con arquitectura AMD64. Ahora sigue e
 
 ```bash
 # 1. Empaquetar la imagen
-docker save twenty-custom:v1.8.2 | gzip > twenty-custom-v1.8.2-amd64-$(date +%Y%m%d).tar.gz
+docker save twenty:v1.10.1 | gzip > twenty-v1.10.1-amd64-$(date +%Y%m%d).tar.gz
 
 # 2. Verificar el tamaño del archivo
-ls -lh twenty-custom-v1.8.2-amd64-$(date +%Y%m%d).tar.gz
+ls -lh twenty-v1.10.1-amd64-$(date +%Y%m%d).tar.gz
 # Debería ser ~500-800MB
 
 # 3. Transferir al VPS (reemplaza con tus datos)
-scp twenty-custom-v1.8.2-amd64-$(date +%Y%m%d).tar.gz root@72.60.214.54:/tmp/
+scp twenty-v1.10.1-amd64-$(date +%Y%m%d).tar.gz root@72.60.214.54:/tmp/
 
 ```
 
@@ -58,21 +58,33 @@ ls -lh backup-*.sql
 
 ```bash
 # 1. Cargar la imagen desde el archivo
-docker load < /tmp/twenty-custom-v1.8.2-amd64-$(date +%Y%m%d).tar.gz
+docker load < /tmp/twenty-v1.10.1-amd64-$(date +%Y%m%d).tar.gz
 
 # Deberías ver:
-# Loaded image: twenty-custom:v1.8.2
+# Loaded image: twenty:v1.10.1
 
 # 2. Verificar que la imagen se cargó correctamente
-docker images | grep twenty-custom
+docker images | grep twenty
 
 # Debería mostrar algo como:
-# twenty-custom   v1.8.2   [IMAGE_ID]   X hours ago   ~2GB
+# twenty   v1.10.1   [IMAGE_ID]   X hours ago   ~2GB
 ```
 
 ---
 
 ## **PASO 5: Actualizar la variable TAG en el archivo .env**
+
+```bash
+# Editar tu archivo docker-compose.yml para usar la nueva imagen
+nano docker-compose.yml
+
+# Cambiar la línea de la imagen de:
+# image: twenty-custom:v1.8.2
+# A:
+# image: twenty:v1.10.1
+
+# Guardar el archivo (Ctrl+O, Enter, Ctrl+X en nano)
+```
 
 
 ---
@@ -196,10 +208,10 @@ sudo iptables-save
 
 ```bash
 # Verificar integridad del archivo
-ls -lh /tmp/twenty-custom-v1.8.2-amd64-$(date +%Y%m%d).tar.gz
+ls -lh /tmp/twenty-v1.10.1-amd64-$(date +%Y%m%d).tar.gz
 
 # Re-cargar la imagen
-docker load < /tmp/twenty-custom-v1.8.2-amd64-$(date +%Y%m%d).tar.gz
+docker load < /tmp/twenty-v1.10.1-amd64-$(date +%Y%m%d).tar.gz
 
 # Listar todas las imágenes
 docker images
@@ -273,17 +285,18 @@ docker compose exec server ls -R /app/packages/twenty-server/dist/src/modules/sa
 
 ```bash
 # En tu Mac:
-docker save twenty-custom:v1.8.2 | gzip > twenty-custom-v1.8.2-amd64.tar.gz
-scp twenty-custom-v1.8.2-amd64.tar.gz usuario@tu-vps:/tmp/
+cd packages/twenty-docker && make prod-build PLATFORM=linux/amd64 TAG=v1.10.1
+docker save twenty:v1.10.1 | gzip > twenty-v1.10.1-amd64.tar.gz
+scp twenty-v1.10.1-amd64.tar.gz usuario@tu-vps:/tmp/
 
 # En el VPS:
 ssh usuario@tu-vps
 cd /opt/twenty
 docker compose exec -T db pg_dump -U postgres default > backup-$(date +%Y%m%d-%H%M%S).sql
-docker load < /tmp/twenty-custom-v1.8.2-amd64.tar.gz
-docker images | grep twenty-custom
+docker load < /tmp/twenty-v1.10.1-amd64.tar.gz
+docker images | grep twenty
 cp docker compose.yml docker compose.yml.backup
-nano docker compose.yml  # Cambiar image: a twenty-custom:v1.8.2
+nano docker compose.yml  # Cambiar image: a twenty:v1.10.1
 docker compose down
 docker compose up -d
 docker compose logs -f server
@@ -293,7 +306,7 @@ docker compose logs -f server
 
 ## **¡Listo!**
 
-Tu NodiaFlow CRM personalizado con el módulo `sales-filter` debería estar corriendo en tu VPS. Accede a través de:
+Tu NodiaFlow CRM v1.10.1 personalizado con el módulo `sales-filter` debería estar corriendo en tu VPS. Accede a través de:
 
 ```
 http://tu-vps-ip:3000
